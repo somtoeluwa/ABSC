@@ -6,7 +6,7 @@
  * Time: 12:43 PM
  */
 
-include 'functions.php' ?>
+include 'assets/functions/functions.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
