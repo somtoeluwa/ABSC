@@ -6,7 +6,7 @@
  * Time: 12:43 PM
  */
 
-include 'dbConnect.php' ?>
+include 'functions.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
