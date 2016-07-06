@@ -45,7 +45,7 @@ include 'assets/functions/functions.php' ?>
     $counter++;
     ?>
 <ul>
-    <li><a href="category.php?categoryName=<?php echo $row['categoryID'];?>"><?php echo $row['categoryName'];?></a></li>
+    <li><a href="category.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo $row['categoryName'];?></a></li>
 </ul>
         <?php
     }
