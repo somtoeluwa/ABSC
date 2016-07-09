@@ -3,9 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <title>Arduino Booking System</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
+
 <body>
+<!-- Header start -->
+    <header>
+        <nav>
+            <i alt="Home" title="Home" class="fa fa-home"></i>
+            <form action="#">
+                Search:
+                <input type="search" name="componentsearch">
+                <select title="Select Search Field">
+                    <option value="">All categories</option>
+                    <option value="Actuators">Actuators</option>
+                    <option value="Connectors">Connectors</option>
+                    <option value="LCD_Matrix">LCD & Matrix</option>
+                    <option value="Passive_Active">Passive & Active</option>
+                    <option value="Sensors">Sensors</option>
+                </select>
+                <input type="submit">
+            </form>
+            <a href="#">Shopping Cart</a>
+            <ul>
+                <li class="dropdown">
+                    <a class="active dropbtn" href="#">My account</a>
+                    <div class="dropdown-content">
+                        <a href="#">lorus</a>
+                        <a href="#">ipsom</a>
+                        <a href="#">dolor</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+<!--Main Start -->
+    <main>
+
+        <div class="row">
+            <div id="sidebar" class="col-3">
+                <ul>
+                    <li><a href="#">Components</a>
+                        <ul>
+                            <li><a href="#">Actuators</a></li>
+                            <li><a href="#">Connectors</a></li>
+                            <li><a href="#">LCD & Matrix</a></li>
+                            <li><a href="#">Passive & Active</a></li>
+                            <li><a href="#"></a>Sensors</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="content" class="col-9">
+                <article class="col-3">
+                    <h3>Yellow LED lights</h3>
+                    <img src="assets/images/yellow%20led.jpg" alt="Yellow LED"/>
+                    <p>Yellow LED lights for project use</p>
+                </article>
+
+                <article class="col-3">
+                    <h3>Blue LED lights</h3>
+                    <img src="assets/images/blue%20led.jpg" alt="Blue LED"/>
+                    <p>Blue LED lights for project use</p>
+                </article>
+
+                <article class="col-3">
+                    <h3>white LED lights</h3>
+                    <img src="assets/images/white%20led.jpg" alt="White LED"/>
+                    <p>White LED lights for project use</p>
+                </article>
+            </div>
+
+        </div>
+    </main>
+
+<!-- Footer -->
+    <footer>
+        <p> Designed by Somto Eluwa</p>
+    </footer>
+<!-- -->
+
+
 
 </body>
 </html>
