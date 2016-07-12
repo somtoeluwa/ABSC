@@ -7,45 +7,56 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 
 <body>
 <!-- Header start -->
     <header>
-        <nav>
-            <i alt="Home" title="Home" class="fa fa-home"></i>
-            <form action="#">
-                Search:
-                <input type="search" name="componentsearch">
-                <select title="Select Search Field">
-                    <option value="">All categories</option>
-                    <option value="Actuators">Actuators</option>
-                    <option value="Connectors">Connectors</option>
-                    <option value="LCD_Matrix">LCD & Matrix</option>
-                    <option value="Passive_Active">Passive & Active</option>
-                    <option value="Sensors">Sensors</option>
-                </select>
-                <input type="submit">
-            </form>
-            <a href="#">Shopping Cart</a>
-            <ul>
-                <li class="dropdown">
-                    <a class="active dropbtn" href="#">My account</a>
+        <img id="logo" src="assets/images/logo.png" alt="Home logo">
+        <h3 id="title">Arduino component booking system</h3>
+
+        <nav >
+            <ul class="topnav">
+                <li>
+                    <a href="index.html"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
+                </li>
+                <li>
+                    <form action="#">
+                        Search:
+                        <input type="search" name="componentsearch">
+                        <select title="Select Search Field">
+                            <option value="">All categories</option>
+                            <option value="Actuators">Actuators</option>
+                            <option value="Connectors">Connectors</option>
+                            <option value="LCD_Matrix">LCD & Matrix</option>
+                            <option value="Passive_Active">Passive & Active</option>
+                            <option value="Sensors">Sensors</option>
+                        </select>
+                        <input type="submit" name="search">
+                    </form>
+                </li>
+                <li class="dropdown right" id="profile">
+                    <a class="dropbtn" href="#">My account</a>
                     <div class="dropdown-content">
                         <a href="#">lorus</a>
                         <a href="#">ipsom</a>
                         <a href="#">dolor</a>
                     </div>
                 </li>
+                <li class="right">
+                    <a href="#"><i class="fa fa-shopping-cart" style="font-size:36px;color:#ac76af"></i></a>
+                </li>
+
             </ul>
         </nav>
     </header>
 
 <!--Main Start -->
     <main>
-
         <div class="row">
-            <div id="sidebar" class="col-3">
+            <div id="sidebar" class="col-3 col-m-3 menu">
                 <ul>
                     <li><a href="#">Components</a>
                         <ul>
@@ -59,26 +70,48 @@
                 </ul>
             </div>
 
-            <div id="content" class="col-9">
-                <article class="col-3">
+            <div id="content" class="col-9 col-m-9">
+                <article class="col-3 col-m-12">
                     <h3>Yellow LED lights</h3>
                     <img src="assets/images/yellow%20led.jpg" alt="Yellow LED"/>
                     <p>Yellow LED lights for project use</p>
                 </article>
-
-                <article class="col-3">
+                <article class="col-3 col-m-12">
                     <h3>Blue LED lights</h3>
                     <img src="assets/images/blue%20led.jpg" alt="Blue LED"/>
                     <p>Blue LED lights for project use</p>
                 </article>
-
-                <article class="col-3">
+                <article class="col-3 col-m-12">
                     <h3>white LED lights</h3>
                     <img src="assets/images/white%20led.jpg" alt="White LED"/>
                     <p>White LED lights for project use</p>
                 </article>
+                <article class="col-3 col-m-12">
+                    <h3>Yellow LED lights</h3>
+                    <img src="assets/images/yellow%20led.jpg" alt="Yellow LED"/>
+                    <p>Yellow LED lights for project use</p>
+                </article>
+                <article class="col-3 col-m-12">
+                    <h3>Blue LED lights</h3>
+                    <img src="assets/images/blue%20led.jpg" alt="Blue LED"/>
+                    <p>Blue LED lights for project use</p>
+                </article>
+                <article class="col-3 col-m-12">
+                    <h3>white LED lights</h3>
+                    <img src="assets/images/white%20led.jpg" alt="White LED"/>
+                    <p>White LED lights for project use</p>
+                </article>
+                <article class="col-3 col-m-12">
+                    <h3>Yellow LED lights</h3>
+                    <img src="assets/images/yellow%20led.jpg" alt="Yellow LED"/>
+                    <p>Yellow LED lights for project use</p>
+                </article>
+                <article class="col-3 col-m-12">
+                    <h3>Blue LED lights</h3>
+                    <img src="assets/images/blue%20led.jpg" alt="Blue LED"/>
+                    <p>Blue LED lights for project use</p>
+                </article>
             </div>
-
         </div>
     </main>
 
