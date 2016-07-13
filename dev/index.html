@@ -9,6 +9,10 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="assets/css/ard/store.css">
+    <link rel="stylesheet" href="assets/css/ard/foundation.css">
+    <link rel="stylesheet" href="assets/css/ard/common.css">
+    <link rel="stylesheet" href="assets/css/ard/icons.css">-->
 </head>
 
 <body>
@@ -40,9 +44,9 @@
                 <li class="dropdown right" id="profile">
                     <a class="dropbtn" href="#">My account</a>
                     <div class="dropdown-content">
-                        <a href="#">lorus</a>
-                        <a href="#">ipsom</a>
-                        <a href="#">dolor</a>
+                        <a href="#">Profile</a>
+                        <a href="#">Dashboard</a>
+                        <a href="#">Sign out</a>
                     </div>
                 </li>
                 <li class="right">
@@ -53,64 +57,139 @@
         </nav>
     </header>
 
+
+<!-- Sub header -->
+
+<div id="pageSubHeader">
+    <div class="row">
+        <div class="col-8 col-m-8">
+            <div id="BreadCrumb">
+                <a href="index.html">Home</a>&nbsp;&gt;&nbsp; All Components
+            </div>
+        </div>
+        <div class="col-4 col-m-4">
+        </div>
+    </div>
+</div>
+
+
+
 <!--Main Start -->
     <main>
         <div class="row">
-            <div id="sidebar" class="col-3 col-m-3 menu">
-                <ul>
-                    <li><a href="#">Components</a>
-                        <ul>
+            <div id="sidenavbar" class="col-2 col-m-2 menu">
+                <section class="section active">
+                <p class="title">
+                    <a href="#">Components</a>
+                </p>
+
+                <div class="content">
+                        <ul class="side-nav">
                             <li><a href="#">Actuators</a></li>
                             <li><a href="#">Connectors</a></li>
                             <li><a href="#">LCD & Matrix</a></li>
                             <li><a href="#">Passive & Active</a></li>
-                            <li><a href="#"></a>Sensors</li>
+                            <li><a href="#">Sensors</a></li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
+                </section>
+
+                <!--<section class="section active">
+                <p class="title">
+                <a href="/category/6">Components<i class="menu-arrow-icon"></i></a>
+                </p>
+                <div class="content">
+                <ul class="side-nav">
+                <li><a href="/category/31">Actuators</a>
+                </li><li><a href="/category/32">Connectors</a>
+                </li><li><a href="/category/36">LCD &amp; Matrix</a>
+                </li><li><a href="/category/33">Passive &amp; Active</a>
+                </li><li><a href="/category/22">Sensors</a></li></ul></div>
+                </section> -->
             </div>
 
-            <div id="content" class="col-9 col-m-9">
-                <article class="col-3 col-m-12">
-                    <h3>Yellow LED lights</h3>
-                    <img src="assets/images/yellow%20led.jpg" alt="Yellow LED"/>
-                    <p>Yellow LED lights for project use</p>
+            <div id="content" class="col-10 col-m-10">
+
+                <article class="col-4 col-m-4 itemBox">
+                    <div class="row">
+                        <div class="col-12 col-m-12 itemPic">
+                            <a href="#">
+                                <img src="assets/images/yellow%20led.jpg" alt="Yellow LED" width="229" height="182"/>
+                            </a>
+                        </div>
+                        <div class="col-12 col-m-12">
+                            <h4><a href="#">Yellow LED lights</a></h4>
+                            <div class="listingDescription">Yellow LEDs .</div>
+                        </div>
+                    <div class="row">
+                        <div class="col-6 col-m-6">
+                            <div class="priceinlist"> 20 > In Stock </div>
+                        </div>
+                        <div class="col-6 col-m-6">
+                            <form class="funkycart" name="cart_quantity" action="#" method="#" enctype="multipart/form-data">
+                                <input type="hidden" name="products_id" value="152">
+                                <input type="hidden" name="cart_quantity" value="1">
+                                <input type="submit" value="Add to cart" class="button tiny-button expand addcart-button">
+                            </form>
+                        </div>
+                    </div>
+                    </div>
                 </article>
-                <article class="col-3 col-m-12">
-                    <h3>Blue LED lights</h3>
-                    <img src="assets/images/blue%20led.jpg" alt="Blue LED"/>
-                    <p>Blue LED lights for project use</p>
+
+
+                <article class="col-4 col-m-4 itemBox">
+                    <div class="row">
+                        <div class="col-12 col-m-12 itemPic">
+                            <a href="#">
+                                <img src="assets/images/blue%20led.jpg" alt="Blue LED" width="229" height="182"/>
+                            </a>
+                        </div>
+                        <div class="col-12 col-m-12">
+                            <h4><a href="#">Blue LED lights</a></h4>
+                            <div class="listingDescription">Blue LEDs .</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-m-6">
+                                <div class="priceinlist"> 20 > In Stock </div>
+                            </div>
+                            <div class="col-6 col-m-6">
+                                <form class="funkycart" name="cart_quantity" action="#" method="#" enctype="multipart/form-data">
+                                    <input type="hidden" name="products_id" value="152">
+                                    <input type="hidden" name="cart_quantity" value="1">
+                                    <input type="submit" value="Add to cart" class="button tiny-button expand addcart-button">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </article>
-                <article class="col-3 col-m-12">
-                    <h3>white LED lights</h3>
-                    <img src="assets/images/white%20led.jpg" alt="White LED"/>
-                    <p>White LED lights for project use</p>
+
+
+                <article class="col-4 col-m-4 itemBox">
+                    <div class="row">
+                        <div class="col-12 col-m-12 itemPic">
+                            <a href="#">
+                                <img src="assets/images/white%20led.jpg" alt="White LED"width="229" height="182"/>
+                            </a>
+                        </div>
+                        <div class="col-12 col-m-12">
+                            <h4><a href="#">White LED lights</a></h4>
+                            <div class="listingDescription">White LEDs</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-m-6">
+                                <div class="priceinlist"> 20 > In Stock </div>
+                            </div>
+                            <div class="col-6 col-m-6">
+                                <form class="funkycart" name="cart_quantity" action="#" method="#" enctype="multipart/form-data">
+                                    <input type="hidden" name="products_id" value="152">
+                                    <input type="hidden" name="cart_quantity" value="1">
+                                    <input type="submit" value="Add to cart" class="button tiny-button expand addcart-button">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </article>
-                <article class="col-3 col-m-12">
-                    <h3>Yellow LED lights</h3>
-                    <img src="assets/images/yellow%20led.jpg" alt="Yellow LED"/>
-                    <p>Yellow LED lights for project use</p>
-                </article>
-                <article class="col-3 col-m-12">
-                    <h3>Blue LED lights</h3>
-                    <img src="assets/images/blue%20led.jpg" alt="Blue LED"/>
-                    <p>Blue LED lights for project use</p>
-                </article>
-                <article class="col-3 col-m-12">
-                    <h3>white LED lights</h3>
-                    <img src="assets/images/white%20led.jpg" alt="White LED"/>
-                    <p>White LED lights for project use</p>
-                </article>
-                <article class="col-3 col-m-12">
-                    <h3>Yellow LED lights</h3>
-                    <img src="assets/images/yellow%20led.jpg" alt="Yellow LED"/>
-                    <p>Yellow LED lights for project use</p>
-                </article>
-                <article class="col-3 col-m-12">
-                    <h3>Blue LED lights</h3>
-                    <img src="assets/images/blue%20led.jpg" alt="Blue LED"/>
-                    <p>Blue LED lights for project use</p>
-                </article>
+
             </div>
         </div>
     </main>
