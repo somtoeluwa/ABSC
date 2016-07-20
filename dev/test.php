@@ -136,7 +136,7 @@ $category = $_GET['categoryID'];
                         <div class="row">
                             <div class="col-12 col-m-12 itemPic">
                                 <a href="item.php?assetID=<?php echo $row['assetID'];?>">
-                                    <img src="assets/images/yellow%20led.jpg" alt="Yellow LED" width="229" height="182"/>
+                                    <img src="<?php echo $row['image'];?>" alt="Yellow LED" width="229" height="182"/>
                                 </a>
                             </div>
                             <div class="col-12 col-m-12">
