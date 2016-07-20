@@ -116,11 +116,10 @@ include 'assets/functions/functions.php' ?>
             <div id="content" class="col-10 col-m-10">
                 <?php
                 $sql_asset = "SELECT * FROM asset";
-                $result =  $db->query($sql_asset);
-                while ($row = $result->fetch_array()){
+                $result2 =  $db->query($sql_asset);
+                while ($row = $result2->fetch_array()){
 
-                    ?>
-
+                ?>
                 <article class="col-4 col-m-4 itemBox">
                     <div class="row">
                         <div class="col-12 col-m-12 itemPic">
@@ -130,7 +129,7 @@ include 'assets/functions/functions.php' ?>
                         </div>
                         <div class="col-12 col-m-12">
                             <h4 class="productTitle"><a href="item.php?assetID=<?php echo $row['assetID'];?>"><?php echo $row['assetName'];?></a></h4>
-                            <div class="listingDescription"><?php echo $row['assetDescription'];?></div>
+                            <div class="listingDescription"><?php echo "{$row['assetDescription']}";?></div>
                         </div>
                         <div class="row">
                             <div class="col-6 col-m-6">
@@ -148,7 +147,7 @@ include 'assets/functions/functions.php' ?>
                 </article>
                 <?php
                         }
-                        $result->close();
+                        $result2->close();
                         $db->close();
                 ?>
 
