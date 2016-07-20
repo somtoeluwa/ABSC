@@ -99,13 +99,13 @@ include 'assets/functions/functions.php' ?>
                         $counter++;
                         ?>
                         <ul class="side-nav">
-                            <li><a href="category.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo $row['categoryName'];?></a></li>
+                            <li><a href="category.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo "{$row['categoryName']}";?></a></li>
                         </ul>
                             <?php
                         }
                         }
                         $result->close();
-                        $db->close();
+
                         ?>
                     </div>
                 </section>
@@ -149,6 +149,11 @@ include 'assets/functions/functions.php' ?>
 
 
 </body>
+</html>
+
+
+
+
 <!--<nav>-->
 <!--    --><?php
 //    $sql_query = "SELECT * FROM category";
@@ -170,10 +175,4 @@ include 'assets/functions/functions.php' ?>
 //    ?>
 <!---->
 <!--</nav>-->
-</html>
-
-
-
-
-
 
