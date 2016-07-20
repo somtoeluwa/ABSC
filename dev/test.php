@@ -6,7 +6,10 @@
  * Time: 12:43 PM
  */
 
-include 'assets/functions/functions.php' ?>
+include 'assets/functions/functions.php' ;
+$category = $_GET['categoryID'];
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,8 +93,10 @@ include 'assets/functions/functions.php' ?>
 
                     <div class="content">
                         <?php
+                            //$category = $_GET['categoryID'];
                         $sql_catNav = "SELECT * FROM category";
                         $result =  $db->query($sql_catNav);
+
                         if(mysqli_num_rows($result)>0){
                         $counter = 0;
                         while ($row = $result->fetch_array())
@@ -99,7 +104,7 @@ include 'assets/functions/functions.php' ?>
                         $counter++;
                         ?>
                         <ul class="side-nav">
-                            <li><a href="category.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo "{$row['categoryName']}";?></a></li>
+                            <li><a href="test.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo "{$row['categoryName']}";?></a></li>
                         </ul>
                             <?php
                         }
@@ -115,17 +120,17 @@ include 'assets/functions/functions.php' ?>
 
             <div id="content" class="col-10 col-m-10">
                 <?php
-                $sql_asset = "SELECT * FROM asset";
+                if ($_GET['categoryID']){
+                    $sql_asset = "SELECT * FROM asset WHERE categoryID = '$category' ";
+                }
+                else{
+                    $sql_asset = "SELECT * FROM asset";
+                }
+
                 $result2 =  $db->query($sql_asset);
                 while ($row = $result2->fetch_array()){
 
                 ?>
-
-<!--                    <p>--><?php //echo $row['assetID'];?><!--</p>-->
-<!--                    <p>--><?php //echo $row['assetName'];?><!--</p>-->
-<!--                    <p>--><?php //echo "{$row['assetDescription']}";?><!--</p>-->
-<!--                    <p>--><?php //echo $row['quantity'];?><!--</p>-->
-
 
                     <article class="col-4 col-m-4 itemBox">
                         <div class="row">
@@ -144,7 +149,7 @@ include 'assets/functions/functions.php' ?>
                                 </div>
                                 <div class="col-6 col-m-6">
                                     <form class="funkycart" name="cart_quantity" action="#" method="#" enctype="multipart/form-data">
-                                        <input type="hidden" name="products_id" value="152">
+                                        <input type="hidden" name="assetID" value="<?php echo $row['assetID'];?>">
                                         <input type="hidden" name="cart_quantity" value="1">
                                         <input type="submit" value="Add to cart" class="button tiny-button expand addcart-button">
                                     </form>
