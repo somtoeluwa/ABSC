@@ -12,4 +12,10 @@ define('DB_PASSWORD', 'c9441472');
 define('DB_DATABASE', 'abscdb');
 $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
+
+
+
+
+
+
 ?>

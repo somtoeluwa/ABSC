@@ -22,12 +22,11 @@ include 'assets/functions/functions.php' ?>
 </head>
 
 <body>
+
 <header>
     <img id="logo" src="assets/images/logo.png" alt="Home logo">
     <h3 id="title">Arduino component booking system</h3>
-</header>
 
-<main>
     <nav >
         <ul class="topnav">
             <li>
@@ -38,15 +37,6 @@ include 'assets/functions/functions.php' ?>
                     Search:
                     <input type="search" name="componentsearch">
                     <select title="Select Search Field">
-                        <?php
-                        $sql_query = "SELECT * FROM category";
-                        $result =  $db->query($sql_query);
-                        if(mysqli_num_rows($result)>0){
-                        $counter = 0;
-                        while ($row = $result->fetch_array())
-                        {
-                        $counter++;
-                        ?>
                         <option value="">All categories</option>
                         <option value="Actuators">Actuators</option>
                         <option value="Connectors">Connectors</option>
@@ -71,32 +61,134 @@ include 'assets/functions/functions.php' ?>
 
         </ul>
     </nav>
+</header>
 
 
-<nav>
-    <?php
-    $sql_query = "SELECT * FROM category";
-    $result =  $db->query($sql_query);
-    if(mysqli_num_rows($result)>0){
-    $counter = 0;
-    while ($row = $result->fetch_array())
-    {
-    $counter++;
-    ?>
-<ul>
-    <li><a href="category.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo $row['categoryName'];?></a></li>
-</ul>
-        <?php
-    }
-    }
-    $result->close();
-    $db->close();
-    ?>
 
-</nav>
-</main>
+<!-- Sub header -->
+
+<div id="pageSubHeader">
+    <div class="row">
+        <div class="col-8 col-m-8">
+            <div id="BreadCrumb">
+                <a href="index.html">Home</a>&nbsp;&gt;&nbsp; All Components
+            </div>
+        </div>
+        <div class="col-4 col-m-4">
+        </div>
+    </div>
+</div>
+
+<!--Main Start -->
+    <main>
+        <div class="row">
+            <div id="sidenavbar" class="col-2 col-m-2 menu">
+                <section>
+                    <p class="title">
+                        <a href="#">Components</a>
+                    </p>
+
+                    <div class="content">
+                        <?php
+                        $sql_catNav = "SELECT * FROM category";
+                        $result =  $db->query($sql_catNav);
+                        if(mysqli_num_rows($result)>0){
+                        $counter = 0;
+                        while ($row = $result->fetch_array())
+                        {
+                        $counter++;
+                        ?>
+                        <ul class="side-nav">
+                            <li><a href="category.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo $row['categoryName'];?></a></li>
+                        </ul>
+                            <?php
+                        }
+                        }
+                        $result->close();
+                        $db->close();
+                        ?>
+                    </div>
+                </section>
+            </div>
+
+
+
+            <div id="content" class="col-10 col-m-10">
+                <?php
+                $sql_asset = "SELECT * FROM asset";
+                $result =  $db->query($sql_asset);
+                while ($row = $result->fetch_array()){
+
+                    ?>
+
+                <article class="col-4 col-m-4 itemBox">
+                    <div class="row">
+                        <div class="col-12 col-m-12 itemPic">
+                            <a href="item.php?assetID=<?php echo $row['assetID'];?>">
+                                <img src="assets/images/yellow%20led.jpg" alt="Yellow LED" width="229" height="182"/>
+                            </a>
+                        </div>
+                        <div class="col-12 col-m-12">
+                            <h4 class="productTitle"><a href="item.php?assetID=<?php echo $row['assetID'];?>"><?php echo $row['assetName'];?></a></h4>
+                            <div class="listingDescription"><?php echo $row['assetDescription'];?></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-m-6">
+                                <div class="priceinlist"><?php echo $row['quantity'];?> In Stock </div>
+                            </div>
+                            <div class="col-6 col-m-6">
+                                <form class="funkycart" name="cart_quantity" action="#" method="#" enctype="multipart/form-data">
+                                    <input type="hidden" name="products_id" value="152">
+                                    <input type="hidden" name="cart_quantity" value="1">
+                                    <input type="submit" value="Add to cart" class="button tiny-button expand addcart-button">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <?php
+                        }
+                        $result->close();
+                        $db->close();
+                ?>
+
+
+
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p> Designed by Somto Eluwa</p>
+    </footer>
+    <!-- -->
+
+
 
 </body>
+<!--<nav>-->
+<!--    --><?php
+//    $sql_query = "SELECT * FROM category";
+//    $result =  $db->query($sql_query);
+//    if(mysqli_num_rows($result)>0){
+//    $counter = 0;
+//    while ($row = $result->fetch_array())
+//    {
+//    $counter++;
+//    ?>
+<!--<ul>-->
+<!--    <li><a href="category.php?categoryID=--><?php //echo $row['categoryID'];?><!--">--><?php //echo $row['categoryName'];?><!--</a></li>-->
+<!--</ul>-->
+<!--        --><?php
+//    }
+//    }
+//    $result->close();
+//    $db->close();
+//    ?>
+<!---->
+<!--</nav>-->
 </html>
 
 
