@@ -33,7 +33,7 @@ $category = $_GET['categoryID'];
     <nav >
         <ul class="topnav">
             <li>
-                <a href="index.html"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
+                <a href="test.php"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
             </li>
             <li>
                 <form action="#">
@@ -74,7 +74,7 @@ $category = $_GET['categoryID'];
     <div class="row">
         <div class="col-8 col-m-8">
             <div id="BreadCrumb">
-                <a href="index.html">Home</a>&nbsp;&gt;&nbsp; All Components
+                <a href="test.php">Home</a>&nbsp;&gt;&nbsp; All Components
             </div>
         </div>
         <div class="col-4 col-m-4">
