@@ -120,15 +120,13 @@ include 'assets/functions/functions.php' ?>
                 while ($row = $result2->fetch_array()){
 
                 ?>
-                <article class="col-4 col-m-4 itemBox">
-                    <div class="row">
-                        <div class="col-12 col-m-12 itemPic">
-                            <a href="item.php?assetID=<?php echo $row['assetID'];?>">
-                                <img src="assets/images/yellow%20led.jpg" alt="Yellow LED" width="229" height="182"/>
-                            </a>
-                        </div>
 
-                </article>
+                    <p><?php echo $row['assetID'];?>"></p>
+                    <p><?php echo $row['assetName'];?></p>
+                    <p><?php echo "{$row['assetDescription']}";?></p>
+                    <p><?php echo $row['quantity'];?></p>
+
+
                 <?php
                         }
                         $result2->close();
