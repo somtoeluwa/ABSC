@@ -127,23 +127,7 @@ include 'assets/functions/functions.php' ?>
                                 <img src="assets/images/yellow%20led.jpg" alt="Yellow LED" width="229" height="182"/>
                             </a>
                         </div>
-                        <div class="col-12 col-m-12">
-                            <h4 class="productTitle"><a href="item.php?assetID=<?php echo $row['assetID'];?>"><?php echo $row['assetName'];?></a></h4>
-                            <div class="listingDescription"><?php echo "{$row['assetDescription']}";?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 col-m-6">
-                                <div class="priceinlist"><?php echo $row['quantity'];?> In Stock </div>
-                            </div>
-                            <div class="col-6 col-m-6">
-                                <form class="funkycart" name="cart_quantity" action="#" method="#" enctype="multipart/form-data">
-                                    <input type="hidden" name="products_id" value="152">
-                                    <input type="hidden" name="cart_quantity" value="1">
-                                    <input type="submit" value="Add to cart" class="button tiny-button expand addcart-button">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+
                 </article>
                 <?php
                         }
