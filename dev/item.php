@@ -128,7 +128,7 @@ $assetID = $_GET['assetID'];
 
                 <div class="row" id="ItemPanel">
                     <div class="col-9" id="itemPicContainer">
-                        <img src="assets/images/yellow%20led.jpg" alt="Yellow LED Light" class="itemPicBig">
+                        <img src="<?php echo $row['image'];?>" alt="Item Image" class="itemPicBig">
                     </div>
 
                     <div class="col-3" id="ItemCheckoutOptions">
