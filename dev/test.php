@@ -42,7 +42,7 @@ $category = $_GET['categoryID'];
 
                     <?php
                     $sql=("SELECT categoryID,categoryName FROM category");
-                    if(mysqli_num_rows($result)>0){{
+                    if(mysqli_num_rows($result)>0){
                     $select= '<select name="searchCategories">';
                         while($row = $result->fetch_array()){
                         $select.='<option value="'.$row['categoryID'].'">'.$row['categoryName'].'</option>';
@@ -50,8 +50,9 @@ $category = $_GET['categoryID'];
                         }
                         $select.='</select>';
                     echo $select;
-
                     ?>
+
+
 
                     <!--<select title="searchCategories"">
                         <option value="">All categories</option>
@@ -61,6 +62,7 @@ $category = $_GET['categoryID'];
                         <option value="Passive_Active">Passive & Active</option>
                         <option value="Sensors">Sensors</option>
                     </select>-->
+
                     <input type="submit" name="search" id="search">
                 </form>
             </li>
