@@ -33,25 +33,39 @@ $category = $_GET['categoryID'];
     <nav >
         <ul class="topnav">
             <li>
-                <a href="test.php"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
+                <a href="index.html"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
             </li>
             <li>
-                <form action="#">
-                    Search:
-                    <input type="search" name="componentsearch">
-                    <select title="Select Search Field">
+                <form action="#" class="navSearch">
+                    <i class="fa fa-search" aria-hidden="true" style="color:#ac76af"></i>
+                    <input type="search" name="componentsearch"  placeholder="Search here ...">
+
+                    <?php
+                    $sql=("SELECT categoryID,categoryName FROM category");
+                    if(mysqli_num_rows($result)>0){{
+                    $select= '<select name="searchCategories">';
+                        while($row = $result->fetch_array()){
+                        $select.='<option value="'.$row['categoryID'].'">'.$row['categoryName'].'</option>';
+                        }
+                        }
+                        $select.='</select>';
+                    echo $select;
+
+                    ?>
+
+                    <!--<select title="searchCategories"">
                         <option value="">All categories</option>
                         <option value="Actuators">Actuators</option>
                         <option value="Connectors">Connectors</option>
                         <option value="LCD_Matrix">LCD & Matrix</option>
                         <option value="Passive_Active">Passive & Active</option>
                         <option value="Sensors">Sensors</option>
-                    </select>
-                    <input type="submit" name="search">
+                    </select>-->
+                    <input type="submit" name="search" id="search">
                 </form>
             </li>
             <li class="dropdown right" id="profile">
-                <a class="dropbtn" href="#">My account</a>
+                <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
                 <div class="dropdown-content">
                     <a href="#">Profile</a>
                     <a href="#">Dashboard</a>
@@ -182,29 +196,3 @@ $category = $_GET['categoryID'];
 
 </body>
 </html>
-
-
-
-
-<!--<nav>-->
-<!--    --><?php
-//    $sql_query = "SELECT * FROM category";
-//    $result =  $db->query($sql_query);
-//    if(mysqli_num_rows($result)>0){
-//    $counter = 0;
-//    while ($row = $result->fetch_array())
-//    {
-//    $counter++;
-//    ?>
-<!--<ul>-->
-<!--    <li><a href="category.php?categoryID=--><?php //echo $row['categoryID'];?><!--">--><?php //echo $row['categoryName'];?><!--</a></li>-->
-<!--</ul>-->
-<!--        --><?php
-//    }
-//    }
-//    $result->close();
-//    $db->close();
-//    ?>
-<!---->
-<!--</nav>-->
-

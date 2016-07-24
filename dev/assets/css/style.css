@@ -122,6 +122,7 @@ ul.topnav {
 ul.topnav li {
     float: left;
 
+
 }
 
 ul.topnav li.right {float: right;}
@@ -134,16 +135,34 @@ ul.topnav li > a,i,form {
     padding: 5px;
     font-size: medium;
 }
-ul.topnav li >form{
-    margin-top: 13px;
-    padding-left: 20px;
+.navSearch i {
+    text-align: center;
+    position: absolute;
+    font-size: 36px;
+}
+
+.navSearch input[type=search] {
+
+    width:585.5px;
+    margin-left: 50px;
+    margin-top: 10px;
+    height: 27px;
 
 }
+
+
+
+input[type=search],[type=submit] {
+    border-radius:10px ;
+
+
+}
+
  #profile{
-        margin-top: 13px;
+        /*margin-top: 13px;
         padding-left: 10px;
         padding-right: 10px;
-        text-align: center;
+        text-align: center;*/
 }
 
 ul.topnav li a:hover:not(.active) {background-color: #111;}
