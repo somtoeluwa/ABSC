@@ -40,28 +40,43 @@ $category = $_GET['categoryID'];
                     <i class="fa fa-search" aria-hidden="true" style="color:#ac76af"></i>
                     <input type="search" name="componentsearch"  placeholder="Search here ...">
 
+                    <select title="searchCategories"">
                     <?php
+                    $sql_search = "SELECT categoryID,categoryName FROM category";
+                    $result_search = $db->query($sql_search);
+                    if(mysqli_num_rows($result_search)>0){
+                        $counter=0;
+
+                        while($row_search = $result_search->fetch_array()){
+
+                            ?>
+                            <option value="<?php echo $row['categoryID'];?>"><?php echo $row['categoryName'];?></option>
+                            <?
+                        }
+                        
+                    }
+                    $result_search->close()
+
+                    ?>
+                    <!--
+                    <option value="">All categories</option>
+                    <option value="Actuators">Actuators</option>
+                    <option value="Connectors">Connectors</option>
+                    <option value="LCD_Matrix">LCD & Matrix</option>
+                    <option value="Passive_Active">Passive & Active</option>
+                    <option value="Sensors">Sensors</option>
+                    </select>
+
                     $sql=("SELECT categoryID,categoryName FROM category");
                     if(mysqli_num_rows($result)>0){
-                    $select= '<select name="searchCategories">';
+                        $select= '<select name="searchCategories">';
                         while($row = $result->fetch_array()){
-                        $select.='<option value="'.$row['categoryID'].'">'.$row['categoryName'].'</option>';
+                            $select.='<option value="'.$row['categoryID'].'">'.$row['categoryName'].'</option>';
                         }
-                        }
-                        $select.='</select>';
+                    }
+                    $select.='</select>';
                     echo $select;
-                    ?>
-
-
-
-                    <!--<select title="searchCategories"">
-                        <option value="">All categories</option>
-                        <option value="Actuators">Actuators</option>
-                        <option value="Connectors">Connectors</option>
-                        <option value="LCD_Matrix">LCD & Matrix</option>
-                        <option value="Passive_Active">Passive & Active</option>
-                        <option value="Sensors">Sensors</option>
-                    </select>-->
+                    ?>-->
 
                     <input type="submit" name="search" id="search">
                 </form>
