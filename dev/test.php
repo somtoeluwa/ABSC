@@ -50,10 +50,10 @@ $category = $_GET['categoryID'];
                         while($row_search = $result_search->fetch_array()){
 
                             ?>
-                            <option value="<?php echo $row['categoryID'];?>"><?php echo $row['categoryName'];?></option>
+                            <option value="<?php echo $row_search['categoryID'];?>"><?php echo $row_search['categoryName'];?></option>
                             <?
                         }
-                        
+
                     }
                     $result_search->close()
 
