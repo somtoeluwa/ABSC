@@ -2,13 +2,14 @@
 
 
 session_start();
+$username = $_SESSION["ad_firstname"];
 if(!isset($_SESSION['ad_email'])){
     header("Location: index.php");
 }
 
 include 'assets/functions/functions.php' ;
 $assetID = $_GET['assetID'];
-$username = $_SESSION["ad_firstname"];
+
 
 ?>
 
