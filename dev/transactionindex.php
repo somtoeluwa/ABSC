@@ -7,7 +7,7 @@
  */
 session_start();
 if(!isset($_SESSION['ad_email'])){
-    header("Location: adminviewitems.php");
+    header("Location: home.php");
 }
 
 include 'assets\functions\functions.php';
@@ -54,17 +54,13 @@ $category = $_GET['categoryID'];
                     $result_search = $db->query($sql_search);
                     if(mysqli_num_rows($result_search)>0){
                         $counter=0;
-
                         while($row_search = $result_search->fetch_array()){
-
                             ?>
                             <option value="<?php echo $row_search['categoryID'];?>"><?php echo $row_search['categoryName'];?></option>
                             <?
                         }
-
                     }
                     $result_search->close()
-
                     ?>
                     <input type="submit" name="search" id="search">
                 </form>
@@ -73,7 +69,7 @@ $category = $_GET['categoryID'];
                 <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
                 <div class="dropdown-content">
                     <a href="#"><?php echo $_SESSION['ad_firstname']; ?>'s Profile</a>
-                    <a href="transactionindex.php">Dashboard</a>
+                    <a href="adminviewitems.php">Dashboard</a>
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>
@@ -92,7 +88,7 @@ $category = $_GET['categoryID'];
     <div class="row">
         <div class="col-8 col-m-8">
             <div id="BreadCrumb">
-                <a href="html/index.html">Home</a>&nbsp;&gt;&nbsp; All Components
+                <a href="home.php">Home</a>&nbsp;&gt;&nbsp; All Components
             </div>
         </div>
         <div class="col-4 col-m-4">

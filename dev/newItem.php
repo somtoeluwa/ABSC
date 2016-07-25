@@ -7,10 +7,10 @@
  */
 session_start();
 if(!isset($_SESSION['ad_email'])){
-    header("Location: adminviewitems.php");
+    header("Location: index.php");
 }
 
-include 'C:\Users\Sommy B\PhpstormProjects\new\ABSC\dev\assets\functions\functions.php';
+include 'assets\functions\functions.php';
 $category = $_GET['categoryID'];
 
 //THIS PAGE IS DESTINATION FOR ADMIN WHEN LOGGED IN AND TRYING TO ACCESS INDEX.PHP, AND WHEN CLICKING LINKS LEADING HERE
@@ -92,7 +92,7 @@ $category = $_GET['categoryID'];
     <div class="row">
         <div class="col-8 col-m-8">
             <div id="BreadCrumb">
-                <a href="html/index.html">Home</a>&nbsp;&gt;&nbsp; All Components
+                <a href="home.php">Home</a>&nbsp;&gt;&nbsp; All Components
             </div>
         </div>
         <div class="col-4 col-m-4">
@@ -123,33 +123,29 @@ $category = $_GET['categoryID'];
                 <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
                     <h3>Item Information</h3>
                     <form class="newAsset">
-                        <label for="itemID">item Name</label>
+                        <label for="itemID">Item ID</label>
                         <input type="text" id="itemID" value="" required >
                         <br><br>
-                        <label for="itemName">item Name</label>
+                        <label for="itemName">Item Name</label>
                         <input type="text" id="itemName" value="" required >
                         <br><br>
-                        <label for="itemType">item Type</label>
+                        <label for="itemType">Item Type</label>
                         <input type="text" id="itemType" value="" required >
                         <br><br>
-                        <label for="itemCategory">item Category</label>
+                        <label for="itemCategory">Item Category</label>
                         <select id="itemCategory">
                             <?php
                             $sql_search = "SELECT categoryID,categoryName FROM category";
                             $result_search = $db->query($sql_search);
                             if(mysqli_num_rows($result_search)>0){
                                 $counter=0;
-
                                 while($row_search = $result_search->fetch_array()){
-
                                     ?>
                                     <option value="<?php echo $row_search['categoryID'];?>"><?php echo $row_search['categoryName'];?></option>
                                     <?
                                 }
-
                             }
                             $result_search->close()
-
                             ?>
                         </select>
                         <br> <br>

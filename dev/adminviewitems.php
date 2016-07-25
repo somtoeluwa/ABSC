@@ -7,7 +7,7 @@
  */
 session_start();
 if(!isset($_SESSION['ad_email'])){
-    header("Location: adminviewitems.php");
+    header("Location: home.php");
 }
 
 include 'assets\functions\functions.php';
@@ -92,7 +92,7 @@ $category = $_GET['categoryID'];
     <div class="row">
         <div class="col-8 col-m-8">
             <div id="BreadCrumb">
-                <a href="html/index.html">Home</a>&nbsp;&gt;&nbsp; All Components
+                <a href="home.php">Home</a>&nbsp;&gt;&nbsp; All Components
             </div>
         </div>
         <div class="col-4 col-m-4">

@@ -7,14 +7,14 @@
  */
 session_start();
 if(!isset($_SESSION['ad_email'])){
-    header("Location: adminviewitems.php");
+    header("Location: index.php");
 }
 
 include 'assets/functions/functions.php' ;
 $category = $_GET['categoryID'];
 
 	//THIS PAGE IS DESTINATION FOR ADMIN WHEN LOGGED IN AND TRYING TO ACCESS INDEX.PHP, AND WHEN CLICKING LINKS LEADING HERE
-	//If no session exists, admin is sent to adminviewitems.php
+	//If no session exists, admin is sent to index.php
 
 ?>
 

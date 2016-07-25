@@ -4,7 +4,7 @@
 session_start();
 $username = $_SESSION["ad_firstname"];
 if(!isset($_SESSION['ad_email'])){
-    header("Location: adminviewitems.php");
+    header("Location: index.php");
 }
 
 include 'assets/functions/functions.php' ;
@@ -36,7 +36,7 @@ $assetID = $_GET['assetID'];
         <nav >
             <ul class="topnav">
                 <li>
-                    <a href="index.php"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
+                    <a href="home.php"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
                 </li>
                 <li>
                     <form action="#" class="navSearch">
@@ -68,7 +68,7 @@ $assetID = $_GET['assetID'];
                     <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
                     <div class="dropdown-content">
                         <a href="#"><?php echo "{$username}"?>'s Profile</a>
-                        <a href="admin.php">Dashboard</a>
+                        <a href="adminviewitems.php">Dashboard</a>
                         <a href="logout.php">Sign out</a>
                     </div>
                 </li>
