@@ -4,7 +4,7 @@
 session_start();
 $username = $_SESSION["ad_firstname"];
 if(!isset($_SESSION['ad_email'])){
-    header("Location: index.php");
+    header("Location: adminviewitems.php");
 }
 
 include 'assets/functions/functions.php' ;

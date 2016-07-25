@@ -10,7 +10,7 @@ if(!isset($_SESSION['ad_email'])){
     header("Location: adminviewitems.php");
 }
 
-include 'assets/functions/functions.php' ;
+include 'C:\Users\Sommy B\PhpstormProjects\new\ABSC\dev\assets\functions\functions.php';
 $category = $_GET['categoryID'];
 
 //THIS PAGE IS DESTINATION FOR ADMIN WHEN LOGGED IN AND TRYING TO ACCESS INDEX.PHP, AND WHEN CLICKING LINKS LEADING HERE
@@ -25,12 +25,11 @@ $category = $_GET['categoryID'];
     <meta charset="UTF-8">
     <title>Arduino Booking System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets\css\style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="script" href="assets/js/scripts.js">
 </head>
 
 <body>
@@ -74,7 +73,7 @@ $category = $_GET['categoryID'];
                 <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
                 <div class="dropdown-content">
                     <a href="#"><?php echo $_SESSION['ad_firstname']; ?>'s Profile</a>
-                    <a href="admin.php">Dashboard</a>
+                    <a href="adminviewitems.php">Dashboard</a>
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>
@@ -103,58 +102,70 @@ $category = $_GET['categoryID'];
 
 <!-- Main Start Item details -->
 <main>
-      <div id="dashboard" >
+    <div id="dashboard" >
         <ul class="tab">
-            <li><a href="#" class="tablinks" onclick="openTab(event, 'Assets')">Assets</a></li>
-            <li><a href="#" class="tablinks" onclick="openTab(event, 'Transactions')">Transactions</a></li>
+            <li><a href="adminviewitems.php" class="tablinks" onclick="openTab(event, 'Assets')">Assets</a></li>
+            <li><a href="transactions/index.php" class="tablinks" onclick="openTab(event, 'Transactions')">Transactions</a></li>
             <li><a href="#" class="tablinks" onclick="openTab(event, 'Users')">Users</a></li>
         </ul>
 
         <div id="Assets" class="tabcontent">
             <div class="row">
-            <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
-                <ul class="side-nav">
-                    <li><a href="#" id="viewAllitems">View All</a></li>
-                    <li><a href="#" id="newItem">New Item</a></li>
-                    <li><a href="#" id="newItemCategory">New item category</a></li>
-                    <li><a href="#">Add item quantity</a></li>
-                    <li><a href="#">view item categories</a></li>
-                </ul>
-            </div>
-            <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
-                <h3>Item Information</h3>
-                <form class="inputBug">
-                    <label for="itemID">item Name</label>
-                    <input type="text" id="itemID" value="" required >
-                    <br><br>
-                    <label for="itemName">item Name</label>
-                    <input type="text" id="itemName" value="" required >
-                    <br><br>
-                    <label for="itemType">item Type</label>
-                    <input type="text" id="itemType" value="" required >
-                    <br><br>
-                    <label for="itemCategory">item Category</label>
-                    <select id="itemCategory">
-                        <option value="Actuators">Actuators</option>
-                        <option value="Connectors">Connectors</option>
-                        <option value="LCD_Matrix">LCD & Matrix</option>
-                        <option value="Passive_Active">Passive & Active</option>
-                        <option value="Sensors">Sensors</option>
-                    </select>
-                    <br> <br>
-                    <label for="itemDescription">Item Description</label>
-                    <textarea required id="itemDescription" cols="30" rows="3" value=""></textarea>
-                    <br> <br>
-                    <input type="submit" value="submit">
-                </form>
+                <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
+                    <ul class="side-nav">
+                        <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
+                        <li><a href="newItem.php" id="newItem">New Item</a></li>
+                        <li><a href="#" id="newItemCategory">New item category</a></li>
+                        <li><a href="#">Add item quantity</a></li>
+                        <li><a href="#">view item categories</a></li>
+                    </ul>
+                </div>
+                <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
+                    <h3>Item Information</h3>
+                    <form class="newAsset">
+                        <label for="itemID">item Name</label>
+                        <input type="text" id="itemID" value="" required >
+                        <br><br>
+                        <label for="itemName">item Name</label>
+                        <input type="text" id="itemName" value="" required >
+                        <br><br>
+                        <label for="itemType">item Type</label>
+                        <input type="text" id="itemType" value="" required >
+                        <br><br>
+                        <label for="itemCategory">item Category</label>
+                        <select id="itemCategory">
+                            <?php
+                            $sql_search = "SELECT categoryID,categoryName FROM category";
+                            $result_search = $db->query($sql_search);
+                            if(mysqli_num_rows($result_search)>0){
+                                $counter=0;
 
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    Select image to upload:
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Upload Image" name="submitImage">
-                </form>
+                                while($row_search = $result_search->fetch_array()){
 
-            </div>
+                                    ?>
+                                    <option value="<?php echo $row_search['categoryID'];?>"><?php echo $row_search['categoryName'];?></option>
+                                    <?
+                                }
+
+                            }
+                            $result_search->close()
+
+                            ?>
+                        </select>
+                        <br> <br>
+                        <label for="itemDescription">Item Description</label>
+                        <textarea required id="itemDescription" cols="30" rows="3" value=""></textarea>
+                        <br> <br>
+                        <input type="submit" value="submit">
+                    </form>
+
+                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                        Select image to upload:
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Upload Image" name="submitImage">
+                    </form>
+
+                </div>
             </div>
         </div>
         <div id="Transactions" class="tabcontent">
@@ -163,14 +174,11 @@ $category = $_GET['categoryID'];
                     <ul class="side-nav">
                         <li><a href="#" id="checkIn">Check In</a></li>
                         <li><a href="#" id="checkOut">Check Out</a></li>
-                        <li><a href="#">New item category</a></li>
-                        <li><a href="#">Add item quantity</a></li>
-                        <li><a href="#">view item categories</a></li>
                     </ul>
                 </div>
 
-            <div class="col-10" id="TransactionOptionsContent" style="border: 1px dashed black">
-                <h3>Transaction Information</h3>
+                <div class="col-10" id="TransactionOptionsContent" style="border: 1px dashed black">
+                    <h3>Transaction Information</h3>
 
 
                 </div>

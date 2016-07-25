@@ -7,14 +7,14 @@
  */
 session_start();
 if(!isset($_SESSION['ad_email'])){
-    header("Location: index.php");
+    header("Location: adminviewitems.php");
 }
 
 include 'assets/functions/functions.php' ;
 $category = $_GET['categoryID'];
 
 	//THIS PAGE IS DESTINATION FOR ADMIN WHEN LOGGED IN AND TRYING TO ACCESS INDEX.PHP, AND WHEN CLICKING LINKS LEADING HERE
-	//If no session exists, admin is sent to index.php
+	//If no session exists, admin is sent to adminviewitems.php
 
 ?>
 
@@ -74,7 +74,7 @@ $category = $_GET['categoryID'];
                 <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
                 <div class="dropdown-content">
                     <a href="#"><?php echo $_SESSION['ad_firstname']; ?>'s Profile</a>
-                    <a href="admin.php">Dashboard</a>
+                    <a href="adminviewitems.php">Dashboard</a>
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>

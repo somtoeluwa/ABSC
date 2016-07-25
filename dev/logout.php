@@ -10,6 +10,6 @@
 	session_start();
 	if(session_destroy()) // Destroying All Sessions
     {
-        header("Location: index.php"); // Redirecting To Login Page
+        header("Location: adminviewitems.php"); // Redirecting To Login Page
     }
 ?>

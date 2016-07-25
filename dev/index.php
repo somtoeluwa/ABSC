@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD']==='GET'){
     }*/
 }
 else if($_SERVER['REQUEST_METHOD']==='POST'){	//Post is used when the form is submitted
-    //read input details from index.php
+    //read input details from adminviewitems.php
     $email=$_POST['u'];
     $password=$_POST['p'];
     if(user_registered($email,$password)){	//See function below
