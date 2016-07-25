@@ -19,7 +19,6 @@ $category = $_GET['categoryID'];
 ?>
 
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
