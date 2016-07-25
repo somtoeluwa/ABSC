@@ -108,15 +108,17 @@ function is_valid_type($type) {
     return false;
 }
 //end is_valid_type()
+
+
 function verifyUserName($username) {
     $sql = "select * from administrators where ad_email='$username'";
     //echo $sql;
     //	echo "";
     //	die();
-    $mysqli = new mysqli(host, user, password, database);
+    $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 // Check connection
     if ($mysqli->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        die("Connection failed: " .connect_error);
     }
 
     $result = $mysqli->query($sql);
@@ -127,16 +129,19 @@ function verifyUserName($username) {
     return FALSE;
 }
 //end function
+
 function verifyPassword($username, $password) {
     $sql = "select * from administrators where ad_email='$username' and ad_password = '$password'";
-    $mysqli = new mysqli(host, user, password, database);
+    $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
     $result = $mysqli->query($sql);
     if (mysqli_num_rows($result) > 0) {
         return TRUE;
     }
     return FALSE;
 }
-//end functio
+//end function
+
+
 function verifyUser($username, $password) {
     if (verifyUserName($username)) {
         if (verifyPassword($username, $password)) {
@@ -147,6 +152,8 @@ function verifyUser($username, $password) {
     return false;
 }
 //end function
+
+
 function is_admin() {
     if (isset($_SESSION['is_admin_logged_in'])) {
         return true;
@@ -155,6 +162,8 @@ function is_admin() {
     }
 }
 //end function
+
+
 function getAllRegisteredUsers() {
     $sql = "select * from volunteers ORDER BY vol_firstname";
     $mysqli = new mysqli(host, user, password, database);
