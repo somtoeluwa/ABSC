@@ -96,7 +96,7 @@ $category = $_GET['categoryID'];
                 <div class="dropdown-content">
                     <a href="#"><?php echo $_SESSION['ad_firstname']; ?>'s Profile</a>
                     <a href="#">Dashboard</a>
-                    <a href="#">Sign out</a>
+                    <a href="logout.php">Sign out</a>
                 </div>
             </li>
             <li class="right">
