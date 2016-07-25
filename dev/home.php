@@ -108,7 +108,7 @@ $category = $_GET['categoryID'];
             <div id="sidenavbar" class="col-2 col-m-2 menu">
                 <section>
                     <p class="title">
-                        <a href="#">Components</a>
+                        <a href="home.php">Components</a>
                     </p>
 
                     <div class="content">
