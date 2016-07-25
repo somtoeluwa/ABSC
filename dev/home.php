@@ -43,7 +43,7 @@ $category = $_GET['categoryID'];
     <nav >
         <ul class="topnav">
             <li>
-                <a href="html/index.html"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
+                <a href="home.php"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
             </li>
             <li>
                 <form action="#" class="navSearch">
@@ -75,7 +75,7 @@ $category = $_GET['categoryID'];
                 <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
                 <div class="dropdown-content">
                     <a href="#"><?php echo $_SESSION['ad_firstname']; ?>'s Profile</a>
-                    <a href="#">Dashboard</a>
+                    <a href="admin.php">Dashboard</a>
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>
