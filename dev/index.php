@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD']==='GET'){
     if(isset($_SESSION["ad_email"]))
     {
         //send user to adminhome.php
-        header("Location: test.php");
+        header("Location: home.php");
     }
     /*else{
         show_index_page();
@@ -18,8 +18,9 @@ else if($_SERVER['REQUEST_METHOD']==='POST'){	//Post is used when the form is su
     $password=$_POST['p'];
     if(user_registered($email,$password)){	//See function below
         session_start();	//start the session
-        $_SESSION["ad_email"]=$email;	//assign the admin email address to the session
-        header("Location: test.php");	//send admin to adminhome.php
+        $_SESSION["ad_email"]=$email;        //assign the admin email address to the session
+
+        header("Location: home.php");	//send admin to adminhome.php
     }
     else{
         //show_index_page();	//This isn't necessary anymore

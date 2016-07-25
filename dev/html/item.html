@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Arduino Booking System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -20,29 +20,40 @@
         <nav >
             <ul class="topnav">
                 <li>
-                    <a href="index.html"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
+                    <a href="html/index.html"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
                 </li>
                 <li>
-                    <form action="#">
-                        Search:
-                        <input type="search" name="componentsearch">
-                        <select title="Select Search Field">
-                            <option value="">All categories</option>
-                            <option value="Actuators">Actuators</option>
-                            <option value="Connectors">Connectors</option>
-                            <option value="LCD_Matrix">LCD & Matrix</option>
-                            <option value="Passive_Active">Passive & Active</option>
-                            <option value="Sensors">Sensors</option>
-                        </select>
-                        <input type="submit" name="search">
+                    <form action="#" class="navSearch">
+                        <i class="fa fa-search" aria-hidden="true" style="color:#ac76af"></i>
+                        <input type="search" name="componentsearch"  placeholder="Search here ...">
+
+                        <select title="searchCategories"">
+                        <?php
+                    $sql_search = "SELECT categoryID,categoryName FROM category";
+                    $result_search = $db->query($sql_search);
+                        if(mysqli_num_rows($result_search)>0){
+                        $counter=0;
+
+                        while($row_search = $result_search->fetch_array()){
+
+                        ?>
+                        <option value="<?php echo $row_search['categoryID'];?>"><?php echo $row_search['categoryName'];?></option>
+                        <?
+                        }
+
+                    }
+                    $result_search->close()
+
+                        ?>
+                        <input type="submit" name="search" id="search">
                     </form>
                 </li>
                 <li class="dropdown right" id="profile">
-                    <a class="dropbtn" href="#">My account</a>
+                    <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
                     <div class="dropdown-content">
-                        <a href="#">Profile</a>
+                        <a href="#"><?php echo $_SESSION['ad_firstname']; ?>'s Profile</a>
                         <a href="#">Dashboard</a>
-                        <a href="#">Sign out</a>
+                        <a href="logout.php">Sign out</a>
                     </div>
                 </li>
                 <li class="right">
@@ -95,7 +106,7 @@
 
                 <div class="row" id="ItemPanel">
                     <div class="col-9" id="itemPicContainer">
-                        <img src="assets/images/yellow%20led.jpg" alt="Yellow LED Light" class="itemPicBig">
+                        <img src="../assets/images/yellow%20led.jpg" alt="Yellow LED Light" class="itemPicBig">
                     </div>
 
                     <div class="col-3" id="ItemCheckoutOptions">

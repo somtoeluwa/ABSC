@@ -1,7 +1,14 @@
 <?php
 
+
+session_start();
+if(!isset($_SESSION['ad_email'])){
+    header("Location: index.php");
+}
+
 include 'assets/functions/functions.php' ;
 $assetID = $_GET['assetID'];
+$username = $_SESSION["ad_firstname"];
 
 ?>
 
@@ -28,29 +35,40 @@ $assetID = $_GET['assetID'];
         <nav >
             <ul class="topnav">
                 <li>
-                    <a href="test.php"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
+                    <a href="html/index.html"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
                 </li>
                 <li>
-                    <form action="#">
-                        Search:
-                        <input type="search" name="componentsearch">
-                        <select title="Select Search Field">
-                            <option value="">All categories</option>
-                            <option value="Actuators">Actuators</option>
-                            <option value="Connectors">Connectors</option>
-                            <option value="LCD_Matrix">LCD & Matrix</option>
-                            <option value="Passive_Active">Passive & Active</option>
-                            <option value="Sensors">Sensors</option>
-                        </select>
-                        <input type="submit" name="search">
+                    <form action="#" class="navSearch">
+                        <i class="fa fa-search" aria-hidden="true" style="color:#ac76af"></i>
+                        <input type="search" name="componentsearch"  placeholder="Search here ...">
+
+                        <select title="searchCategories"">
+                        <?php
+                        $sql_search = "SELECT categoryID,categoryName FROM category";
+                        $result_search = $db->query($sql_search);
+                        if(mysqli_num_rows($result_search)>0){
+                            $counter=0;
+
+                            while($row_search = $result_search->fetch_array()){
+
+                                ?>
+                                <option value="<?php echo $row_search['categoryID'];?>"><?php echo $row_search['categoryName'];?></option>
+                                <?
+                            }
+
+                        }
+                        $result_search->close()
+
+                        ?>
+                        <input type="submit" name="search" id="search">
                     </form>
                 </li>
                 <li class="dropdown right" id="profile">
-                    <a class="dropbtn" href="#">My account</a>
+                    <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
                     <div class="dropdown-content">
-                        <a href="#">Profile</a>
+                        <a href="#"><?php echo "{$username}"?>'s Profile</a>
                         <a href="#">Dashboard</a>
-                        <a href="#">Sign out</a>
+                        <a href="logout.php">Sign out</a>
                     </div>
                 </li>
                 <li class="right">
@@ -68,7 +86,7 @@ $assetID = $_GET['assetID'];
         <div class="row">
             <div class="col-8 col-m-8">
                 <div id="BreadCrumb">
-                    <a href="test.php">Home</a>&nbsp;&gt;&nbsp; All Components
+                    <a href="home.php">Home</a>&nbsp;&gt;&nbsp; All Components
                 </div>
             </div>
             <div class="col-4 col-m-4">
@@ -98,7 +116,7 @@ $assetID = $_GET['assetID'];
                                 $counter++;
                                 ?>
                                 <ul class="side-nav">
-                                    <li><a href="test.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo "{$row['categoryName']}";?></a></li>
+                                    <li><a href="home.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo "{$row['categoryName']}";?></a></li>
                                 </ul>
                                 <?php
                             }

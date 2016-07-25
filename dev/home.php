@@ -43,7 +43,7 @@ $category = $_GET['categoryID'];
     <nav >
         <ul class="topnav">
             <li>
-                <a href="index.html"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
+                <a href="html/index.html"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
             </li>
             <li>
                 <form action="#" class="navSearch">
@@ -68,26 +68,6 @@ $category = $_GET['categoryID'];
                     $result_search->close()
 
                     ?>
-                    <!--
-                    <option value="">All categories</option>
-                    <option value="Actuators">Actuators</option>
-                    <option value="Connectors">Connectors</option>
-                    <option value="LCD_Matrix">LCD & Matrix</option>
-                    <option value="Passive_Active">Passive & Active</option>
-                    <option value="Sensors">Sensors</option>
-                    </select>
-
-                    $sql=("SELECT categoryID,categoryName FROM category");
-                    if(mysqli_num_rows($result)>0){
-                        $select= '<select name="searchCategories">';
-                        while($row = $result->fetch_array()){
-                            $select.='<option value="'.$row['categoryID'].'">'.$row['categoryName'].'</option>';
-                        }
-                    }
-                    $select.='</select>';
-                    echo $select;
-                    ?>-->
-
                     <input type="submit" name="search" id="search">
                 </form>
             </li>
@@ -115,7 +95,7 @@ $category = $_GET['categoryID'];
     <div class="row">
         <div class="col-8 col-m-8">
             <div id="BreadCrumb">
-                <a href="test.php">Home</a>&nbsp;&gt;&nbsp; All Components
+                <a href="home.php">Home</a>&nbsp;&gt;&nbsp; All Components
             </div>
         </div>
         <div class="col-4 col-m-4">
@@ -145,7 +125,7 @@ $category = $_GET['categoryID'];
                         $counter++;
                         ?>
                         <ul class="side-nav">
-                            <li><a href="test.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo "{$row['categoryName']}";?></a></li>
+                            <li><a href="home.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo "{$row['categoryName']}";?></a></li>
                         </ul>
                             <?php
                         }
