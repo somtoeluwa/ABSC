@@ -5,9 +5,19 @@
  * Date: 7/6/2016
  * Time: 12:43 PM
  */
+session_start();
+if(!isset($_SESSION['ad_email'])){
+    header("Location: index.php");
+}
 
 include 'assets/functions/functions.php' ;
 $category = $_GET['categoryID'];
+
+	//THIS PAGE IS DESTINATION FOR ADMIN WHEN LOGGED IN AND TRYING TO ACCESS INDEX.PHP, AND WHEN CLICKING LINKS LEADING HERE
+	//If no session exists, admin is sent to index.php
+
+?>
+
 
 ?>
 
@@ -84,7 +94,7 @@ $category = $_GET['categoryID'];
             <li class="dropdown right" id="profile">
                 <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
                 <div class="dropdown-content">
-                    <a href="#">Profile</a>
+                    <a href="#"><?php echo $_SESSION['ad_firstname']; ?>'s Profile</a>
                     <a href="#">Dashboard</a>
                     <a href="#">Sign out</a>
                 </div>
