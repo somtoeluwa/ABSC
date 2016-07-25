@@ -7,14 +7,14 @@
  */
 session_start();
 if(!isset($_SESSION['ad_email'])){
-    header("Location: index.php");
+    header("Location: adminviewitems.php");
 }
 
-include 'C:\Users\Sommy B\PhpstormProjects\new\ABSC\dev\assets\functions\functions.php' ;
+include 'assets\functions\functions.php';
 $category = $_GET['categoryID'];
 
 //THIS PAGE IS DESTINATION FOR ADMIN WHEN LOGGED IN AND TRYING TO ACCESS INDEX.PHP, AND WHEN CLICKING LINKS LEADING HERE
-//If no session exists, admin is sent to index.php
+//If no session exists, admin is sent to adminviewitems.php
 
 ?>
 
@@ -25,7 +25,7 @@ $category = $_GET['categoryID'];
     <meta charset="UTF-8">
     <title>Arduino Booking System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -73,7 +73,7 @@ $category = $_GET['categoryID'];
                 <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
                 <div class="dropdown-content">
                     <a href="#"><?php echo $_SESSION['ad_firstname']; ?>'s Profile</a>
-                    <a href="index.php">Dashboard</a>
+                    <a href="transactionindex.php">Dashboard</a>
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>
@@ -104,8 +104,8 @@ $category = $_GET['categoryID'];
 <main>
       <div id="dashboard" >
         <ul class="tab">
-            <li><a href="index.php" class="tablinks" onclick="openTab(event, 'Assets')">Assets</a></li>
-            <li><a href="dev\Transactions\index.php" class="tablinks" onclick="openTab(event, 'Transactions')">Transactions</a></li>
+            <li><a href="#" class="tablinks" onclick="openTab(event, 'Assets')">Assets</a></li>
+            <li><a href="#" class="tablinks" onclick="openTab(event, 'Transactions')">Transactions</a></li>
             <li><a href="#" class="tablinks" onclick="openTab(event, 'Users')">Users</a></li>
         </ul>
 
@@ -113,7 +113,7 @@ $category = $_GET['categoryID'];
             <div class="row">
             <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
                 <ul class="side-nav">
-                    <li><a href="index.php" id="viewAllitems">View All</a></li>
+                    <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
                     <li><a href="newItem.php" id="newItem">New Item</a></li>
                     <li><a href="#" id="newItemCategory">New item category</a></li>
                     <li><a href="#">Add item quantity</a></li>
@@ -121,47 +121,37 @@ $category = $_GET['categoryID'];
                 </ul>
             </div>
             <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
-                <div style="overflow-x:auto;">
-                    <table class="itemTable" style="margin-left: auto; margin-right: auto;">
-                        <tr>
-                            <th>Asset ID</th>
-                            <th>Asset Name</th>
-                            <th>Asset Type</th>
-                            <th>Asset Description</th>
-                            <th>Quantity</th>
-                            <th>Category Name</th>
-                            <th>Checked out</th>
-                            <th>Serial Number</th>
-                            <th>Condition</th>
+                <h3>Item Information</h3>
+                <form class="inputBug">
+                    <label for="itemID">item Name</label>
+                    <input type="text" id="itemID" value="" required >
+                    <br><br>
+                    <label for="itemName">item Name</label>
+                    <input type="text" id="itemName" value="" required >
+                    <br><br>
+                    <label for="itemType">item Type</label>
+                    <input type="text" id="itemType" value="" required >
+                    <br><br>
+                    <label for="itemCategory">item Category</label>
+                    <select id="itemCategory">
+                        <option value="Actuators">Actuators</option>
+                        <option value="Connectors">Connectors</option>
+                        <option value="LCD_Matrix">LCD & Matrix</option>
+                        <option value="Passive_Active">Passive & Active</option>
+                        <option value="Sensors">Sensors</option>
+                    </select>
+                    <br> <br>
+                    <label for="itemDescription">Item Description</label>
+                    <textarea required id="itemDescription" cols="30" rows="3" value=""></textarea>
+                    <br> <br>
+                    <input type="submit" value="submit">
+                </form>
 
-                            <?php
-                            $sql_query = "SELECT * FROM assett,category where asset.categoryID = category.categoryID";
-                            $result =  $db->query($sql_query);
-                            if(mysqli_num_rows($result)>0){
-                            $counter = 0;
-                            while ($row = $result->fetch_array())
-                            {
-                            $counter++;
-                            ?>
-                        <tr>
-                            <td><a href="edit_asset.php?assetID=<?php echo $row['assetID'];?>"><?php echo $row['assetID'];?></a></td>
-                            <td><?php echo $row['assetName'];?></td>
-                            <td><?php echo $row['assetType'];?></td>
-                            <td><?php echo $row['assetDescription'];?></td>
-                            <td><?php echo $row['quantity'];?></td>
-                            <td><?php echo $row['categoryName'];?></td>
-                            <td><?php echo $row['checked_out'];?></td>
-                            <td><?php echo $row['serial_number'];?></td>
-                            <td><?php echo $row['condition'];?></td>
-                        </tr>
-                        <?php
-                        }
-                        }
-                        $result->close();
-                        $db->close();
-                        ?>
-                    </table>
-                </div>
+                <form action="upload.php" method="post" enctype="multipart/form-data">
+                    Select image to upload:
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Upload Image" name="submitImage">
+                </form>
 
             </div>
             </div>

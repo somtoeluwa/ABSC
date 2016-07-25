@@ -104,8 +104,8 @@ $category = $_GET['categoryID'];
 <main>
       <div id="dashboard" >
         <ul class="tab">
-            <li><a href="adminviewitems.php" class="tablinks" onclick="openTab(event, 'Assets')">Assets</a></li>
-            <li><a href="transactions/index.php" class="tablinks" onclick="openTab(event, 'Transactions')">Transactions</a></li>
+            <li><a href="#" class="tablinks" onclick="openTab(event, 'Assets')">Assets</a></li>
+            <li><a href="#" class="tablinks" onclick="openTab(event, 'Transactions')">Transactions</a></li>
             <li><a href="#" class="tablinks" onclick="openTab(event, 'Users')">Users</a></li>
         </ul>
 
@@ -170,11 +170,9 @@ $category = $_GET['categoryID'];
             <div class="row">
                 <div  id="TransactionOptions" class="col-2" style="border: 1px dashed black">
                     <ul class="side-nav">
-                        <li><a href="#" id="checkIn">Check In</a></li>
+                        <li><a href="transactionindex.php" id="checkIn">Check In</a></li>
                         <li><a href="#" id="checkOut">Check Out</a></li>
-                        <li><a href="#">New item category</a></li>
-                        <li><a href="#">Add item quantity</a></li>
-                        <li><a href="#">view item categories</a></li>
+
                     </ul>
                 </div>
 
