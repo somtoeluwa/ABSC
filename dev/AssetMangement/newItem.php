@@ -102,68 +102,58 @@ $category = $_GET['categoryID'];
 
 <!-- Main Start Item details -->
 <main>
-      <div id="dashboard" >
+    <div id="dashboard" >
         <ul class="tab">
             <li><a href="index.php" class="tablinks" onclick="openTab(event, 'Assets')">Assets</a></li>
-            <li><a href="dev\Transactions\index.php" class="tablinks" onclick="openTab(event, 'Transactions')">Transactions</a></li>
+            <li><a href="Transactions\index.php" class="tablinks" onclick="openTab(event, 'Transactions')">Transactions</a></li>
             <li><a href="#" class="tablinks" onclick="openTab(event, 'Users')">Users</a></li>
         </ul>
 
         <div id="Assets" class="tabcontent">
             <div class="row">
-            <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
-                <ul class="side-nav">
-                    <li><a href="index.php" id="viewAllitems">View All</a></li>
-                    <li><a href="newItem.php" id="newItem">New Item</a></li>
-                    <li><a href="#" id="newItemCategory">New item category</a></li>
-                    <li><a href="#">Add item quantity</a></li>
-                    <li><a href="#">view item categories</a></li>
-                </ul>
-            </div>
-            <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
-                <div style="overflow-x:auto;">
-                    <table class="itemTable" style="margin-left: auto; margin-right: auto;">
-                        <tr>
-                            <th>Asset ID</th>
-                            <th>Asset Name</th>
-                            <th>Asset Type</th>
-                            <th>Asset Description</th>
-                            <th>Quantity</th>
-                            <th>Category Name</th>
-                            <th>Checked out</th>
-                            <th>Serial Number</th>
-                            <th>Condition</th>
-
-                            <?php
-                            $sql_query = "SELECT * FROM assett,category where asset.categoryID = category.categoryID";
-                            $result =  $db->query($sql_query);
-                            if(mysqli_num_rows($result)>0){
-                            $counter = 0;
-                            while ($row = $result->fetch_array())
-                            {
-                            $counter++;
-                            ?>
-                        <tr>
-                            <td><a href="edit_asset.php?assetID=<?php echo $row['assetID'];?>"><?php echo $row['assetID'];?></a></td>
-                            <td><?php echo $row['assetName'];?></td>
-                            <td><?php echo $row['assetType'];?></td>
-                            <td><?php echo $row['assetDescription'];?></td>
-                            <td><?php echo $row['quantity'];?></td>
-                            <td><?php echo $row['categoryName'];?></td>
-                            <td><?php echo $row['checked_out'];?></td>
-                            <td><?php echo $row['serial_number'];?></td>
-                            <td><?php echo $row['condition'];?></td>
-                        </tr>
-                        <?php
-                        }
-                        }
-                        $result->close();
-                        $db->close();
-                        ?>
-                    </table>
+                <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
+                    <ul class="side-nav">
+                        <li><a href="#" id="viewAllitems">View All</a></li>
+                        <li><a href="#" id="newItem">New Item</a></li>
+                        <li><a href="#" id="newItemCategory">New item category</a></li>
+                        <li><a href="#">Add item quantity</a></li>
+                        <li><a href="#">view item categories</a></li>
+                    </ul>
                 </div>
+                <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
+                    <h3>Item Information</h3>
+                    <form class="inputBug">
+                        <label for="itemID">item Name</label>
+                        <input type="text" id="itemID" value="" required >
+                        <br><br>
+                        <label for="itemName">item Name</label>
+                        <input type="text" id="itemName" value="" required >
+                        <br><br>
+                        <label for="itemType">item Type</label>
+                        <input type="text" id="itemType" value="" required >
+                        <br><br>
+                        <label for="itemCategory">item Category</label>
+                        <select id="itemCategory">
+                            <option value="Actuators">Actuators</option>
+                            <option value="Connectors">Connectors</option>
+                            <option value="LCD_Matrix">LCD & Matrix</option>
+                            <option value="Passive_Active">Passive & Active</option>
+                            <option value="Sensors">Sensors</option>
+                        </select>
+                        <br> <br>
+                        <label for="itemDescription">Item Description</label>
+                        <textarea required id="itemDescription" cols="30" rows="3" value=""></textarea>
+                        <br> <br>
+                        <input type="submit" value="submit">
+                    </form>
 
-            </div>
+                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                        Select image to upload:
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Upload Image" name="submitImage">
+                    </form>
+
+                </div>
             </div>
         </div>
         <div id="Transactions" class="tabcontent">
@@ -178,8 +168,8 @@ $category = $_GET['categoryID'];
                     </ul>
                 </div>
 
-            <div class="col-10" id="TransactionOptionsContent" style="border: 1px dashed black">
-                <h3>Transaction Information</h3>
+                <div class="col-10" id="TransactionOptionsContent" style="border: 1px dashed black">
+                    <h3>Transaction Information</h3>
 
 
                 </div>
