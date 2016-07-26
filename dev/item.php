@@ -7,7 +7,7 @@ if(!isset($_SESSION['ad_email'])){
     header("Location: index.php");
 }
 
-include 'assets/functions/functions.php' ;
+include 'assets/functions/functions.php';
 $assetID = $_GET['assetID'];
 
 
@@ -20,7 +20,7 @@ $assetID = $_GET['assetID'];
     <meta charset="UTF-8">
     <title>Arduino Booking System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -30,7 +30,7 @@ $assetID = $_GET['assetID'];
 <body>
     <!-- Header start -->
     <header>
-        <img id="logo" src="/dev/assets/images/logo.png" alt="Home logo">
+        <img id="logo" src="/dev/images/logo.png" alt="Home logo">
         <h3 id="title">Arduino component booking system</h3>
 
         <nav >

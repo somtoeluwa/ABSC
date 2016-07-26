@@ -66,7 +66,7 @@ $htmlpage = <<<HTMLPAGE-->
 <head>
     <meta charset="UTF-8">
     <title> Admin </title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -75,7 +75,7 @@ $htmlpage = <<<HTMLPAGE-->
 </head>
 
 <header>
-    <img id="logo" src="assets/images/logo.png" alt="Home logo">
+    <img id="logo" src="images/logo.png" alt="Home logo">
     <h3 id="title">Arduino component booking system</h3>
 </header>
 
