@@ -146,7 +146,7 @@ else{
                     <input type="text" id="assetType" value="<?php echo $row['assetType'];?>" required >
                     <br><br>
                     <label for="assetDescription">Asset Description</label>
-                    <textarea required id="assetDescription" cols="30" rows="3" value="<?php echo $row['assetDescription'];?>"></textarea>
+                    <textarea required id="assetDescription" cols="30" rows="3"><?php echo $row['assetDescription'];?></textarea>
                     <br> <br>
                     <label for="quantity">Quantity</label>
                     <input type="number" id="quantity" value="<?php echo $row['quantity'];?>" maxlength="10" required >
