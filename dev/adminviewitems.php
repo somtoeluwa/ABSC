@@ -101,26 +101,33 @@ $category = $_GET['categoryID'];
 </div>
 
 <!-- Main Start Item details -->
-<main>
-      <div id="dashboard" >
-        <ul class="tab">
-            <li><a href="#" class="tablinks" onclick="openTab(event, 'Assets')">Assets</a></li>
-            <li><a href="#" class="tablinks" onclick="openTab(event, 'Transactions')">Transactions</a></li>
-            <li><a href="#" class="tablinks" onclick="openTab(event, 'Users')">Users</a></li>
-        </ul>
 
-        <div id="Assets" class="tabcontent">
-            <div class="row">
-            <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
-                <ul class="side-nav">
-                    <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
-                    <li><a href="newItem.php" id="newItem">New Item</a></li>
-                    <li><a href="#" id="newItemCategory">New item category</a></li>
-                    <li><a href="#">Add item quantity</a></li>
-                    <li><a href="#">view item categories</a></li>
-                </ul>
-            </div>
-            <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
+<main>
+     <div class="row">
+         <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
+             <ul class="menu">
+                 <li>Assets</li>
+                 <ul>
+                     <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
+                     <li><a href="newItem.php" id="newItem">New Item</a></li>
+                     <li><a href="newCategory.php" id="newItemCategory">New item category</a></li>
+                     <li><a href="viewCategories.php">view item categories</a></li>
+                     <li><a href="addQuantity.php">Add item quantity</a></li>
+                 </ul>
+                 <li>Transactions</li>
+                 <ul>
+                     <li><a href="#" id="checkIn">Check In</a></li>
+                     <li><a href="#" id="checkOut">Check Out</a></li>
+                 </ul>
+                 <li>Users</li>
+                 <ul>
+                     <li><a href="#" id="checkIn">Regiter User</a></li>
+                     <li><a href="#" id="checkOut">View all Users</a></li>
+                 </ul>
+             </ul>
+         </div>
+
+         <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
                 <div style="overflow-x:auto;">
                     <table class="itemTable" style="margin-left: auto; margin-right: auto;">
                         <tr>
@@ -162,60 +169,8 @@ $category = $_GET['categoryID'];
                         ?>
                     </table>
                 </div>
-
-            </div>
-            </div>
-        </div>
-        <div id="Transactions" class="tabcontent">
-            <div class="row">
-                <div  id="TransactionOptions" class="col-2" style="border: 1px dashed black">
-                    <ul class="side-nav">
-                        <li><a href="transactionindex.php" id="checkIn">Check In</a></li>
-                        <li><a href="#" id="checkOut">Check Out</a></li>
-
-                    </ul>
-                </div>
-
-            <div class="col-10" id="TransactionOptionsContent" style="border: 1px dashed black">
-                <h3>Transaction Information</h3>
-
-
-                </div>
-            </div>
-
-
-        </div>
-
-        <div id="Users" class="tabcontent">
-            <h3>Users Infomation</h3>
-
-        </div>
-
-    </div>
-
-
-    <script>
-        function openTab(evt, tabName) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
-
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the link that opened the tab
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
+         </div>
+     </div>
 
 
 </main>
