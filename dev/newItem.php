@@ -125,15 +125,15 @@ $category = $_GET['categoryID'];
                 </ul>
             </ul>
         </div>
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        // execute if requested using HTTP GET Method
+        ?>
 
         <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
             <h3>New Asset</h3>
 
                 <!-- Form Start-->
-                <?php
-                if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-                // execute if requested using HTTP GET Method
-                ?>
 
                 <form class="newAsset" action="<?{$_SERVER['PHP_SELF'];}?>" method="post">
                     <!--<label for="assetID">Asset ID</label>
