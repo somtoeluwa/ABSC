@@ -15,7 +15,7 @@ if(!isset($_SESSION['ad_email'])){
 
 if(isset($_GET['assetID'])){
     $assetPicked = $_GET['assetID'];
-    $sql_query="select * from asset where `assetID` ='$user_login'";
+    $sql_query="select * from asset where `assetID` ='$assetPicked'";
     $result=$db->query($sql_query);
     $row = $result->fetch_assoc();
 }
