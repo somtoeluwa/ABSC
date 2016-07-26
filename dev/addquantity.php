@@ -107,10 +107,10 @@ $category = $_GET['categoryID'];
             <ul class="menu">
                 <li>Assets</li>
                 <ul>
-                    <li><a href="adminviewitems.php" >View All</a></li>
-                    <li><a href="newItem.php" >New Item</a></li>
-                    <li><a href="newCategory.php">New item category</a></li>
-                    <li><a href="viewcategory.php">View item categories</a></li>
+                    <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
+                    <li><a href="newItem.php" id="newItem">New Item</a></li>
+                    <li><a href="newCategory.php" id="newItemCategory">New item category</a></li>
+                    <li><a href="viewcategory.php">view item categories</a></li>
                     <li><a href="addquantity.php">Add item quantity</a></li>
                 </ul>
                 <li>Transactions</li>

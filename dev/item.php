@@ -30,7 +30,7 @@ $assetID = $_GET['assetID'];
 <body>
     <!-- Header start -->
     <header>
-        <img id="logo" src="/dev/images/logo.png" alt="Home logo">
+        <img id="logo" src="/dev/assets/images/logo.png" alt="Home logo">
         <h3 id="title">Arduino component booking system</h3>
 
         <nav >

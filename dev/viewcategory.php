@@ -112,7 +112,7 @@ $category = $_GET['categoryID'];
                      <li><a href="newItem.php" id="newItem">New Item</a></li>
                      <li><a href="newCategory.php" id="newItemCategory">New item category</a></li>
                      <li><a href="viewcategory.php">view item categories</a></li>
-                     <li><a href="addQuantity.php">Add item quantity</a></li>
+                     <li><a href="addquantity.php">Add item quantity</a></li>
                  </ul>
                  <li>Transactions</li>
                  <ul>
@@ -128,22 +128,15 @@ $category = $_GET['categoryID'];
          </div>
 
          <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
-             <h3>Assets Table</h3>
+             <h3>Category Table</h3>
                 <div style="overflow-x:auto;">
                     <table class="itemTable" style="margin-left: auto; margin-right: auto;">
                         <tr>
-                            <th>Asset ID</th>
-                            <th>Asset Name</th>
-                            <th>Asset Type</th>
-                            <th>Asset Description</th>
-                            <th>Quantity</th>
+                            <th>Category ID</th>
                             <th>Category Name</th>
-                            <th>Checked out</th>
-                            <th>Serial Number</th>
-                            <th>Condition</th>
 
                             <?php
-                            $sql_query = "SELECT * FROM asset,category where asset.categoryID = category.categoryID";
+                            $sql_query = "SELECT * FROM category";
                             $result =  $db->query($sql_query);
                             if(mysqli_num_rows($result)>0){
                             $counter = 0;
@@ -152,15 +145,9 @@ $category = $_GET['categoryID'];
                             $counter++;
                             ?>
                         <tr>
-                            <td><a href="edit_asset.php?assetID=<?php echo $row['assetID'];?>"><?php echo $row['assetID'];?></a></td>
-                            <td><?php echo $row['assetName'];?></td>
-                            <td><?php echo $row['assetType'];?></td>
-                            <td><?php echo $row['assetDescription'];?></td>
-                            <td><?php echo $row['quantity'];?></td>
+                            <td><a href="edit_category.php?assetID=<?php echo $row['categoryID'];?>"><?php echo $row['categoryID'];?></a></td>
                             <td><?php echo $row['categoryName'];?></td>
-                            <td><?php echo $row['checked_out'];?></td>
-                            <td><?php echo $row['serial_number'];?></td>
-                            <td><?php echo $row['condition'];?></td>
+
                         </tr>
                         <?php
                         }

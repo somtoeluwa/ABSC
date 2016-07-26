@@ -7,7 +7,7 @@
  */
 session_start();
 if(!isset($_SESSION['ad_email'])){
-    header("Location: home.php");
+    header("Location: index.php");
 }
 
 include 'functions\functions.php';
@@ -101,77 +101,51 @@ $category = $_GET['categoryID'];
 </div>
 
 <!-- Main Start Item details -->
-
 <main>
-     <div class="row">
-         <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
-             <ul class="menu">
-                 <li>Assets</li>
-                 <ul>
-                     <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
-                     <li><a href="newItem.php" id="newItem">New Item</a></li>
-                     <li><a href="newCategory.php" id="newItemCategory">New item category</a></li>
-                     <li><a href="viewcategory.php">view item categories</a></li>
-                     <li><a href="addQuantity.php">Add item quantity</a></li>
-                 </ul>
-                 <li>Transactions</li>
-                 <ul>
-                     <li><a href="#" id="checkIn">Check In</a></li>
-                     <li><a href="#" id="checkOut">Check Out</a></li>
-                 </ul>
-                 <li>Users</li>
-                 <ul>
-                     <li><a href="#" id="checkIn">Regiter User</a></li>
-                     <li><a href="#" id="checkOut">View all Users</a></li>
-                 </ul>
-             </ul>
-         </div>
+    <div class="row">
+        <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
+            <ul class="menu">
+                <li>Assets</li>
+                <ul>
+                    <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
+                    <li><a href="newItem.php" id="newItem">New Item</a></li>
+                    <li><a href="newCategory.php" id="newItemCategory">New item category</a></li>
+                    <li><a href="viewcategory.php">View item categories</a></li>
+                    <li><a href="addquantity.php">Add item quantity</a></li>
+                </ul>
+                <li>Transactions</li>
+                <ul>
+                    <li><a href="#" id="checkIn">Check In</a></li>
+                    <li><a href="#" id="checkOut">Check Out</a></li>
+                </ul>
+                <li>Users</li>
+                <ul>
+                    <li><a href="#" id="checkIn">Regiter User</a></li>
+                    <li><a href="#" id="checkOut">View all Users</a></li>
+                </ul>
+            </ul>
+        </div>
 
-         <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
-             <h3>Assets Table</h3>
-                <div style="overflow-x:auto;">
-                    <table class="itemTable" style="margin-left: auto; margin-right: auto;">
-                        <tr>
-                            <th>Asset ID</th>
-                            <th>Asset Name</th>
-                            <th>Asset Type</th>
-                            <th>Asset Description</th>
-                            <th>Quantity</th>
-                            <th>Category Name</th>
-                            <th>Checked out</th>
-                            <th>Serial Number</th>
-                            <th>Condition</th>
+        <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
+            <h3>New Category</h3>
+                <form class="newCategory">
+                    <!--<label for="assetID">Asset ID</label>
+                    <input type="number" id="assetID" value="" required >
+                    <br><br>-->
+                    <label for="categoryName">Category Name</label>
+                    <input type="text" id="categoryName" value="" required >
+                    <br><br>
+                    <br><br>
+                    <label for="categoryDescription">Category Description</label>
+                    <textarea required id="assetDescription" cols="30" rows="3" value=""></textarea>
+                    <br><br>
+                    <br><br>
+                    <input type="submit" value="submit">
+                </form>
 
-                            <?php
-                            $sql_query = "SELECT * FROM asset,category where asset.categoryID = category.categoryID";
-                            $result =  $db->query($sql_query);
-                            if(mysqli_num_rows($result)>0){
-                            $counter = 0;
-                            while ($row = $result->fetch_array())
-                            {
-                            $counter++;
-                            ?>
-                        <tr>
-                            <td><a href="edit_asset.php?assetID=<?php echo $row['assetID'];?>"><?php echo $row['assetID'];?></a></td>
-                            <td><?php echo $row['assetName'];?></td>
-                            <td><?php echo $row['assetType'];?></td>
-                            <td><?php echo $row['assetDescription'];?></td>
-                            <td><?php echo $row['quantity'];?></td>
-                            <td><?php echo $row['categoryName'];?></td>
-                            <td><?php echo $row['checked_out'];?></td>
-                            <td><?php echo $row['serial_number'];?></td>
-                            <td><?php echo $row['condition'];?></td>
-                        </tr>
-                        <?php
-                        }
-                        }
-                        $result->close();
-                        $db->close();
-                        ?>
-                    </table>
-                </div>
-         </div>
-     </div>
+
+        </div>
+    </div>
 
 
 </main>

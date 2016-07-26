@@ -36,7 +36,7 @@ $category = $_GET['categoryID'];
 <body>
 
 <header>
-    <img id="logo" src="images/logo.png" alt="Home logo">
+    <img id="logo" src="assets/images/logo.png" alt="Home logo">
     <h3 id="title">Arduino component booking system</h3>
 
     <nav >
@@ -65,8 +65,8 @@ $category = $_GET['categoryID'];
 
                     }
                     $result_search->close()
-
                     ?>
+
                     <input type="submit" name="search" id="search">
                 </form>
             </li>
