@@ -215,6 +215,7 @@ $category = $_GET['categoryID'];
 
                     }else {
                         echo "Error:" . $sql . "<br>" . mysqli_error($db);
+                        header('location: adminviewitems.php');
                     }
                 }
                 else{
