@@ -41,7 +41,7 @@ $serialnumber =$_POST['serialnumber'];
 $condition = $_POST['assetcondition'];
 
 
-$sql = "insert into asset (assetName,assetType,assetDescription,quantity,categoryID,serialNumber,condition)
+$sql = "insert into `asset` (`assetName`, `assetType`, `assetDescription`, `quantity`, `categoryID` , `serialNumber` ,`condition`)
                 values('$asset_Name','$asset_Type','$asset_Description', $quantity ,$cat_ID ,'$serialnumber', '$condition')";
 
 if($result = mysqli_query($db,$sql)){
