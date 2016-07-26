@@ -20,7 +20,7 @@ else if($_SERVER['REQUEST_METHOD']==='POST'){	//Post is used when the form is su
     if(user_registered($email,$password)){	//See function below
         session_start();	//start the session
         $_SESSION["ad_email"]=$email;
-        $_SESSION['ad_firstname'] = $username;//assign the admin email address to the session
+        $_SESSION['ad_firstname'] = "Somto";//assign the admin email address to the session
 
         header("Location: home.php");	//send admin to adminhome.php
     }
