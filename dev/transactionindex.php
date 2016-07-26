@@ -10,7 +10,7 @@ if(!isset($_SESSION['ad_email'])){
     header("Location: home.php");
 }
 
-include 'assets\functions\functions.php';
+include 'functions\functions.php';
 $category = $_GET['categoryID'];
 
 //THIS PAGE IS DESTINATION FOR ADMIN WHEN LOGGED IN AND TRYING TO ACCESS INDEX.PHP, AND WHEN CLICKING LINKS LEADING HERE

@@ -31,7 +31,7 @@ else if($_SERVER['REQUEST_METHOD']==='POST'){	//Post is used when the form is su
 function user_registered($email,$password) {
     //test to discover if the user is already in the DB
     //to do that, we can find out if the email address already exists in any row
-    include("assets/functions/functions.php");
+    include("functions/functions.php");
     if($db->connect_errno){		//check if there was a connection error and respond accordingly
         die('Connection failed:'.connect_error);
     }

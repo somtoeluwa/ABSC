@@ -7,7 +7,7 @@ if(!isset($_SESSION['ad_email'])){
     header("Location: index.php");
 }
 
-include 'assets/functions/functions.php';
+include 'functions/functions.php';
 $assetID = $_GET['assetID'];
 
 
