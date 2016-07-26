@@ -22,13 +22,13 @@ $cat_ID = test_input($_POST['assetCategory']);
 $serialnumber = test_input($_POST['serialnumber']);
 $condition = test_input($_POST['assetcondition']);
 
-echo "{$asset_Name}";
+/*echo "{$asset_Name}";
 echo "{$asset_Type}";
 echo "{$asset_Description}";
 echo "{$quantity}";
 echo "{$cat_ID}";
 echo "{$serialnumber}";
-echo "{$condition}";
+echo "{$condition}";*/
 
 
 
