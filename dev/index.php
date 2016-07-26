@@ -16,9 +16,11 @@ else if($_SERVER['REQUEST_METHOD']==='POST'){	//Post is used when the form is su
     //read input details from adminviewitems.php
     $email=$_POST['u'];
     $password=$_POST['p'];
+    $username = "";
     if(user_registered($email,$password)){	//See function below
         session_start();	//start the session
-        $_SESSION["ad_email"]=$email;        //assign the admin email address to the session
+        $_SESSION["ad_email"]=$email;
+        $_SESSION['ad_firstname'] = $username;//assign the admin email address to the session
 
         header("Location: home.php");	//send admin to adminhome.php
     }
@@ -37,7 +39,7 @@ function user_registered($email,$password) {
     }
     else{
         //select all values from database using the entered values as filter
-        $query="SELECT ad_email, ad_password
+        $query="SELECT ad_email, ad_password, ad_firstname
 					FROM administrators
 					WHERE ad_email = ? AND ad_password = ?";
         $stmt = $db->prepare($query);
@@ -45,6 +47,7 @@ function user_registered($email,$password) {
         $stmt->execute() or die("Error: ".$query."<br>".$db->error);
         if(mysqli_stmt_fetch($stmt)){	//if the sql query returns a value
             return TRUE; 	//indicate that a value was returned, and user exists in database
+
         }
         else{
             return false; //indicate a value wasn't returned, and user doesn't exist in database

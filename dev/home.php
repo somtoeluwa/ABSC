@@ -73,7 +73,7 @@ $category = $_GET['categoryID'];
             <li class="dropdown right" id="profile">
                 <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
                 <div class="dropdown-content">
-                    <a href="#"><?php echo $_SESSION['ad_firstname']; ?>'s Profile</a>
+                    <a href="#"><?php echo "{$_SESSION['ad_firstname']}";?>'s Profile</a>
                     <a href="adminviewitems.php">Dashboard</a>
                     <a href="logout.php">Sign out</a>
                 </div>
