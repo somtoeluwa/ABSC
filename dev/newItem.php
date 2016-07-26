@@ -212,12 +212,13 @@ $category = $_GET['categoryID'];
                     if($result = mysqli_query($db,$sql)){
                         // When sucessful return to blog.php(Show all blog entries)
                         header('location: adminviewitems.php');
+
                     }else {
-                        header("Location:index.php");
+                        echo "Error:" . $sql . "<br>" . mysqli_error($db);
                     }
                 }
                 else{
-                    header('location: index.php');
+                    header('location: home.php');
                 }
                 ?>
 
