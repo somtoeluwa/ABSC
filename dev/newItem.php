@@ -131,11 +131,11 @@ $category = $_GET['categoryID'];
 
                 <!-- Form Start-->
                 <?php
-/*                if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 // execute if requested using HTTP GET Method
-                */?>
+                ?>
 
-                <form class="newAsset" action="testing.php" method="post">
+                <form class="newAsset" action="<?{$_SERVER['PHP_SELF'];}?>" method="post">
                     <!--<label for="assetID">Asset ID</label>
                     <input type="number" id="assetID" value="" required >
                     <br><br>-->
@@ -173,8 +173,8 @@ $category = $_GET['categoryID'];
                     <br> <br>
                     <label for="condtion">Condition</label>
                         <select  id="assetcondition" name="assetcondition">
-                            <option value="good">Good working condition</option>
-                            <option value="bad">Not working</option>
+                            <option value="Good">Good working condition</option>
+                            <option value="Bad">Not working</option>
                         </select>
                     <br> <br>
                     <input type="submit" value="submit">
@@ -186,8 +186,8 @@ $category = $_GET['categoryID'];
                     <input type="submit" value="Upload Image" name="submitImage">
                 </form>
 
-                  <?
-          /*  }elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                 <?
+            }elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // execute if requested using HTTP POST Method
 
                 function test_input($data) {
@@ -206,11 +206,11 @@ $category = $_GET['categoryID'];
                 $condition = test_input($_POST['assetcondition']);
 
 
-                $sql = "insert into asset (assetName,assetType,assetDescription,quantity,categoryID,serialNumber,condition)
-                values('$asset_Name','$asset_Type','$asset_Description','$quantity','$cat_ID','$serialnumber', '$condition')";
+                    $sql = "insert into `asset` (`assetName`, `assetType`, `assetDescription`, `quantity`, `categoryID` , `serialNumber` ,`condition`)
+                values('$asset_Name','$asset_Type','$asset_Description', $quantity ,$cat_ID ,'$serialnumber', '$condition')";
 
                     if($result = mysqli_query($db,$sql)){
-                        // When sucessful return to blog.php(Show all blog entries)
+                        // When sucessful return to View all assets
                         header('location: adminviewitems.php');
 
                     }else {
@@ -220,7 +220,7 @@ $category = $_GET['categoryID'];
                 else{
                     header('location: home.php');
                 }
-                */?>
+                ?>
 
         </div>
     </div>
