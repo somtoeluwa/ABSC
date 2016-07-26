@@ -102,39 +102,51 @@ $category = $_GET['categoryID'];
 
 <!-- Main Start Item details -->
 <main>
-    <div id="dashboard" >
-        <ul class="tab">
-            <li><a href="#" class="tablinks" onclick="openTab(event, 'Assets')">Assets</a></li>
-            <li><a href="#" class="tablinks" onclick="openTab(event, 'Transactions')">Transactions</a></li>
-            <li><a href="#" class="tablinks" onclick="openTab(event, 'Users')">Users</a></li>
-        </ul>
+    <div class="row">
+        <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
+            <ul class="menu">
+                <li>Assets</li>
+                <ul>
+                    <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
+                    <li><a href="newItem.php" id="newItem">New Item</a></li>
+                    <li><a href="newCategory.php" id="newItemCategory">New item category</a></li>
+                    <li><a href="viewCategories.php">view item categories</a></li>
+                    <li><a href="addQuantity.php">Add item quantity</a></li>
+                </ul>
+                <li>Transactions</li>
+                <ul>
+                    <li><a href="#" id="checkIn">Check In</a></li>
+                    <li><a href="#" id="checkOut">Check Out</a></li>
+                </ul>
+                <li>Users</li>
+                <ul>
+                    <li><a href="#" id="checkIn">Regiter User</a></li>
+                    <li><a href="#" id="checkOut">View all Users</a></li>
+                </ul>
+            </ul>
+        </div>
 
-        <div id="Assets" class="tabcontent">
-            <div class="row">
-                <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
-                    <ul class="side-nav">
-                        <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
-                        <li><a href="newItem.php" id="newItem">New Item</a></li>
-                        <li><a href="#" id="newItemCategory">New item category</a></li>
-                        <li><a href="#">Add item quantity</a></li>
-                        <li><a href="#">view item categories</a></li>
-                    </ul>
-                </div>
-                <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
-                    <h3>Item Information</h3>
-                    <form class="newAsset">
-                        <label for="itemID">Item ID</label>
-                        <input type="text" id="itemID" value="" required >
-                        <br><br>
-                        <label for="itemName">Item Name</label>
-                        <input type="text" id="itemName" value="" required >
-                        <br><br>
-                        <label for="itemType">Item Type</label>
-                        <input type="text" id="itemType" value="" required >
-                        <br><br>
-                        <label for="itemCategory">Item Category</label>
-                        <select id="itemCategory">
-                            <?php
+        <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
+            <h3>New Asset</h3>
+                <form class="newAsset">
+                    <!--<label for="assetID">Asset ID</label>
+                    <input type="number" id="assetID" value="" required >
+                    <br><br>-->
+                    <label for="assetName">Asset Name</label>
+                    <input type="text" id="assetName" value="" required >
+                    <br><br>
+                    <label for="assetType">Asset Type</label>
+                    <input type="text" id="assetType" value="" required >
+                    <br><br>
+                    <label for="assetDescription">Asset Description</label>
+                    <textarea required id="assetDescription" cols="30" rows="3" value=""></textarea>
+                    <br> <br>
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" value="" maxlength="10" required >
+                    <br><br>
+                    <label for="assetCategory">Item Category</label>
+                    <select id="assetCategory">
+                        <?php
                             $sql_search = "SELECT categoryID,categoryName FROM category";
                             $result_search = $db->query($sql_search);
                             if(mysqli_num_rows($result_search)>0){
@@ -146,73 +158,29 @@ $category = $_GET['categoryID'];
                                 }
                             }
                             $result_search->close()
-                            ?>
+                        ?>
+                    </select>
+                    <br> <br>
+                    <label for="serialnumber">Serial Number</label>
+                    <input type="text" id="serialnumber"  value="">
+                    <br> <br>
+                    <label for="condtion">Condition</label>
+                        <select  id="assetcondition">
+                            <option value="good">Good working condition</option>
+                            <option value="bad">Not working</option>
                         </select>
-                        <br> <br>
-                        <label for="itemDescription">Item Description</label>
-                        <textarea required id="itemDescription" cols="30" rows="3" value=""></textarea>
-                        <br> <br>
-                        <input type="submit" value="submit">
-                    </form>
+                    <br> <br>
+                    <input type="submit" value="submit">
+                </form>
 
-                    <form action="upload.php" method="post" enctype="multipart/form-data">
-                        Select image to upload:
-                        <input type="file" name="fileToUpload" id="fileToUpload">
-                        <input type="submit" value="Upload Image" name="submitImage">
-                    </form>
-
-                </div>
-            </div>
-        </div>
-        <div id="Transactions" class="tabcontent">
-            <div class="row">
-                <div  id="TransactionOptions" class="col-2" style="border: 1px dashed black">
-                    <ul class="side-nav">
-                        <li><a href="transactionindex.php" id="checkIn">Check In</a></li>
-                        <li><a href="#" id="checkOut">Check Out</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-10" id="TransactionOptionsContent" style="border: 1px dashed black">
-                    <h3>Transaction Information</h3>
-
-
-                </div>
-            </div>
-
+                <form action="upload.php" method="post" enctype="multipart/form-data">
+                    Select image to upload:
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Upload Image" name="submitImage">
+                </form>
 
         </div>
-
-        <div id="Users" class="tabcontent">
-            <h3>Users Infomation</h3>
-
-        </div>
-
     </div>
-
-
-    <script>
-        function openTab(evt, tabName) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
-
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the link that opened the tab
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
 
 
 </main>
