@@ -102,66 +102,69 @@ $category = $_GET['categoryID'];
 
 <!-- Main Start Item details -->
 <main>
-        <div id="Assets" class="tabcontent">
+
             <div class="row">
-            <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
-                <ul class="menu">
-                    <li>Assets</li>
-                        <ul>
-                            <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
-                            <li><a href="newItem.php" id="newItem">New Item</a></li>
-                            <li><a href="newCategory.php" id="newItemCategory">New item category</a></li>
-                            <li><a href="viewCategories">view item categories</a></li>
-                            <li><a href="addQuantity.php">Add item quantity</a></li>
-                        </ul>
-                    <li>Transactions</li>
-                        <ul>
-                            <li><a href="#" id="checkIn">Check In</a></li>
-                            <li><a href="#" id="checkOut">Check Out</a></li>
-                        </ul>
-                    <li>Users</li>
-                        <ul>
-                            <li><a href="#" id="checkIn">Regiter User</a></li>
-                            <li><a href="#" id="checkOut">View all Users</a></li>
-                        </ul>
-                </ul>
-            </div>
-            <div class="col-10" id="content" style="border: 1px dashed black">
-                <h3>Item Information</h3>
-                <form class="inputBug">
-                    <label for="itemID">item Name</label>
-                    <input type="text" id="itemID" value="" required >
-                    <br><br>
-                    <label for="itemName">item Name</label>
-                    <input type="text" id="itemName" value="" required >
-                    <br><br>
-                    <label for="itemType">item Type</label>
-                    <input type="text" id="itemType" value="" required >
-                    <br><br>
-                    <label for="itemCategory">item Category</label>
-                    <select id="itemCategory">
-                        <option value="Actuators">Actuators</option>
-                        <option value="Connectors">Connectors</option>
-                        <option value="LCD_Matrix">LCD & Matrix</option>
-                        <option value="Passive_Active">Passive & Active</option>
-                        <option value="Sensors">Sensors</option>
-                    </select>
-                    <br> <br>
-                    <label for="itemDescription">Item Description</label>
-                    <textarea required id="itemDescription" cols="30" rows="3" value=""></textarea>
-                    <br> <br>
-                    <input type="submit" value="submit">
-                </form>
 
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    Select image to upload:
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Upload Image" name="submitImage">
-                </form>
+                <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
+                    <ul class="menu">
+                        <li>Assets</li>
+                            <ul>
+                                <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
+                                <li><a href="newItem.php" id="newItem">New Item</a></li>
+                                <li><a href="newCategory.php" id="newItemCategory">New item category</a></li>
+                                <li><a href="viewCategories.php">view item categories</a></li>
+                                <li><a href="addQuantity.php">Add item quantity</a></li>
+                            </ul>
+                        <li>Transactions</li>
+                            <ul>
+                                <li><a href="#" id="checkIn">Check In</a></li>
+                                <li><a href="#" id="checkOut">Check Out</a></li>
+                            </ul>
+                        <li>Users</li>
+                            <ul>
+                                <li><a href="#" id="checkIn">Regiter User</a></li>
+                                <li><a href="#" id="checkOut">View all Users</a></li>
+                            </ul>
+                    </ul>
+                </div>
+
+                <div class="col-10" id="content" style="border: 1px dashed black">
+                    <h3>Item Information</h3>
+                    <form class="inputBug">
+                        <label for="itemID">item Name</label>
+                        <input type="text" id="itemID" value="" required >
+                        <br><br>
+                        <label for="itemName">item Name</label>
+                        <input type="text" id="itemName" value="" required >
+                        <br><br>
+                        <label for="itemType">item Type</label>
+                        <input type="text" id="itemType" value="" required >
+                        <br><br>
+                        <label for="itemCategory">item Category</label>
+                        <select id="itemCategory">
+                            <option value="Actuators">Actuators</option>
+                            <option value="Connectors">Connectors</option>
+                            <option value="LCD_Matrix">LCD & Matrix</option>
+                            <option value="Passive_Active">Passive & Active</option>
+                            <option value="Sensors">Sensors</option>
+                        </select>
+                        <br> <br>
+                        <label for="itemDescription">Item Description</label>
+                        <textarea required id="itemDescription" cols="30" rows="3" value=""></textarea>
+                        <br> <br>
+                        <input type="submit" value="submit">
+                    </form>
+
+                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                        Select image to upload:
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Upload Image" name="submitImage">
+                    </form>
+
+                </div>
 
             </div>
-            </div>
-        </div>
+
 
 </main>
 
