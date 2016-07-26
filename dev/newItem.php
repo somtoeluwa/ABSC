@@ -169,7 +169,7 @@ $category = $_GET['categoryID'];
                     </select>
                     <br> <br>
                     <label for="serialnumber">Serial Number</label>
-                    <input type="text" id="serialnumber"  value="">
+                    <input type="text" id="serialnumber" name="serialnumber" value="">
                     <br> <br>
                     <label for="condtion">Condition</label>
                         <select  id="assetcondition" name="assetcondition">
