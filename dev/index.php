@@ -1,10 +1,8 @@
 <?php
-
 session_start();
 //GET when accessed through URL
 if($_SERVER['REQUEST_METHOD']==='GET'){
     //check if session is set
-    session_start();
     if(isset($_SESSION["ad_email"]))
     {
         //send user to adminhome.php
