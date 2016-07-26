@@ -131,11 +131,11 @@ $category = $_GET['categoryID'];
 
                 <!-- Form Start-->
                 <?php
-                if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+/*                if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 // execute if requested using HTTP GET Method
-                ?>
+                */?>
 
-                <form class="newAsset" action="<?{$_SERVER['PHP_SELF'];}?>" method="post">
+                <form class="newAsset" action="testing.php" method="post">
                     <!--<label for="assetID">Asset ID</label>
                     <input type="number" id="assetID" value="" required >
                     <br><br>-->
@@ -187,7 +187,7 @@ $category = $_GET['categoryID'];
                 </form>
 
                   <?
-            }elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+          /*  }elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // execute if requested using HTTP POST Method
 
                 function test_input($data) {
@@ -220,7 +220,7 @@ $category = $_GET['categoryID'];
                 else{
                     header('location: home.php');
                 }
-                ?>
+                */?>
 
         </div>
     </div>
