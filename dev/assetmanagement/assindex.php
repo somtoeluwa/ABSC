@@ -5,12 +5,14 @@
  * Date: 7/6/2016
  * Time: 12:43 PM
  */
+
+include 'functionAss.php';
 session_start();
 if(!isset($_SESSION['ad_email'])){
     header("Location: home.php");
 }
 
-include '\Project\ABSC\dev\functions.php';
+
 $category = $_GET['categoryID'];
 
 //THIS PAGE IS DESTINATION FOR ADMIN WHEN LOGGED IN AND TRYING TO ACCESS INDEX.PHP, AND WHEN CLICKING LINKS LEADING HERE
