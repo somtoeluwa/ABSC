@@ -29,3 +29,25 @@ echo "{$quantity}";
 echo "{$cat_ID}";
 echo "{$serialnumber}";
 echo "{$condition}";
+
+
+
+$asset_Name = $_POST['assetName'];
+$asset_Type =$_POST['assetType'];
+$asset_Description =$_POST['assetDescription'];
+$quantity = $_POST['quantity'];
+$cat_ID = $_POST['assetCategory'];
+$serialnumber =$_POST['serialnumber'];
+$condition = $_POST['assetcondition'];
+
+
+$sql = "insert into asset (assetName,assetType,assetDescription,quantity,categoryID,serialNumber,condition)
+                values('$asset_Name','$asset_Type','$asset_Description', $quantity ,$cat_ID ,'$serialnumber', '$condition')";
+
+if($result = mysqli_query($db,$sql)){
+    // When sucessful return to blog.php(Show all blog entries)
+    header('location: adminviewitems.php');
+
+}else {
+    echo "Error:" . $sql . "<br>" . mysqli_error($db);
+}
