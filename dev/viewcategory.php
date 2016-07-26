@@ -145,7 +145,7 @@ $category = $_GET['categoryID'];
                             $counter++;
                             ?>
                         <tr>
-                            <td><a href="edit_category.php?assetID=<?php echo $row['categoryID'];?>"><?php echo $row['categoryID'];?></a></td>
+                            <td><a href="edit_category.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo $row['categoryID'];?></a></td>
                             <td><?php echo $row['categoryName'];?></td>
 
                         </tr>

@@ -29,8 +29,8 @@
 
                         <select title="searchCategories"">
                         <?php
-                    $sql_search = "SELECT categoryID,categoryName FROM category";
-                    $result_search = $db->query($sql_search);
+                    $sql_form = "SELECT categoryID,categoryName FROM category";
+                    $result_search = $db->query($sql_form);
                         if(mysqli_num_rows($result_search)>0){
                         $counter=0;
 

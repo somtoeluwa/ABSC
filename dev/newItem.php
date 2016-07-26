@@ -128,24 +128,31 @@ $category = $_GET['categoryID'];
 
         <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
             <h3>New Asset</h3>
-                <form class="newAsset">
+
+                <!-- Form Start-->
+                <?php
+                if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                // execute if requested using HTTP GET Method
+                ?>
+
+                <form class="newAsset" action="<?{$_SERVER['PHP_SELF'];}?>" method="post">
                     <!--<label for="assetID">Asset ID</label>
                     <input type="number" id="assetID" value="" required >
                     <br><br>-->
                     <label for="assetName">Asset Name</label>
-                    <input type="text" id="assetName" value="" required >
+                    <input type="text" id="assetName" name="assetName" value="" required >
                     <br><br>
                     <label for="assetType">Asset Type</label>
-                    <input type="text" id="assetType" value="" required >
+                    <input type="text" id="assetType" name="assetType" value="" required >
                     <br><br>
                     <label for="assetDescription">Asset Description</label>
-                    <textarea required id="assetDescription" cols="30" rows="3" value=""></textarea>
+                    <textarea required id="assetDescription" name="assetDescription" cols="30" rows="3" value=""></textarea>
                     <br> <br>
                     <label for="quantity">Quantity</label>
-                    <input type="number" id="quantity" value="" maxlength="10" required >
+                    <input type="number" id="quantity" name="quantity" value="" maxlength="10" required >
                     <br><br>
                     <label for="assetCategory">Item Category</label>
-                    <select id="assetCategory">
+                    <select id="assetCategory" name="assetCategory">
                         <?php
                             $sql_search = "SELECT categoryID,categoryName FROM category";
                             $result_search = $db->query($sql_search);
@@ -165,7 +172,7 @@ $category = $_GET['categoryID'];
                     <input type="text" id="serialnumber"  value="">
                     <br> <br>
                     <label for="condtion">Condition</label>
-                        <select  id="assetcondition">
+                        <select  id="assetcondition" name="assetcondition">
                             <option value="good">Good working condition</option>
                             <option value="bad">Not working</option>
                         </select>
@@ -179,6 +186,41 @@ $category = $_GET['categoryID'];
                     <input type="submit" value="Upload Image" name="submitImage">
                 </form>
 
+                  <?
+            }elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // execute if requested using HTTP POST Method
+
+                function test_input($data) {
+                    $data = trim($data);
+                    $data = stripslashes($data);
+                    $data = htmlspecialchars($data);
+                    return $data;
+                }
+
+                $asset_Name = test_input($_POST['assetName']);
+                $asset_Type = test_input($_POST['assetType']);
+                $asset_Description = test_input($_POST['assetDescription']);
+                $quantity = test_input($_POST['quantity']);
+                $cat_ID = test_input($_POST['assetCategory']);
+                $serialnumber = test_input($_POST['serialnumber']);
+                $condition = test_input($_POST['assetcondition']);
+
+
+                $sql = "insert into asset (assetName,assetType,assetDescription,quantity,categoryID,serial_number,condition)
+                values('{$asset_Name}','{$asset_Type}','{$asset_Description}','{$quantity}','{$cat_ID}','{$serialnumber}', '{$condition}')";
+
+                    if($result = mysqli_query($db,$sql)){
+                        // When sucessful return to blog.php(Show all blog entries)
+                        header('location: adminviewitems.php');
+                    }else {
+                        header("Location:index.php");
+                    }
+                }
+                else{
+                    header('location: index.php');
+                }
+                ?>
+
         </div>
     </div>
 
@@ -186,7 +228,7 @@ $category = $_GET['categoryID'];
 </main>
 
 <footer>
-
+    <p>Designed by [Somto Eluwa, 1412632] [2016]</p>
 </footer>
 
 </body>
