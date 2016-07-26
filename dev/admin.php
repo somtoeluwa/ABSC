@@ -103,25 +103,31 @@ $category = $_GET['categoryID'];
 
 <!-- Main Start Item details -->
 <main>
-      <div id="dashboard" >
-        <ul class="tab">
-            <li><a href="#" class="tablinks" onclick="openTab(event, 'Assets')">Assets</a></li>
-            <li><a href="#" class="tablinks" onclick="openTab(event, 'Transactions')">Transactions</a></li>
-            <li><a href="#" class="tablinks" onclick="openTab(event, 'Users')">Users</a></li>
-        </ul>
-
         <div id="Assets" class="tabcontent">
             <div class="row">
             <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
-                <ul class="side-nav">
-                    <li><a href="#" id="viewAllitems">View All</a></li>
-                    <li><a href="#" id="newItem">New Item</a></li>
-                    <li><a href="#" id="newItemCategory">New item category</a></li>
-                    <li><a href="#">Add item quantity</a></li>
-                    <li><a href="#">view item categories</a></li>
+                <ul class="menu">
+                    <li>Assets</li>
+                        <ul>
+                            <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
+                            <li><a href="newItem.php" id="newItem">New Item</a></li>
+                            <li><a href="newCategory.php" id="newItemCategory">New item category</a></li>
+                            <li><a href="viewCategories">view item categories</a></li>
+                            <li><a href="addQuantity.php">Add item quantity</a></li>
+                        </ul>
+                    <li>Transactions</li>
+                        <ul>
+                            <li><a href="#" id="checkIn">Check In</a></li>
+                            <li><a href="#" id="checkOut">Check Out</a></li>
+                        </ul>
+                    <li>Users</li>
+                        <ul>
+                            <li><a href="#" id="checkIn">Regiter User</a></li>
+                            <li><a href="#" id="checkOut">View all Users</a></li>
+                        </ul>
                 </ul>
             </div>
-            <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
+            <div class="col-10" id="content" style="border: 1px dashed black">
                 <h3>Item Information</h3>
                 <form class="inputBug">
                     <label for="itemID">item Name</label>
@@ -157,32 +163,7 @@ $category = $_GET['categoryID'];
             </div>
             </div>
         </div>
-        <div id="Transactions" class="tabcontent">
-            <div class="row">
-                <div  id="TransactionOptions" class="col-2" style="border: 1px dashed black">
-                    <ul class="side-nav">
-                        <li><a href="#" id="checkIn">Check In</a></li>
-                        <li><a href="#" id="checkOut">Check Out</a></li>
-                        <li><a href="#">New item category</a></li>
-                        <li><a href="#">Add item quantity</a></li>
-                        <li><a href="#">view item categories</a></li>
-                    </ul>
-                </div>
 
-            <div class="col-10" id="TransactionOptionsContent" style="border: 1px dashed black">
-                <h3>Transaction Information</h3>
-
-
-                </div>
-            </div>
-
-
-        </div>
-
-        <div id="Users" class="tabcontent">
-            <h3>Users Infomation</h3>
-
-        </div>
 
     </div>
 
