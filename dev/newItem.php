@@ -135,7 +135,7 @@ $category = $_GET['categoryID'];
 
                 <!-- Form Start-->
 
-                <form class="newAsset" action="<?{$_SERVER['PHP_SELF'];}?>" method="post">
+                <form class="newAsset" action="<?{$_SERVER['PHP_SELF'];}?>" method="post" enctype="multipart/form-data">
                     <!--<label for="assetID">Asset ID</label>
                     <input type="number" id="assetID" value="" required >
                     <br><br>-->
@@ -177,14 +177,10 @@ $category = $_GET['categoryID'];
                             <option value="Bad">Not working</option>
                         </select>
                     <br> <br>
-                    <input type="submit" value="submit">
+                    <input type="file" name="images" id="images" multiple />
+                    <button type="submit" id="btn">Upload Files!</button>
                 </form>
 
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    Select image to upload:
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Upload Image" name="submitImage">
-                </form>
 
                  <?
             }elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
