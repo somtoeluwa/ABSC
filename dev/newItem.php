@@ -178,7 +178,7 @@ $category = $_GET['categoryID'];
                         </select>
                     <br> <br>
                     <input type="file" name="images" id="images" multiple />
-                    <button type="submit" id="btn">Upload Files!</button>
+                    <button type="submit" id="btn">Add item</button>
                 </form>
 
 
