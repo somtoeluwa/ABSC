@@ -183,8 +183,17 @@ $category = $_GET['categoryID'];
 
 
                  <?
+
             }elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // execute if requested using HTTP POST Method
+                     $target_path = "";
+             foreach ($_FILES["images"]["error"] as $key => $error) {
+                 if ($error == UPLOAD_ERR_OK) {
+                     $name = $_FILES["images"]["name"][$key];
+                     move_uploaded_file( $_FILES["images"]["tmp_name"][$key], "asset/images/" . $_FILES['images']['name'][$key]);
+                     $target_path = "asset/images/" .$name;
+                 }
+             }
 
                 function test_input($data) {
                     $data = trim($data);
@@ -202,8 +211,8 @@ $category = $_GET['categoryID'];
                 $condition = test_input($_POST['assetcondition']);
 
 
-                    $sql = "insert into `asset` (`assetName`, `assetType`, `assetDescription`, `quantity`, `categoryID` , `serialNumber` ,`condition`)
-                values('$asset_Name','$asset_Type','$asset_Description', $quantity ,$cat_ID ,'$serialnumber', '$condition')";
+                    $sql = "insert into `asset` (`assetName`, `assetType`, `assetDescription`, `quantity`,`image`, `categoryID` , `serialNumber` ,`condition`)
+                values('$asset_Name','$asset_Type','$asset_Description', $quantity, $target_path ,$cat_ID ,'$serialnumber', '$condition')";
 
                     if($result = mysqli_query($db,$sql)){
                         // When sucessful return to View all assets
