@@ -1,16 +1,20 @@
+
+
+
 <?php
 
-
+//Start session
 session_start();
-$username = $_SESSION["ad_firstname"];
+
+//check if user has a valid session
 if(!isset($_SESSION['ad_email'])){
     header("Location: index.php");
 }
 
 include 'functions/functions.php';
+
+//Get the Asset
 $assetID = $_GET['assetID'];
-
-
 ?>
 
 
@@ -18,70 +22,48 @@ $assetID = $_GET['assetID'];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Arduino Booking System</title>
+    <title>Item Details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-purple.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 
-<body>
-    <!-- Header start -->
-    <header>
-        <img id="logo" src="/dev/assets/images/logo.png" alt="Home logo">
-        <h3 id="title">Arduino component booking system</h3>
+<body class="w3-content">
+<!-- Header start -->
+<header class="w3-light-grey">
+    <!-- top panel-->
+    <div class="w3-container">
+        <img id="logo" src="assets/images/Robert_Gordon_University_logo.svg.png" alt="Home logo" style="width:30%">
+        <h2 id="login_title" class="w3-xlarge">Arduino component booking system</h2>
+    </div>
+    <!-- Responsive Top navigation bar -->
+    <nav>
+        <ul class="w3-navbar w3-theme w3-large w3-border">
 
-        <nav >
-            <ul class="topnav">
-                <li>
-                    <a href="home.php"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
-                </li>
-                <li>
-                    <form action="#" class="navSearch">
-                        <i class="fa fa-search" aria-hidden="true" style="color:#ac76af"></i>
-                        <input type="search" name="componentsearch"  placeholder="Search here ...">
+            <li><a href="home.php"><i title="home" class="fa fa-home w3-large"></i></a></li>
+            <li><a href="#"><i class="fa fa-search w3-large" aria-hidden="true"></i></a></li>
+            <li class="w3-dropdown-hover w3-right" id="profile">
+                <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
+                <div class="w3-dropdown-content w3-white w3-card-2">
+                    <a href="#">My Profile</a>
+                    <a href="adminviewitems.php">Dashboard</a>
+                    <a href="logout.php">Sign out</a>
+                </div>
+            </li>
+            <li class="w3-right">
+                <a href="#"><i class="fa fa-shopping-cart w3-large"></i></a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
-                        <select title="searchCategories"">
-                        <?php
-                        $sql_search = "SELECT categoryID,categoryName FROM category";
-                        $result_search = $db->query($sql_search);
-                        if(mysqli_num_rows($result_search)>0){
-                            $counter=0;
+<!--
 
-                            while($row_search = $result_search->fetch_array()){
-
-                                ?>
-                                <option value="<?php echo $row_search['categoryID'];?>"><?php echo $row_search['categoryName'];?></option>
-                                <?
-                            }
-
-                        }
-                        $result_search->close()
-
-                        ?>
-                        <input type="submit" name="search" id="search">
-                    </form>
-                </li>
-                <li class="dropdown right" id="profile">
-                    <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
-                    <div class="dropdown-content">
-                        <a href="#"><?php echo "{$username}"?>'s Profile</a>
-                        <a href="adminviewitems.php">Dashboard</a>
-                        <a href="logout.php">Sign out</a>
-                    </div>
-                </li>
-                <li class="right">
-                    <a href="#"><i class="fa fa-shopping-cart" style="font-size:36px;color:#ac76af"></i></a>
-                </li>
-
-            </ul>
-        </nav>
-    </header>
-
-
-    <!-- Sub header -->
+     Sub header
 
     <div id="pageSubHeader">
         <div class="row">
@@ -93,53 +75,37 @@ $assetID = $_GET['assetID'];
             <div class="col-4 col-m-4">
             </div>
         </div>
-    </div>
+    </div>-->
 
-    <!-- Main Start Item details -->
-    <main>
-        <div class="row">
-            <div id="sidenavbar" class="col-2 col-m-2 menu">
-                <section>
-                    <p class="title">
-                        <a href="#">Components</a>
-                    </p>
 
-                    <div class="content">
-                        <?php
-                        //$category = $_GET['categoryID'];
-                        $sql_catNav = "SELECT * FROM category";
-                        $result =  $db->query($sql_catNav);
+<!-- Main Start Item details -->
+<main>
+    <div class="row">
+        <ul id="sidenavbar" class=" w3-ul w3-light-grey w3-hoverable col-2" >
+            <!-- Navbar header-->
+            <li><a href="home.php" class="w3-border-bottom"><h3>Components</h3></a></li>
 
-                        if(mysqli_num_rows($result)>0){
-                            $counter = 0;
-                            while ($row = $result->fetch_array())
-                            {
-                                $counter++;
-                                ?>
-                                <ul class="side-nav">
-                                    <li><a href="home.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo "{$row['categoryName']}";?></a></li>
-                                </ul>
-                                <?php
-                            }
-                        }
-                        $result->close();
+            <!-- Navbar content from database (move PHP to functions at later time)-->
 
-                        ?>
-                    </div>
-                </section>
-            </div>
+            <li><a href="home.php?assetCategory=Actuators">Actuators</a></li>
+            <li><a href="home.php?assetCategory=Connectors">Connectors</a></li>
+            <li><a href="home.php?assetCategory=LCD & Matrix">LCD & Matrix</a></li>
+            <li><a href="home.php?assetCategory=Passive & Active">Passive & Active</a></li>
+            <li><a href="home.php?assetCategory=Sensors">Sensors</a></li>
+        </ul>
 
-            <div id="itemdetails" class="col-10 col-m-10">
-                <?php
 
-                if ($_GET['assetID']){
-                    $sql_asset = "SELECT * FROM asset WHERE assetID = '$assetID' ";
-                }
-                else{
-                    $sql_asset = "SELECT * FROM asset";
-                }
-                $result2 =  $db->query($sql_asset);
-                while ($row = $result2->fetch_array()){
+        <div id="itemdetails" class="col-10 col-m-10">
+            <?php
+
+            if ($_GET['assetID']){
+                $sql_asset = "SELECT * FROM asset WHERE assetID = '$assetID' ";
+            }
+            else{
+                $sql_asset = "SELECT * FROM asset";
+            }
+            $result2 =  $db->query($sql_asset);
+            while ($row = $result2->fetch_array()){
                 ?>
 
                 <h1 id="itemName" class="title"><?php echo"{$row['assetName']}";?></h1>
@@ -147,7 +113,7 @@ $assetID = $_GET['assetID'];
 
                 <div class="row" id="ItemPanel">
                     <div class="col-9" id="itemPicContainer">
-                        <img src="<?php echo $row['image'];?>" alt="Item Image" class="itemPicBig">
+                        <img src="<?php echo $row['imagepath'];?>" alt="Item Image" class="itemPicBig">
                     </div>
 
                     <div class="col-3" id="ItemCheckoutOptions">
@@ -157,35 +123,37 @@ $assetID = $_GET['assetID'];
                             </div>
                             <div class="buttonAddToCart">
                                 <input type="hidden" name="asset_id" value="<?php echo $row['assetID'];?>" />
-                                <p class="quantity-in-cart">Quantity in Stock: <?php echo $row['quantity'];?></p>
-                                <input type="submit" class="button small-button cart-button expand" value="Add to cart" />
+                                <p class="quantity-in-cart">Quantity in Stock: <?php echo $row['total_stock'];?></p>
+                                <input type="submit" class="" value="Add to cart" />
                             </div>
                         </form>
                     </div>
-            <div class="row" id="itemDescription">
-                <article class="col-12">
-                    <p><?php echo "{$row['assetDescription']}";?></p>
+                    <div class="row" id="itemDescription">
+                        <article class="col-12">
+                            <p><?php echo "{$row['assetDescription']}";?></p>
 
-                </article>
-            </div>
+                        </article>
+                    </div>
 
-            </div>
-                    <?php
-                }
-                $result2->close();
-                $db->close();
-                ?>
-            </div>
-
+                </div>
+                <?php
+            }
+            $result2->close();
+            $db->close();
+            ?>
         </div>
+    </div>
 
-    </main>
 
-    <!-- Footer -->
-    <footer style="background-color: purple">
-        <p> Designed by Somto Eluwa</p>
-    </footer>
-    <!-- -->
+
+</main>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-light-grey">
+    <p> Designed by Somto Eluwa</p>
+</footer>
+<!-- -->
 
 
 

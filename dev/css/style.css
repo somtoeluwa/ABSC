@@ -292,6 +292,8 @@ div #pageSubHeader {
     height: 400px !important;
     text-align: left;
     margin-bottom: 0 !important;
+    font-weight: 400;
+    font-size: 12.5px;
 }
 
 

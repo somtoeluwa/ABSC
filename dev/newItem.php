@@ -7,15 +7,9 @@
  */
 session_start();
 if(!isset($_SESSION['ad_email'])){
-    header("Location: index.php");
-}
+    header("Location: home.php");}
 
 include 'functions\functions.php';
-$category = $_GET['categoryID'];
-
-//THIS PAGE IS DESTINATION FOR ADMIN WHEN LOGGED IN AND TRYING TO ACCESS INDEX.PHP, AND WHEN CLICKING LINKS LEADING HERE
-//If no session exists, admin is sent to adminviewitems.php
-
 ?>
 
 
@@ -23,71 +17,48 @@ $category = $_GET['categoryID'];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Arduino Booking System</title>
+    <title>Arduino Booking System - Add Item</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-purple.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 
-<body>
+<body class="w3-content">
 <!-- Header start -->
-<header>
-    <img id="logo" src="assets/images/logo.png" alt="Home logo">
-    <h3 id="title">Arduino component booking system</h3>
+<header class="w3-light-grey">
+    <!-- top panel-->
+    <div class="w3-container">
+        <img id="logo" src="assets/images/Robert_Gordon_University_logo.svg.png" alt="Home logo" style="width:30%">
+        <h2 id="login_title" class="w3-xlarge">Arduino component booking system</h2>
+    </div>
+    <!-- Responsive Top navigation bar -->
+    <nav>
+        <ul class="w3-navbar w3-theme w3-large w3-border">
 
-    <nav >
-        <ul class="topnav">
-            <li>
-                <a href="home.php"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
-            </li>
-            <li>
-                <form action="#" class="navSearch">
-                    <i class="fa fa-search" aria-hidden="true" style="color:#ac76af"></i>
-                    <input type="search" name="componentsearch"  placeholder="Search here ...">
-
-                    <select title="searchCategories"">
-                    <?php
-                    $sql_search = "SELECT categoryID,categoryName FROM category";
-                    $result_search = $db->query($sql_search);
-                    if(mysqli_num_rows($result_search)>0){
-                        $counter=0;
-
-                        while($row_search = $result_search->fetch_array()){
-
-                            ?>
-                            <option value="<?php echo $row_search['categoryID'];?>"><?php echo $row_search['categoryName'];?></option>
-                            <?
-                        }
-
-                    }
-                    $result_search->close()
-
-                    ?>
-                    <input type="submit" name="search" id="search">
-                </form>
-            </li>
-            <li class="dropdown right" id="profile">
-                <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
-                <div class="dropdown-content">
-                    <a href="#"><?php echo $_SESSION['ad_firstname']; ?>'s Profile</a>
+            <li><a href="home.php"><i title="home" class="fa fa-home w3-large"></i></a></li>
+            <li><a href="#"><i class="fa fa-search w3-large" aria-hidden="true"></i></a></li>
+            <li class="w3-dropdown-hover w3-right" id="profile">
+                <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
+                <div class="w3-dropdown-content w3-white w3-card-2">
+                    <a href="#">My Profile</a>
                     <a href="adminviewitems.php">Dashboard</a>
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>
-            <li class="right">
-                <a href="#"><i class="fa fa-shopping-cart" style="font-size:36px;color:#ac76af"></i></a>
+            <li class="w3-right">
+                <a href="#"><i class="fa fa-shopping-cart w3-large"></i></a>
             </li>
-
         </ul>
     </nav>
 </header>
 
 
 <!-- Sub header -->
-
+<!--
 <div id="pageSubHeader">
     <div class="row">
         <div class="col-8 col-m-8">
@@ -98,138 +69,84 @@ $category = $_GET['categoryID'];
         <div class="col-4 col-m-4">
         </div>
     </div>
-</div>
+</div>-->
 
 <!-- Main Start Item details -->
-<main>
-    <div class="row">
-        <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
-            <ul class="menu">
-                <li>Assets</li>
-                <ul>
-                    <li><a href="adminviewitems.php" >View All</a></li>
-                    <li><a href="newItem.php" >New Item</a></li>
-                    <li><a href="newCategory.php">New item category</a></li>
-                    <li><a href="viewcategory.php">View item categories</a></li>
-                    <li><a href="addquantity.php">Add item quantity</a></li>
-                </ul>
-                <li>Transactions</li>
-                <ul>
-                    <li><a href="#" id="checkIn">Check In</a></li>
-                    <li><a href="#" id="checkOut">Check Out</a></li>
-                </ul>
-                <li>Users</li>
-                <ul>
-                    <li><a href="#" id="checkIn">Regiter User</a></li>
-                    <li><a href="#" id="checkOut">View all Users</a></li>
-                </ul>
-            </ul>
+
+<main class="w3-padding-row">
+    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2" style="width:160px;"style="border: 1px dashed black">
+
+        <div class="w3-accordion">
+            <a onclick="myAccFunc()" href="#"><h4>Assets <i class="fa fa-caret-down"></i></h4></a>
+            <div id="demoAcc" class="w3-accordion-content w3-white w3-card-4">
+                <a href="adminviewitems.php" class="w3-padding-16">View All Items</a>
+                <a href="newItem.php" class="w3-padding-16" >New Item</a>
+            </div>
         </div>
-        <?php
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        // execute if requested using HTTP GET Method
-        ?>
-
-        <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
-            <h3>New Asset</h3>
-
-                <!-- Form Start-->
-
-                <form class="newAsset" action="<?{$_SERVER['PHP_SELF'];}?>" method="post" enctype="multipart/form-data">
-                    <!--<label for="assetID">Asset ID</label>
-                    <input type="number" id="assetID" value="" required >
-                    <br><br>-->
-                    <label for="assetName">Asset Name</label>
-                    <input type="text" id="assetName" name="assetName" value="" required >
-                    <br><br>
-                    <label for="assetType">Asset Type</label>
-                    <input type="text" id="assetType" name="assetType" value="" required >
-                    <br><br>
-                    <label for="assetDescription">Asset Description</label>
-                    <textarea required id="assetDescription" name="assetDescription" cols="30" rows="3" value=""></textarea>
-                    <br> <br>
-                    <label for="quantity">Quantity</label>
-                    <input type="number" id="quantity" name="quantity" value="" maxlength="10" required >
-                    <br><br>
-                    <label for="assetCategory">Item Category</label>
-                    <select id="assetCategory" name="assetCategory">
-                        <?php
-                            $sql_search = "SELECT categoryID,categoryName FROM category";
-                            $result_search = $db->query($sql_search);
-                            if(mysqli_num_rows($result_search)>0){
-                                $counter=0;
-                                while($row_search = $result_search->fetch_array()){
-                                    ?>
-                                    <option value="<?php echo $row_search['categoryID'];?>"><?php echo $row_search['categoryName'];?></option>
-                                    <?
-                                }
-                            }
-                            $result_search->close()
-                        ?>
-                    </select>
-                    <br> <br>
-                    <label for="serialnumber">Serial Number</label>
-                    <input type="text" id="serialnumber" name="serialnumber" value="">
-                    <br> <br>
-                    <label for="condtion">Condition</label>
-                        <select  id="assetcondition" name="assetcondition">
-                            <option value="Good">Good working condition</option>
-                            <option value="Bad">Not working</option>
-                        </select>
-                    <br> <br>
-                    <input type="file" name="images" id="images" multiple />
-                    <button type="submit" id="btn">Add item</button>
-                </form>
-
-
-                 <?
-
-            }elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // execute if requested using HTTP POST Method
-                     $target_path = "";
-             foreach ($_FILES["images"]["error"] as $key => $error) {
-                 if ($error == UPLOAD_ERR_OK) {
-                     $name = $_FILES["images"]["name"][$key];
-                     move_uploaded_file( $_FILES["images"]["tmp_name"][$key], "asset/images/" . $_FILES['images']['name'][$key]);
-                     $target_path = "asset/images/" .$name;
-                 }
-             }
-
-                function test_input($data) {
-                    $data = trim($data);
-                    $data = stripslashes($data);
-                    $data = htmlspecialchars($data);
-                    return $data;
-                }
-
-                $asset_Name = test_input($_POST['assetName']);
-                $asset_Type = test_input($_POST['assetType']);
-                $asset_Description = test_input($_POST['assetDescription']);
-                $quantity = test_input($_POST['quantity']);
-                $cat_ID = test_input($_POST['assetCategory']);
-                $serialnumber = test_input($_POST['serialnumber']);
-                $condition = test_input($_POST['assetcondition']);
-
-
-                    $sql = "insert into `asset` (`assetName`, `assetType`, `assetDescription`, `quantity`,`image`, `categoryID` , `serialNumber` ,`condition`)
-                values('$asset_Name','$asset_Type','$asset_Description', $quantity, $target_path ,$cat_ID ,'$serialnumber', '$condition')";
-
-                    if($result = mysqli_query($db,$sql)){
-                        // When sucessful return to View all assets
-                        header('location: adminviewitems.php');
-
-                    }else {
-                        echo "Error:" . $sql . "<br>" . mysqli_error($db);
-                        header('location: adminviewitems.php');
-                    }
-                }
-                else{
-                    header('location: home.php');
-                }
-                ?>
-
+        <div class="w3-accordion">
+            <a onclick="accFunc('trans')" href="#"><h4>Transactions <i class="fa fa-caret-down"></i></h4></a>
+            <div id="trans" class="w3-accordion-content w3-white">
+                <a href="#" class="w3-padding-16" >Check In</a>
+                <a href="#" class="w3-padding-16" >Check Out</a>
+            </div>
         </div>
+
+        <div class="w3-accordion">
+            <a onclick="accFunc('user')" href="#"><h4>Users<i class="fa fa-caret-down"></i></h4></a>
+            <div id="user" class="w3-accordion-content w3-white">
+                <a href="#" class="w3-padding-16" >Regiter User</a>
+                <a href="#" class="w3-padding-16" >View all Users</a>
+            </div>
+        </div>
+
     </div>
+
+    <div class="w3-container" id="assetOptionscontent" style=" margin-left:160px;">
+        <h3>New Asset</h3>
+
+        <!-- Form Start-->
+
+        <form class="w3-container"  action="upload.php" method="post" enctype="multipart/form-data">
+            <!--<label for="assetID">Asset ID</label>
+            <input type="number" id="assetID" value="" required >
+            <br><br>-->
+            <label class="w3-label w3-validate" for="assetName">Asset Name</label>
+            <input class="w3-input w3-theme-border w3-border w3-round-large" type="text" id="assetName" name="assetName" value="" required >
+            <br><br>
+            <label class="w3-label w3-validate" for="assetCategory">Asset Category</label>
+            <select class="w3-select w3-theme-border" id="assetCategory" name="assetCategory" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="Actuators">Actuators</option>
+                <option value="Connectors">Connectors</option>
+                <option value="LCD_Matrix">LCD & Matrix</option>
+                <option value="Passive_Active">Passive & Active</option>
+                <option value="Sensors">Sensors</option>
+            </select>
+            <br><br>
+            <label class="w3-label w3-validate"  for="assetDescription">Asset Description</label>
+            <textarea class="w3-input w3-theme-border w3-border w3-round-large" required id="assetDescription" name="assetDescription" cols="30" rows="3" value=""></textarea>
+            <br> <br>
+            <label class="w3-label w3-validate"  for="totalstock">Total number in stock</label>
+            <input class="w3-input w3-theme-border w3-border w3-round-large" type="number" id="totalstock" name="totalstock" value="" maxlength="10" required >
+            <br><br>
+            <label class="w3-label w3-validate"  for="totalowned">Total number owned</label>
+            <input class="w3-input w3-theme-border w3-border w3-round-large" type="number" id="totalowned" name="totalowned" value="" maxlength="10" required >
+            <br><br>
+            <label class="w3-label w3-validate"  for="assetCondition">Condition</label>
+            <select class="w3-select w3-theme-border" name="assetCondition" id="assetCondition">
+                <option value="Good">Good working condition</option>
+                <option value="Bad">Not working</option>
+            </select>
+            <br> <br>
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+
+            <p>
+                <button type="submit" class="w3-btn w3-theme" value="Upload Item" name="submit">Create Asset</button>
+            </p>
+        </form>
+    </div>
+
 
 
 </main>
@@ -238,5 +155,21 @@ $category = $_GET['categoryID'];
     <p>Designed by [Somto Eluwa, 1412632] [2016]</p>
 </footer>
 
+
+
+
+<script>
+    function myAccFunc() {
+        var x = document.getElementById("demoAcc");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            x.previousElementSibling.className += " w3-purple";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+            x.previousElementSibling.className =
+                x.previousElementSibling.className.replace(" w3-purple", "");
+        }
+    }
+</script>
 </body>
 </html>
