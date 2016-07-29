@@ -48,25 +48,6 @@ $category = $_GET['categoryID'];
                 <form action="#" class="navSearch">
                     <i class="fa fa-search" aria-hidden="true" style="color:#ac76af"></i>
                     <input type="search" name="componentsearch"  placeholder="Search here ...">
-
-                    <select title="searchCategories"">
-                    <?php
-                    $sql_search = "SELECT categoryID,categoryName FROM category";
-                    $result_search = $db->query($sql_search);
-                    if(mysqli_num_rows($result_search)>0){
-                        $counter=0;
-
-                        while($row_search = $result_search->fetch_array()){
-
-                            ?>
-                            <option value="<?php echo $row_search['categoryID'];?>"><?php echo $row_search['categoryName'];?></option>
-                            <?
-                        }
-
-                    }
-                    $result_search->close()
-                    ?>
-
                     <input type="submit" name="search" id="search">
                 </form>
             </li>
@@ -112,26 +93,13 @@ $category = $_GET['categoryID'];
                     </p>
 
                     <div class="content">
-                        <?php
-                            //$category = $_GET['categoryID'];
-                        $sql_catNav = "SELECT * FROM category";
-                        $result =  $db->query($sql_catNav);
-
-                        if(mysqli_num_rows($result)>0){
-                        $counter = 0;
-                        while ($row = $result->fetch_array())
-                        {
-                        $counter++;
-                        ?>
-                        <ul class="side-nav">
-                            <li><a href="home.php?categoryID=<?php echo $row['categoryID'];?>"><?php echo "{$row['categoryName']}";?></a></li>
+                         <ul class="side-nav">
+                            <li><a href="#">Actuators</a></li>
+                            <li><a href="#">Connectors</a></li>
+                            <li><a href="#">LCD & Matrix</a></li>
+                            <li><a href="#">Passive & Active</a></li>
+                            <li><a href="#">Sensors</a></li>
                         </ul>
-                            <?php
-                        }
-                        }
-                        $result->close();
-
-                        ?>
                     </div>
                 </section>
             </div>
@@ -141,7 +109,7 @@ $category = $_GET['categoryID'];
             <div id="content" class="col-10 col-m-10">
                 <?php
                 if ($_GET['categoryID']){
-                    $sql_asset = "SELECT * FROM asset WHERE categoryID = '$category' ";
+                    $sql_asset = "SELECT * FROM asset";
                 }
                 else{
                     $sql_asset = "SELECT * FROM asset";
