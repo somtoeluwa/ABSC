@@ -104,36 +104,37 @@ include 'functions\functions.php';
     <div class="w3-container" id="assetOptionscontent" style=" margin-left:160px;">
         <h3>Assets Table</h3>
         <div class="w3-responsive">
-            <table class="w3-table w3-bordered w3-striped w3-border w3-hoverable">
-                <tr>
-                    <th>Asset ID</th>
+            <table class="w3-table w3-bordered w3-reverse-striped w3-border w3-hoverable">
+                <tr class="w3-light-grey">
+                    <th >Asset ID</th>
                     <th>Asset Name</th>
                     <th>Asset Category</th>
                     <th>Asset Description</th>
                     <th>Total in Stock</th>
                     <th>Total Owned</th>
                     <th>Condition</th>
+                </tr>
 
-                    <?php
-                    $sql_query = "SELECT * FROM asset";
-                    $result =  $db->query($sql_query);
-                    if(mysqli_num_rows($result)>0){
+                <?php
+                $sql_query = "SELECT * FROM asset";
+                $result =  $db->query($sql_query);
+                if(mysqli_num_rows($result)>0){
                     $counter = 0;
                     while ($row = $result->fetch_array())
                     {
-                    $counter++;
-                    ?>
-                <tr>
-                    <td><a href="edit_asset.php?assetID=<?php echo $row['assetID'];?>"><?php echo $row['assetID'];?></a></td>
-                    <td><?php echo $row['assetName'];?></td>
-                    <td><?php echo $row['assetCategory'];?></td>
-                    <td><?php echo $row['assetDescription'];?></td>
-                    <td><?php echo $row['total_stock'];?></td>
-                    <td><?php echo $row['total_owned'];?></td>
-                    <td><?php echo $row['condition'];?></td>
-                </tr>
-                <?php
-                }
+                        $counter++;
+                        ?>
+                        <tr>
+                            <td><a href="edit_asset.php?assetID=<?php echo $row['assetID'];?>"><?php echo $row['assetID'];?></a></td>
+                            <td><?php echo $row['assetName'];?></td>
+                            <td><?php echo $row['assetCategory'];?></td>
+                            <td><?php echo $row['assetDescription'];?></td>
+                            <td><?php echo $row['total_stock'];?></td>
+                            <td><?php echo $row['total_owned'];?></td>
+                            <td><?php echo $row['condition'];?></td>
+                        </tr>
+                        <?php
+                    }
                 }
                 $result->close();
                 $db->close();

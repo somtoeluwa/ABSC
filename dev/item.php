@@ -15,6 +15,7 @@ include 'functions/functions.php';
 
 //Get the Asset
 $assetID = $_GET['assetID'];
+//$_SESSION['quantity'] = $_GET['quantity'] ;
 ?>
 
 
@@ -112,17 +113,19 @@ $assetID = $_GET['assetID'];
                 <span>Asset ID: <?php echo $row['assetID'];?></span>
 
                 <div class="row" id="ItemPanel">
-                    <div class="col-9" id="itemPicContainer">
+                    <div class="col-9 w3-card-4" id="itemPicContainer">
                         <img src="<?php echo $row['imagepath'];?>" alt="Item Image" class="itemPicBig">
                     </div>
 
-                    <div class="col-3" id="ItemCheckoutOptions">
-                        <form name="add_cart" action="#" method="post">
+                    <div class="col-3" id="add-to-cart">
+                        <form name="add_cart" action="add_to_cart.php" method="post">
                             <div id="qty">
-                                <span style="color: black">Quantity: </span><input type="number" name="cart_quantity" value="1" maxlength="6" size="4" />
+                                <span style="color: black">Quantity: </span>
+                                <input type="number" name="quantity" value="1" max="<?php echo"{$row['total_stock']}";?>" maxlength="6" size="4" />
                             </div>
                             <div class="buttonAddToCart">
-                                <input type="hidden" name="asset_id" value="<?php echo $row['assetID'];?>" />
+                                <input type="hidden" name="assetID" value="<?php echo $row['assetID'];?>" />
+                                <input type="hidden" name="assetName" value="<?php echo"{$row['assetName']}";?>"/>
                                 <p class="quantity-in-cart">Quantity in Stock: <?php echo $row['total_stock'];?></p>
                                 <input type="submit" class="" value="Add to cart" />
                             </div>
@@ -155,8 +158,23 @@ $assetID = $_GET['assetID'];
 </footer>
 <!-- -->
 
+<script>
+    $(document).ready(function(){
+        $('.add-to-cart').click(function(){
+            var id = $(this).find('.product-id').text();
+            var name = $(this).find('.product-name').text();
+            var quantity = $(this).find('input').val();
+            window.location.href = "add_to_cart.php?id=" + id + "&name=" + name + "&quantity=" + quantity;
+        });
 
-
+        $('.update-quantity').click(function(){
+            var id = $(this).closest('tr').find('.product-id').text();
+            var name = $(this).closest('tr').find('.product-name').text();
+            var quantity = $(this).closest('tr').find('input').val();
+            window.location.href = "update_quantity.php?id=" + id + "&name=" + name + "&quantity=" + quantity;
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -158,11 +158,11 @@ input[type=search],[type=submit] {
 
 }
 
- #profile{
-        /*margin-top: 13px;
-        padding-left: 10px;
-        padding-right: 10px;
-        text-align: center;*/
+#profile{
+    /*margin-top: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;*/
 }
 
 ul.topnav li a:hover:not(.active) {background-color: #111;}

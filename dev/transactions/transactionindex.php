@@ -25,7 +25,7 @@ $category = $_GET['categoryID'];
     <meta charset="UTF-8">
     <title>Arduino Booking System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -35,13 +35,13 @@ $category = $_GET['categoryID'];
 <body>
 <!-- Header start -->
 <header>
-    <img id="logo" src="assets/images/logo.png" alt="Home logo">
+    <img id="logo" src="../assets/images/logo.png" alt="Home logo">
     <h3 id="title">Arduino component booking system</h3>
 
     <nav >
         <ul class="topnav">
             <li>
-                <a href="home.php"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
+                <a href="../home.php"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
             </li>
             <li>
                 <form action="#" class="navSearch">
@@ -69,8 +69,8 @@ $category = $_GET['categoryID'];
                 <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
                 <div class="dropdown-content">
                     <a href="#"><?php echo $_SESSION['ad_firstname']; ?>'s Profile</a>
-                    <a href="adminviewitems.php">Dashboard</a>
-                    <a href="logout.php">Sign out</a>
+                    <a href="../adminviewitems.php">Dashboard</a>
+                    <a href="../logout.php">Sign out</a>
                 </div>
             </li>
             <li class="right">
@@ -88,7 +88,7 @@ $category = $_GET['categoryID'];
     <div class="row">
         <div class="col-8 col-m-8">
             <div id="BreadCrumb">
-                <a href="home.php">Home</a>&nbsp;&gt;&nbsp; All Components
+                <a href="../home.php">Home</a>&nbsp;&gt;&nbsp; All Components
             </div>
         </div>
         <div class="col-4 col-m-4">
@@ -109,8 +109,8 @@ $category = $_GET['categoryID'];
             <div class="row">
             <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
                 <ul class="side-nav">
-                    <li><a href="adminviewitems.php" id="viewAllitems">View All</a></li>
-                    <li><a href="newItem.php" id="newItem">New Item</a></li>
+                    <li><a href="../adminviewitems.php" id="viewAllitems">View All</a></li>
+                    <li><a href="../newItem.php" id="newItem">New Item</a></li>
                     <li><a href="#" id="newItemCategory">New item category</a></li>
                     <li><a href="#">Add item quantity</a></li>
                     <li><a href="#">view item categories</a></li>
@@ -143,7 +143,7 @@ $category = $_GET['categoryID'];
                     <input type="submit" value="submit">
                 </form>
 
-                <form action="upload.php" method="post" enctype="multipart/form-data">
+                <form action="../upload.php" method="post" enctype="multipart/form-data">
                     Select image to upload:
                     <input type="file" name="fileToUpload" id="fileToUpload">
                     <input type="submit" value="Upload Image" name="submitImage">

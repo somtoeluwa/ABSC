@@ -101,12 +101,12 @@
 
 /* Content sidenav styling*/
 #sidenavbar{
-    height: 850px;
+    height: 100vh;
     background-color: inherit;
-/*
-    border: 1px dashed black;
-*/
-    
+    /*
+        border: 1px dashed black;
+    */
+
 }
 
 
@@ -121,7 +121,7 @@
     margin-bottom: 0 !important;
     font-weight: 400;
     font-size: 12.5px;
-    
+
 }
 
 
@@ -144,7 +144,7 @@
 
 /**Footer styling*/
 footer {
-    
+
     max-width: 100%;
     clear: both;
 }
