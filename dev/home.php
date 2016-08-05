@@ -119,8 +119,8 @@ if(!isset($_SESSION['ad_email'])){
 
         <li><a href="home.php?assetCategory=Actuators">Actuators</a></li>
         <li><a href="home.php?assetCategory=Connectors">Connectors</a></li>
-        <li><a href="home.php?assetCategory=LCD & Matrix">LCD & Matrix</a></li>
-        <li><a href="home.php?assetCategory=Passive & Active">Passive & Active</a></li>
+        <li><a href="home.php?assetCategory=LCD_Matrix">LCD & Matrix</a></li>
+        <li><a href="home.php?assetCategory=Passive_Active">Passive & Active</a></li>
         <li><a href="home.php?assetCategory=Sensors">Sensors</a></li>
     </ul>
 
