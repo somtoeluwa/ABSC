@@ -126,8 +126,8 @@ include 'functions\functions.php';
                         <tr>
                             <td><input type="checkbox" name="orderselected" value="<?php echo $row['c_ID'];?>"/></td>
                             <td><?php echo $counter;?></td>
-                            <td><?php echo $row['assetID'];?></td>
-                            <td><?php echo $row['assetName'];?></td>
+                            <td><?php echo $row['c_assetID'];?></td>
+                            <td><?php echo $row['c_assetName'];?></td>
                             <td><?php echo $row['quantity'];?></td>
 
                         </tr>
