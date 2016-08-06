@@ -112,6 +112,7 @@ include 'functions\functions.php';
                     <th >Asset ID</th>
                     <th>Asset Name</th>
                     <th>Quantity Requested</th>
+                    <th>Action</th>
                 </tr>
 
                 <?php
@@ -129,6 +130,7 @@ include 'functions\functions.php';
                             <td><?php echo $row['c_assetID'];?></td>
                             <td><?php echo $row['c_assetName'];?></td>
                             <td><?php echo $row['quantity'];?></td>
+                            <td><button class="w3-btn w3-blue">Edit</button><button class="w3-btn fa fa-remove w3-red">Remove</button> </td>
 
                         </tr>
                         <?php
@@ -140,7 +142,7 @@ include 'functions\functions.php';
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><button class="w3-btn w3-theme" id="approve" name="approve" type="submit" >Approve</button></td>
+                    <td><button class="w3-btn w3-green" id="approve" name="approve" type="submit" >Approve</button> <button>Deny</button></td>
                 </tr>
             </table>
             </form>

@@ -147,12 +147,12 @@ if(count($_SESSION['cart_items'])>0){
                         echo "</div>";
                 echo "</td>";-->
 
-            <td><input type="number" name="cart_quantity" value="<?php echo $_SESSION['cart_items'][$row['assetID']]['quantity'] ;?>">
-                <input type="hidden" name="assetID" value="<?php echo $row['assetID'];?>" />
-                <input type="hidden" name="assetName" value="<?php echo"{$row['assetName']}";?>"/></td>
+            <td><input type="number" name="cart_quantity[]" value="<?php echo $_SESSION['cart_items'][$row['assetID']]['quantity'] ;?>">
+                <input type="hidden" name="assetID[]" value="<?php echo $row['assetID'];?>" />
+                <input type="hidden" name="assetName[]" value="<?php echo"{$row['assetName']}";?>"/></td>
 
             <td><a href='remove_from_cart.php?assetID=<?php echo $row['assetID']?>&assetName=<?php echo $row['assetName']?>' class='btn btn-danger'>
-                    <span class='fa fa-remove'></span>Remove from cart</a>
+                    <span class='fa fa-remove'>Remove from cart</span></a>
             </td>
         </tr>
        <?php
