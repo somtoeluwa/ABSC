@@ -103,9 +103,11 @@ include 'functions\functions.php';
 
     <div class="w3-container" id="assetOptionscontent" style=" margin-left:160px;">
         <h3>Checkout Table</h3>
+
+
         <div class="w3-responsive">
             <form name="approveorder" id="approveorder" action="#" method="#">
-            <table class="w3-table w3-bordered w3-reverse-striped w3-border w3-hoverable">
+                <table class="w3-table w3-bordered w3-reverse-striped w3-border w3-hoverable" id="table">
                 <tr class="w3-light-grey">
                     <th></th>
                     <th>Checkout ID</th>
@@ -135,23 +137,12 @@ include 'functions\functions.php';
                             <td><?php echo $row['c_created'];?></td>
                             <td><?php echo $row['orderID'];?></td>
                             <td><?php echo $row['c_duedate'];?></td>
-
-
-                            <td><button class="w3-btn w3-blue">Edit</button><button class="w3-btn fa fa-remove w3-red">Remove</button> </td>
-
                         </tr>
                         <?php
                     }
                 }
                      ?>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button class="w3-btn w3-green" id="approve" name="approve" type="submit" >Approve</button> <button>Deny</button></td>
-                </tr>
+
             </table>
             </form>
         </div>
@@ -184,5 +175,7 @@ include 'functions\functions.php';
         }
     }
 </script>
+
+
 </body>
 </html>
