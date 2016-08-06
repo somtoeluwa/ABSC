@@ -87,7 +87,7 @@ include 'functions\functions.php';
             <a onclick="myAccFunc('trans')" href="#"><h4>Transactions <i class="fa fa-caret-down"></i></h4></a>
             <div id="trans" class="w3-accordion-content w3-white">
                 <a href="admincheckout.php" class="w3-padding-16" >Check Out</a>
-                <a href="#" class="w3-padding-16" >Check In</a>
+                <a href="admincheckin.php" class="w3-padding-16" >Check In</a>
             </div>
         </div>
 
