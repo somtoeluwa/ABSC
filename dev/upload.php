@@ -72,7 +72,7 @@ if ($uploadOk == 0) {
 
         if($result = mysqli_query($db,$sql)) {
             // When sucessful return to View all assets
-            header('location: newItem.php');
+            header('location: newItem.php?action=added');
         }else{
 
             echo "Error:" . $sql . "<br>" . mysqli_error($db);

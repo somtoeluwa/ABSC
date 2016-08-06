@@ -103,6 +103,13 @@ include 'functions\functions.php';
 
     <div class="w3-container" id="assetOptionscontent" style=" margin-left:160px;">
         <h3>New Asset</h3>
+       <?php if($action=='added'){
+
+        echo "<div class='w3-container w3-section w3-green'>";
+            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+            echo "<p>Asset created!</p>";
+            echo "</div>";
+        }?>
 
         <!-- Form Start-->
 
