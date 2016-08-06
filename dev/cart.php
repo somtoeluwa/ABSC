@@ -152,7 +152,7 @@ if(count($_SESSION['cart_items'])>0){
             <td></td>
             <td></td>
             <td>
-                <button type="submit" name="checkout">
+                <button type="submit" name="checkout" class="confirmation">
                     <span class='fa fa-shopping-cart'></span> Checkout
                 </button>
             </td>
