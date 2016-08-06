@@ -111,7 +111,7 @@ include 'functions\functions.php';
                     <th>Checkout ID</th>
                     <th >Asset ID</th>
                     <th>Asset Name</th>
-                    <th>Quantity Requested</th>
+                    <th>Quantity Approved</th>
                 </tr>
 
                 <?php
