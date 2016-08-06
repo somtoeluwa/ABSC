@@ -101,6 +101,9 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
         $t = time();
         $a = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 4);
         $orderID = $a . $t;
+        // set default due date for one week from checkout
+        $nextWeek = $t + (7 * 24 * 60 * 60);
+        $duedate = date('Y-m-d 00:00:00',$nextWeek);
 
         echo "<p>Your order has been placed. Your order number is : {$orderID }</p>";
         echo "<p>Present this number to the Module co-ordinator to recieve your items.</p>";
@@ -113,6 +116,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
         echo "<th>AssetID</th>";
         echo "<th>Asset Name</th>";
         echo "<th>Quantity</th>";
+        echo "<th>Due Date</th>";
         echo "</tr>";
 
         for ($i = 0; $i < count($_POST['cart_quantity']); $i++) {
@@ -140,17 +144,15 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
             echo "<th>$newitemparam1</th>";
             echo "<th>$newitemparam2</th>";
             echo "<th>$newitemparam3</th>";
+            echo "<th>$duedate</th>";
             echo "</tr>";
 
-            /*echo 'Key = ' . $key . ' AssetID =  ' . "'" . $value['assetID'] . "'" . ' Asset Name = ' . "'" . $value['assetName'] . "'" . 'Quantity = ' . "'" . $value['quantity'] . "'";
-
-            echo "<br>";*/
+            
 
 
 
-
-            $sql = "INSERT INTO `checkout`(`c_assetID`,`c_assetName`,`quantity`,`c_created`,`orderID`)
-                      VALUES ('$newitemparam1','$newitemparam2','$newitemparam3','$created','$orderID')";
+            $sql = "INSERT INTO `checkout`(`c_assetID`,`c_assetName`,`quantity`,`c_created`,`orderID`,`c_duedate`)
+                      VALUES ('$newitemparam1','$newitemparam2','$newitemparam3','$created','$orderID','$duedate')";
 
             if ($result = mysqli_query($db, $sql)) {
                 // When sucessful return to View all assets

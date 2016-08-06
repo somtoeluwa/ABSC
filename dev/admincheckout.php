@@ -112,7 +112,9 @@ include 'functions\functions.php';
                     <th >Asset ID</th>
                     <th>Asset Name</th>
                     <th>Quantity Requested</th>
-                    <th>Action</th>
+                    <th>Date ordered</th>
+                    <th>OrderID</th>
+                    <th>Return date</th>
                 </tr>
 
                 <?php
@@ -130,6 +132,10 @@ include 'functions\functions.php';
                             <td><?php echo $row['c_assetID'];?></td>
                             <td><?php echo $row['c_assetName'];?></td>
                             <td><?php echo $row['quantity'];?></td>
+                            <td><?php echo $row['c_created'];?></td>
+                            <td><?php echo $row['orderID'];?></td>
+                            <td><?php echo $row['c_duedate'];?></td>
+
 
                             <td><button class="w3-btn w3-blue">Edit</button><button class="w3-btn fa fa-remove w3-red">Remove</button> </td>
 
@@ -139,6 +145,7 @@ include 'functions\functions.php';
                 }
                      ?>
                 <tr>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
