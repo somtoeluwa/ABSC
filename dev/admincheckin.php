@@ -74,7 +74,7 @@ include 'functions\functions.php';
 <!-- Main Start Item details -->
 
 <main class="w3-padding-row">
-    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2">
+    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2"style="width:160px">
 
         <div class="w3-accordion">
             <a onclick="myAccFunc('demoAcc')" href="#"><h4>Assets <i class="fa fa-caret-down"></i></h4></a>
@@ -115,7 +115,7 @@ include 'functions\functions.php';
                 </tr>
 
                 <?php
-                $sql_query = "SELECT * FROM `checkout`";
+                $sql_query = "SELECT * FROM `checkout` GROUP by `order`";
                 $result =  $db->query($sql_query);
                 if(mysqli_num_rows($result)>0){
                     $counter = 0;
