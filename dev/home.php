@@ -83,7 +83,7 @@ if(!isset($_SESSION['ad_email'])){
                     // count products in cart
                     $cart_count= count($_SESSION['cart_items']);
                     ?><i class="fa fa-shopping-cart w3-large"></i>
-                    <span class="w3-badge" id="comparison-count"><?php echo $cart_count; ?></span>
+                    <span class="w3-badge" id="comparison-count"><?php echo $cart_count; ?>item(s)</span>
                 </a>
             </li>
         </ul>
@@ -91,31 +91,14 @@ if(!isset($_SESSION['ad_email'])){
 </header>
 
 
-
-<!-- Sub header
-
-<div id="pageSubHeader">
-    <div class="row">
-        <div class="col-8 col-m-8">
-            <div id="BreadCrumb">
-                <a href="home.php">Home</a>&nbsp;&gt;&nbsp; All Components
-            </div>
-        </div>
-        <div class="col-4 col-m-4">
-        </div>
-    </div>
-</div>-->
-
-
 <!--Main Start -->
 <main class="row">
-
 
     <ul id="sidenavbar" class=" w3-ul w3-card-2 w3-theme-l4  w3-hoverable col-2" >
         <!-- Navbar header-->
         <li><a href="home.php" class="w3-border-bottom"><h3>Components</h3></a></li>
 
-        <!-- Navbar content from database (move PHP to functions at later time)-->
+        <!-- Navbar content -->
 
         <li><a href="home.php?assetCategory=Actuators">Actuators</a></li>
         <li><a href="home.php?assetCategory=Connectors">Connectors</a></li>
@@ -133,7 +116,6 @@ if(!isset($_SESSION['ad_email'])){
         // to prevent undefined index notice
 
         $action = isset($_GET['action']) ? $_GET['action'] : "";
-        $product_id = isset($_GET['assetID']) ? $_GET['assetID'] : "1";
         $name = isset($_GET['assetName']) ? $_GET['assetName'] : "";
         $category= isset($_GET['assetCategory']) ? $_GET['assetCategory'] : "";
 

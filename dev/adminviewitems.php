@@ -74,7 +74,7 @@ include 'functions\functions.php';
 <!-- Main Start Item details -->
 
 <main class="w3-padding-row">
-    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2" style="width:160px;"style="border: 1px dashed black">
+    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2">
 
         <div class="w3-accordion">
             <a onclick="myAccFunc('demoAcc')" href="#"><h4>Assets <i class="fa fa-caret-down"></i></h4></a>
@@ -85,7 +85,7 @@ include 'functions\functions.php';
         </div>
         <div class="w3-accordion">
             <a onclick="myAccFunc('trans')" href="#"><h4>Transactions <i class="fa fa-caret-down"></i></h4></a>
-            <div id="trans" class="w3-accordion-content w3-white">
+            <div id="trans" class="w3-accordion-content w3-white w3-card-4">
                 <a href="admincheckout.php" class="w3-padding-16" >Check Out</a>
                 <a href="admincheckin.php" class="w3-padding-16" >Check In</a>
             </div>
@@ -93,7 +93,7 @@ include 'functions\functions.php';
 
         <div class="w3-accordion">
             <a onclick="myAccFunc('user')" href="#"><h4>Users<i class="fa fa-caret-down"></i></h4></a>
-            <div id="user" class="w3-accordion-content w3-white">
+            <div id="user" class="w3-accordion-content w3-white w3-card-4">
                 <a href="#" class="w3-padding-16" >Regiter User</a>
                 <a href="#" class="w3-padding-16" >View all Users</a>
             </div>

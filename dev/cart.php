@@ -21,13 +21,13 @@ if(!isset($_SESSION['ad_email'])){
 }
 
 // to prevent undefined index notice
-$id = isset($_GET['assetID']) ? $_GET['assetID'] : "";
 $name = isset($_GET['assetName']) ? $_GET['assetName'] : "";
 $action = isset($_GET['action']) ? $_GET['action'] : "";
-$product_id = isset($_GET['assetID']) ? $_GET['assetID'] : "1";
-$name = isset($_GET['assetName']) ? $_GET['assetName'] : "";
 $category= isset($_GET['assetCategory']) ? $_GET['assetCategory'] : "";
 $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "";
+
+// Page Title
+$page_title = "Checkout- Arduino Booking System";
 
 
 ?>
@@ -38,7 +38,7 @@ $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo isset($page_title) ? $page_title : "The Code of a Ninja"; ?> Arduino component booking System</title>
+    <title><?php echo isset($page_title) ? $page_title : "The Code of a Ninja"; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-purple.css">
@@ -136,23 +136,12 @@ if(count($_SESSION['cart_items'])>0){
         <tr>
             <td><a href="item.php?assetID=<?php echo $row['assetID']; ?>"><?php echo $row['assetName'];?></a></td>
             <td ><?php echo $row['assetCategory'];?></td>
-            <!--"<td>";
-                        echo "<div class='input-group'>";
-                            echo "<input type='number' name='quantity' value='{$quantity}' class='form-control'>";
-
-                            echo "<span class='input-group-btn'>";
-                                echo "<button class='btn btn-default update-quantity' type='button'>Update</button>";
-                            echo "</span>";
-
-                        echo "</div>";
-                echo "</td>";-->
-
             <td><input type="number" name="cart_quantity[]" value="<?php echo $_SESSION['cart_items'][$row['assetID']]['quantity'] ;?>">
-                <input type="hidden" name="assetID[]" value="<?php echo $row['assetID'];?>" />
-                <input type="hidden" name="assetName[]" value="<?php echo"{$row['assetName']}";?>"/></td>
+                <input type="hidden" name="assetID[]" value="<?php echo $_SESSION['cart_items'][$row['assetID']]['assetID'];?>" />
+                <input type="hidden" name="assetName[]" value="<?php echo"{$_SESSION['cart_items'][$row['assetID']]['assetName']}";?>"/></td>
 
             <td><a href='remove_from_cart.php?assetID=<?php echo $row['assetID']?>&assetName=<?php echo $row['assetName']?>' class='btn btn-danger'>
-                    <span class='fa fa-remove'>Remove from cart</span></a>
+                    <span class='fa fa-remove'></span>Remove from cart</a>
             </td>
         </tr>
        <?php
@@ -162,10 +151,10 @@ if(count($_SESSION['cart_items'])>0){
             <td><b>Total</b></td>
             <td></td>
             <td></td>
-            <td><button type="submit" name="checkout">
-                    <!--<input type="hidden" name="assetID" value="<?php /*echo $row['assetID'];*/?>" />
-                    <input type="hidden" name="assetName" value="<?php /*echo"{$row['assetName']}";*/?>"/>-->
-                    <span class='fa fa-shopping-cart'></span> Checkout</button>
+            <td>
+                <button type="submit" name="checkout">
+                    <span class='fa fa-shopping-cart'></span> Checkout
+                </button>
             </td>
         </tr>
     </table>
@@ -198,15 +187,14 @@ else{
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 
-    <script>
-    $(document).ready(function() {
-        $('.update-quantity').click(function () {
-            var id = $(this).closest('tr').find('.product-id').text();
-            var name = $(this).closest('tr').find('.product-name').text();
-            var quantity = $(this).closest('tr').find('input').val();
-            window.location.href = "update_quantity.php?id=" + id + "&name=" + name + "&quantity=" + quantity;
-        });
-    });
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Are you sure you want to checkout? ')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
 </script>
 
 </body>
