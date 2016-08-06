@@ -77,22 +77,22 @@ include 'functions\functions.php';
     <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2" style="width:160px;"style="border: 1px dashed black">
 
         <div class="w3-accordion">
-            <a onclick="myAccFunc()" href="#"><h4>Assets <i class="fa fa-caret-down"></i></h4></a>
+            <a onclick="myAccFunc('demoAcc')" href="#"><h4>Assets <i class="fa fa-caret-down"></i></h4></a>
             <div id="demoAcc" class="w3-accordion-content w3-white w3-card-4">
                 <a href="adminviewitems.php" class="w3-padding-16">View All Items</a>
                 <a href="newItem.php" class="w3-padding-16" >New Item</a>
             </div>
         </div>
         <div class="w3-accordion">
-            <a onclick="accFunc('trans')" href="#"><h4>Transactions <i class="fa fa-caret-down"></i></h4></a>
+            <a onclick="myAccFunc('trans')" href="#"><h4>Transactions <i class="fa fa-caret-down"></i></h4></a>
             <div id="trans" class="w3-accordion-content w3-white">
+                <a href="admincheckout.php" class="w3-padding-16" >Check Out</a>
                 <a href="#" class="w3-padding-16" >Check In</a>
-                <a href="#" class="w3-padding-16" >Check Out</a>
             </div>
         </div>
 
         <div class="w3-accordion">
-            <a onclick="accFunc('user')" href="#"><h4>Users<i class="fa fa-caret-down"></i></h4></a>
+            <a onclick="myAccFunc('user')" href="#"><h4>Users<i class="fa fa-caret-down"></i></h4></a>
             <div id="user" class="w3-accordion-content w3-white">
                 <a href="#" class="w3-padding-16" >Regiter User</a>
                 <a href="#" class="w3-padding-16" >View all Users</a>
@@ -158,8 +158,8 @@ include 'functions\functions.php';
 
 
 <script>
-    function myAccFunc() {
-        var x = document.getElementById("demoAcc");
+    function myAccFunc(id) {
+        var x = document.getElementById(id);
         if (x.className.indexOf("w3-show") == -1) {
             x.className += " w3-show";
             x.previousElementSibling.className += " w3-purple";
