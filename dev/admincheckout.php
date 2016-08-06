@@ -130,6 +130,7 @@ include 'functions\functions.php';
                             <td><?php echo $row['c_assetID'];?></td>
                             <td><?php echo $row['c_assetName'];?></td>
                             <td><?php echo $row['quantity'];?></td>
+
                             <td><button class="w3-btn w3-blue">Edit</button><button class="w3-btn fa fa-remove w3-red">Remove</button> </td>
 
                         </tr>
