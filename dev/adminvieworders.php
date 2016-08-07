@@ -156,6 +156,8 @@ $page_title ="View all Orders";
                             <td><?php echo $row['c_created'];?></td>
                             <td><?php echo $row['orderID'];?></td>
                             <td><?php echo $row['c_duedate'];?></td>
+                            <td><?php echo $row['status'];?></td>
+
                         </tr>
                         <?php
                     }
