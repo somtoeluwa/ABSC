@@ -133,7 +133,7 @@ $page_title ="Order Details";
                         ?>
                     </table>
 
-                    <button type="submit" class="w3-btn w3-right w3-margin">Approve</button>
+                    <button type="submit" class="w3-btn w3-right w3-margin confirmation">Approve</button>
                 </form>
             </div>
                 <?
@@ -151,6 +151,16 @@ $page_title ="Order Details";
                 ?>
         </div>
     </main>
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Add this item to cart? ')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>
+
 
 </body>
 </html>
