@@ -77,6 +77,7 @@ $page_title = "Checkout- Arduino Booking System";
                     $cart_count=count($_SESSION['cart_items']);
                     ?><i class="fa fa-shopping-cart w3-large"></i>
                     <span class="badge" id="comparison-count"><?php echo $cart_count; ?></span>
+                    item(s)
                 </a>
             </li>
         </ul>

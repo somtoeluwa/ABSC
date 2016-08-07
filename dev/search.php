@@ -1,19 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sommy B
- * Date: 7/6/2016
- * Time: 12:43 PM
- */
 session_start();
 if(!isset($_SESSION['ad_email'])){
-    header("Location: home.php");}
+    header("Location: home.php");
+}
 
 include 'functions\functions.php';
-// Page title
-$page_title ="Create new asset";
-?>
 
+// Page title
+$page_title ="Order Details";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,8 +59,6 @@ $page_title ="Create new asset";
     </nav>
 </header>
 
-
-
 <!-- Main Start Item details -->
 
 <main class="w3-padding-row">
@@ -94,87 +87,71 @@ $page_title ="Create new asset";
                 <a href="#" class="w3-padding-16" >View all Users</a>
             </div>
         </div>
-
     </div>
 
     <div class="w3-container" id="assetOptionscontent" style=" margin-left:160px;">
-        <h3>New Asset</h3>
-       <?php
-       $action = isset($_GET['action']) ? $_GET['action'] : "";
-       if($action=='added'){
+        <?php
+            $search = $_POST['search'];
+            $sql = "SELECT * FROM `checkout` WHERE  `orderID` = '" . $search . "' AND `status` = 'pending' ";
+            $result = $db->query($sql);
+            if (mysqli_num_rows($result) > 0) {
+                $counter = 0;
+                ?>
+                <h3>Order Table</h3>
+                <div class="w3-responsive">
+                <form name="approveorder" id="approveorder" action="approve.php" method="post">
+                    <table class="w3-table w3-bordered w3-reverse-striped w3-border w3-hoverable" id="table">
+                        <tr class="w3-light-grey">
+                            <th></th>
+                            <th>Checkout ID</th>
+                            <th>Asset ID</th>
+                            <th>Asset Name</th>
+                            <th>Quantity Requested</th>
+                            <th>Date ordered</th>
+                            <th>OrderID</th>
+                            <th>Return date</th>
+                        </tr>
 
-        echo "<div class='w3-container w3-section w3-green'>";
-            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
-            echo "<p>Asset created!</p>";
-            echo "</div>";
-        }?>
+                        <?
+                        while ($row = $result->fetch_array()) {
+                            $counter++;
+                            ?>
+                            <tr>
+                                <td><input type="checkbox" name="orderselected[]" value="<?php echo $row['c_id']; ?>"/>
+                                    <input type="hidden" name="orderID" value="<?php echo $row['orderID']; ?>"/>
+                                </td>
+                                <td><?php echo $counter; ?></td>
+                                <td><?php echo $row['c_assetID']; ?></td>
+                                <td><?php echo $row['c_assetName']; ?></td>
+                                <td><?php echo $row['quantity']; ?></td>
+                                <td><?php echo $row['c_created']; ?></td>
+                                <td><?php echo $row['orderID']; ?></td>
+                                <td><?php echo $row['c_duedate']; ?></td>
+                            </tr>
+                            <?
+                        }
+                        ?>
+                    </table>
 
-        <!-- Form Start-->
+                    <button type="submit" class="w3-btn w3-right w3-margin">Approve</button>
+                </form>
+            </div>
+                <?
+            }
+            else{
+                ?>
+                    <div id="response" class="w3-container w3-card-2 " align="center">
+                        <div id="empty_category" align="left">
+                            <p>No order matches the order ID.</p>
+                            <a href="adminapprove.php"><button class="w3-center"> Go Back</button></a>
+                        </div>
+                    </div>
+                    <?php
+            }
+                ?>
+        </div>
+    </main>
 
-        <form class="w3-container"  action="upload.php" method="post" enctype="multipart/form-data">
-            <!--<label for="assetID">Asset ID</label>
-            <input type="number" id="assetID" value="" required >
-            <br><br>-->
-            <label class="w3-label w3-validate" for="assetName">Asset Name</label>
-            <input class="w3-input w3-theme-border w3-border w3-round-large" type="text" id="assetName" name="assetName" value="" required >
-            <br><br>
-            <label class="w3-label w3-validate" for="assetCategory">Asset Category</label>
-            <select class="w3-select w3-theme-border" id="assetCategory" name="assetCategory" required>
-                <option value="" disabled selected>Select Category</option>
-                <option value="Actuators">Actuators</option>
-                <option value="Connectors">Connectors</option>
-                <option value="LCD_Matrix">LCD & Matrix</option>
-                <option value="Passive_Active">Passive & Active</option>
-                <option value="Sensors">Sensors</option>
-            </select>
-            <br><br>
-            <label class="w3-label w3-validate"  for="assetDescription">Asset Description</label>
-            <textarea class="w3-input w3-theme-border w3-border w3-round-large" required id="assetDescription" name="assetDescription" cols="30" rows="3" value=""></textarea>
-            <br> <br>
-            <label class="w3-label w3-validate"  for="totalstock">Total number in stock</label>
-            <input class="w3-input w3-theme-border w3-border w3-round-large" type="number" id="totalstock" name="totalstock" value="" maxlength="10" required >
-            <br><br>
-            <label class="w3-label w3-validate"  for="totalowned">Total number owned</label>
-            <input class="w3-input w3-theme-border w3-border w3-round-large" type="number" id="totalowned" name="totalowned" value="" maxlength="10" required >
-            <br><br>
-            <label class="w3-label w3-validate"  for="assetCondition">Condition</label>
-            <select class="w3-select w3-theme-border" name="assetCondition" id="assetCondition">
-                <option value="Good">Good working condition</option>
-                <option value="Bad">Not working</option>
-            </select>
-            <br> <br>
-            Select image to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload">
-
-            <p>
-                <button type="submit" class="w3-btn w3-theme" value="Upload Item" name="submit">Create Asset</button>
-            </p>
-        </form>
-    </div>
-
-
-
-</main>
-
-<footer>
-    <p>Designed by [Somto Eluwa, 1412632] [2016]</p>
-</footer>
-
-
-
-
-<script>
-    function myAccFunc(id) {
-        var x = document.getElementById(id);
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-            x.previousElementSibling.className += " w3-purple";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-            x.previousElementSibling.className =
-                x.previousElementSibling.className.replace(" w3-purple", "");
-        }
-    }
-</script>
 </body>
 </html>
+

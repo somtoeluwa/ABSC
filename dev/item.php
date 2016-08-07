@@ -72,6 +72,7 @@ $page_title ="Asset Details";
                     $cart_count= count($_SESSION['cart_items']);
                     ?><i class="fa fa-shopping-cart w3-large"></i>
                     <span class="w3-badge" id="comparison-count"><?php echo $cart_count; ?></span>
+                    item(s)
                 </a>
             </li>
         </ul>
