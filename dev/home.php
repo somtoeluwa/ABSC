@@ -9,7 +9,7 @@
 // Start session
 session_start();
 $role = $_SESSION['sess_userrole'];
-$userid = $_SESSION['sess_user_id'];
+$userid = $_SESSION['userid'];
 if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
     header('Location: index.php?err=2');
 }
@@ -49,7 +49,7 @@ $page_title ="Arduino component booking system";
     <!-- top panel-->
     <div class="w3-container">
         <img id="logo" src="assets/images/Robert_Gordon_University_logo.svg.png" alt="Home logo" style="width:30%">
-        <marquee><h2 id="login_title" class="w3-xlarge"><?php echo isset($page_title) ? $page_title : "Store Home"; ?> </h2></marquee>
+        <marquee><h2 id="login_title" class="w3-xlarge"><?php echo $_SESSION['userid']; ?> </h2></marquee>
     </div>
     <!-- Responsive Top navigation bar -->
     <nav>
