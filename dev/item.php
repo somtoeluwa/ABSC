@@ -5,12 +5,12 @@
 
 //Start session
 session_start();
-
-//check if user has a valid session
-if(!isset($_SESSION['ad_email'])){
-    header("Location: index.php");
+$role = $_SESSION['sess_userrole'];
+if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
+    header('Location: index.php?err=2');
 }
 
+// include Database connection
 include 'functions/functions.php';
 
 //Get the Asset
@@ -54,14 +54,19 @@ $page_title ="Asset Details";
     <!-- Responsive Top navigation bar -->
     <nav>
         <ul class="w3-navbar w3-theme w3-large w3-border">
-
             <li><a href="home.php"><i title="home" class="fa fa-home w3-large"></i></a></li>
             <li><a href="#"><i class="fa fa-search w3-large" aria-hidden="true"></i></a></li>
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="#">My Profile</a>
-                    <a href="adminviewitems.php">Dashboard</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
+                    <?php
+                    if ($role == "admin" ) {
+                        ?>
+                        <a href="adminviewitems.php">Dashboard</a>
+                        <?php
+                    }
+                    ?>
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>

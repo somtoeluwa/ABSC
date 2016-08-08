@@ -12,8 +12,10 @@ if(!isset($_SESSION['sess_username']) && $role!="admin"){
 }
 
 include 'functions\functions.php';
+
+
 // Page title
-$page_title ="Create new asset";
+$page_title ="Create User";
 ?>
 
 
@@ -48,7 +50,7 @@ $page_title ="Create new asset";
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Account</a>
                     <?php
                     if ($role == "admin" ) {
                         ?>
@@ -72,7 +74,6 @@ $page_title ="Create new asset";
         </ul>
     </nav>
 </header>
-
 
 
 <!-- Main Start Item details -->
@@ -108,71 +109,116 @@ $page_title ="Create new asset";
     </div>
 
     <div class="w3-container" id="assetOptionscontent" style=" margin-left:160px;">
-        <h3>New Asset</h3>
-       <?php
-       $action = isset($_GET['action']) ? $_GET['action'] : "";
-       if($action=='added'){
+        <?php
 
-        echo "<div class='w3-container w3-section w3-green'>";
-            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
-            echo "<p>Asset created!</p>";
-            echo "</div>";
-        }?>
+        if($_SERVER['REQUEST_METHOD']==='GET') {
+            ?>
 
-        <!-- Form Start-->
+            <h3>New User</h3>
+            <?php
+            $action = isset($_GET['action']) ? $_GET['action'] : "";
+            if ($action == 'added') {
 
-        <form class="w3-container"  action="upload.php" method="post" enctype="multipart/form-data">
-            <!--<label for="assetID">Asset ID</label>
-            <input type="number" id="assetID" value="" required >
-            <br><br>-->
-            <label class="w3-label w3-validate" for="assetName">Asset Name</label>
-            <input class="w3-input w3-theme-border w3-border w3-round-large" type="text" id="assetName" name="assetName" value="" required >
-            <br><br>
-            <label class="w3-label w3-validate" for="assetCategory">Asset Category</label>
-            <select class="w3-select w3-theme-border" id="assetCategory" name="assetCategory" required>
-                <option value="" disabled selected>Select Category</option>
-                <option value="Actuators">Actuators</option>
-                <option value="Connectors">Connectors</option>
-                <option value="LCD_Matrix">LCD & Matrix</option>
-                <option value="Passive_Active">Passive & Active</option>
-                <option value="Sensors">Sensors</option>
-            </select>
-            <br><br>
-            <label class="w3-label w3-validate"  for="assetDescription">Asset Description</label>
-            <textarea class="w3-input w3-theme-border w3-border w3-round-large" required id="assetDescription" name="assetDescription" cols="30" rows="3" value=""></textarea>
-            <br> <br>
-            <label class="w3-label w3-validate"  for="totalstock">Total number in stock</label>
-            <input class="w3-input w3-theme-border w3-border w3-round-large" type="number" id="totalstock" name="totalstock" value="" maxlength="10" required >
-            <br><br>
-            <label class="w3-label w3-validate"  for="totalowned">Total number owned</label>
-            <input class="w3-input w3-theme-border w3-border w3-round-large" type="number" id="totalowned" name="totalowned" value="" maxlength="10" required >
-            <br><br>
-            <label class="w3-label w3-validate"  for="assetCondition">Condition</label>
-            <select class="w3-select w3-theme-border" name="assetCondition" id="assetCondition">
-                <option value="Good">Good working condition</option>
-                <option value="Bad">Not working</option>
-            </select>
-            <br> <br>
-            Select image to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload">
+                echo "<div class='w3-container w3-section w3-green'>";
+                echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+                echo "<p>User created!</p>";
+                echo "</div>";
+            } ?>
 
-            <p>
-                <button type="submit" class="w3-btn w3-theme" value="Upload Item" name="submit">Create Asset</button>
-            </p>
-        </form>
+            <!-- Form Start-->
+
+            <form class="w3-container" action="createuser.php" method="post">
+
+                <label class="w3-label w3-validate" for="firstname">First Name</label>
+                <input class="w3-input w3-theme-border w3-border w3-round-large" type="text" id="firstname"
+                       name="firstname" value="" required>
+                <br><br>
+                <label class="w3-label w3-validate" for="surname">Last Name</label>
+                <input class="w3-input w3-theme-border w3-border w3-round-large" type="text" id="surname" name="surname"
+                       value="" required>
+                <br> <br>
+                <label class="w3-label w3-validate" for="email">Email address</label>
+                <input class="w3-input w3-theme-border w3-border w3-round-large" type="email" id="email" name="email"
+                       value=""  required>
+                <br> <br>
+                <label class="w3-label w3-validate" for="password">Password</label>
+                <input class="w3-input w3-theme-border w3-border w3-round-large" type="password" id="password"
+                       name="password" value="" required>
+                <br> <br>
+                <label class="w3-label w3-validate" for="confirmpassword">Confirm Password</label>
+                <input class="w3-input w3-theme-border w3-border w3-round-large" type="password" id="confirmpassword"
+                       name="confirmpassword" value="" required>
+                <br> <br>
+                <label class="w3-label w3-validate" for="role">Role</label>
+                <select class="w3-select w3-theme-border" id="role" name="role" required>
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="admin">Administrator</option>
+                    <option value="user">User</option>
+                </select>
+                <br><br>
+                <p>
+                    <button type="submit" class="w3-btn w3-theme" value="create" name="submit">Create User
+                    </button>
+                </p>
+            </form>
+            <?php
+        }
+        else if ($_SERVER['REQUEST_METHOD']==='POST'){
+
+            // Function to test data and allow those with special characters inputted  to be posted
+            function test_input($data) {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
+            }
+
+            $firstname = test_input($_POST['firstname']);
+            $surname = test_input($_POST['surname']);
+            $email = test_input($_POST['email']);
+            $password = test_input($_POST['password']);
+            $role = test_input($_POST['role']);
+
+            $sql = "insert into users (email,password,firstname,surname,role)
+            values('$email','$password','$firstname','$surname','$role')";
+
+            if($result = mysqli_query($db,$sql)) {
+                // When sucessful return to View all assets
+                header('location: createuser.php?action=added');
+            }else{
+
+                echo "Error:" . $sql . "<br>" . mysqli_error($db);
+
+            }
+
+        }
+        else{
+            /*bla bla bla*/
+            header('location: index.php');
+        }
+
+        ?>
+
     </div>
-
-
-
 </main>
 
-<footer>
-    <p>Designed by [Somto Eluwa, 1412632] [2016]</p>
-</footer>
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById("password").onchange = validatePassword;
+        document.getElementById("confirmpassword").onchange = validatePassword;
+        /* document.getElementById('email').setCustomValidity("Please use an @rgu.ac.uk email address.");*/
 
-
-
-
+    }
+    function validatePassword(){
+        var pass2=document.getElementById("confirmpassword").value;
+        var pass1=document.getElementById("password").value;
+        if(pass1!=pass2)
+            document.getElementById("confirmpassword").setCustomValidity("Passwords Don't Match");
+        else
+            document.getElementById("confirmpassword").setCustomValidity('');
+//empty string means no validation error
+    }
+</script>
 <script>
     function myAccFunc(id) {
         var x = document.getElementById(id);

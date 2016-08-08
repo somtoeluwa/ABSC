@@ -7,6 +7,10 @@
  */
 // Start session
 session_start();
+$role = $_SESSION['sess_userrole'];
+if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
+    header('Location: index.php?err=2');
+}
 
 // include Database connection
 
@@ -16,18 +20,12 @@ include 'functions/functions.php';
 $page_title ="Cart";
 
 
-if(!isset($_SESSION['ad_email'])){
-    header("Location: index.php");
-}
-
 // to prevent undefined index notice
 $name = isset($_GET['assetName']) ? $_GET['assetName'] : "";
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 $category= isset($_GET['assetCategory']) ? $_GET['assetCategory'] : "";
 $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "";
 
-// Page Title
-$page_title = "Checkout- Arduino Booking System";
 
 
 ?>
@@ -38,7 +36,7 @@ $page_title = "Checkout- Arduino Booking System";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo isset($page_title) ? $page_title : "The Code of a Ninja"; ?></title>
+    <title><?php echo isset($page_title) ? $page_title : "Arduino Booking "; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-purple.css">
@@ -65,8 +63,14 @@ $page_title = "Checkout- Arduino Booking System";
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="#">My Profile</a>
-                    <a href="adminviewitems.php">Dashboard</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
+                    <?php
+                    if ($role == "admin" ) {
+                        ?>
+                        <a href="adminviewitems.php">Dashboard</a>
+                        <?php
+                    }
+                    ?>
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>
@@ -74,9 +78,9 @@ $page_title = "Checkout- Arduino Booking System";
                 <a href="cart.php">
                     <?php
                     // count products in cart
-                    $cart_count=count($_SESSION['cart_items']);
+                    $cart_count= count($_SESSION['cart_items']);
                     ?><i class="fa fa-shopping-cart w3-large"></i>
-                    <span class="badge" id="comparison-count"><?php echo $cart_count; ?></span>
+                    <span class="w3-badge" id="comparison-count"><?php echo $cart_count; ?></span>
                     item(s)
                 </a>
             </li>
@@ -149,7 +153,7 @@ if(count($_SESSION['cart_items'])>0){
                 }
         ?>
         <tr>
-            <td><b>Total</b></td>
+            <td><b></b></td>
             <td></td>
             <td></td>
             <td>

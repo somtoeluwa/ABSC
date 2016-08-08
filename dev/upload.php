@@ -48,13 +48,6 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file and create new item
 }*/ else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-// Simple function to avoid SQL Injection.
-        function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
 
 // Test input from forms and store them in variables
         $asset_name = test_input($_POST['assetName']);

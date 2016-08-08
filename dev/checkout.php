@@ -6,18 +6,21 @@
  * Time: 11:55 PM
  */
 
+
+// Start session
 session_start();
+$role = $_SESSION['sess_userrole'];
+if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
+    header('Location: index.php?err=2');
+}
+
+
 include 'functions/functions.php';
 
 // Page title
 $page_title ="Arduino component booking system";
 
 
-if(!isset($_SESSION['ad_email'])){
-    header("Location: index.php");
-    //THIS PAGE IS DESTINATION FOR USERS WHEN LOGGED IN AND TRYING TO ACCESS INDEX.PHP, AND WHEN CLICKING LINKS LEADING HERE
-    //If no session exists, admin is sent to index.php
-}
 
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -55,8 +58,14 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="#">My Profile</a>
-                    <a href="adminviewitems.php">Dashboard</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
+                    <?php
+                    if ($role == "admin" ) {
+                        ?>
+                        <a href="adminviewitems.php">Dashboard</a>
+                        <?php
+                    }
+                    ?>
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>

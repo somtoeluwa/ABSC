@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'functions\functions.php';
 
 
@@ -14,9 +15,9 @@ foreach($_POST['orderselected'] as $cid) {
 
     if ($query = $db->query($sql)) {
         echo "Successful";
-        header("Location: adminvieworders.php?action=approved");
+        header("Location: vieworders.php?action=approved");
     } else {
         echo "Error" . $sql . '<br>' . mysqli_error($db);
-        header('Location: adminvieworders.php?action=failed');;
+        header('Location: vieworders.php?action=failed');
     }
 }

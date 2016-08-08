@@ -6,27 +6,18 @@
  * Time: 12:43 PM
  */
 // Start session
+// Start session
 session_start();
+$role = $_SESSION['sess_userrole'];
+if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
+    header('Location: index.php?err=2');
+}
 
 // include Database connection
-
 include 'functions/functions.php';
 
 // Page title
 $page_title ="Arduino component booking system";
-
-
-if(!isset($_SESSION['ad_email'])){
-    header("Location: index.php");
-    //THIS PAGE IS DESTINATION FOR USERS WHEN LOGGED IN AND TRYING TO ACCESS INDEX.PHP, AND WHEN CLICKING LINKS LEADING HERE
-    //If no session exists, admin is sent to index.php
-}
-
-
-
-
-
-
 ?>
 
 
@@ -41,10 +32,6 @@ if(!isset($_SESSION['ad_email'])){
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-purple.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <!-- Latest compiled and minified CSS -->
-    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
-
     <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -72,8 +59,14 @@ if(!isset($_SESSION['ad_email'])){
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="#">My Profile</a>
-                    <a href="adminviewitems.php">Dashboard</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
+                    <?php
+                    if ($role == "admin" ) {
+                        ?>
+                        <a href="adminviewitems.php">Dashboard</a>
+                        <?php
+                    }
+                    ?>
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>
@@ -96,11 +89,11 @@ if(!isset($_SESSION['ad_email'])){
 <main class="row">
 
     <ul id="sidenavbar" class=" w3-ul w3-card-2 w3-theme-l4  w3-hoverable col-2" >
+
         <!-- Navbar header-->
         <li><a href="home.php" class="w3-border-bottom"><h3>Components</h3></a></li>
 
         <!-- Navbar content -->
-
         <li><a href="home.php?assetCategory=Actuators">Actuators</a></li>
         <li><a href="home.php?assetCategory=Connectors">Connectors</a></li>
         <li><a href="home.php?assetCategory=LCD_Matrix">LCD & Matrix</a></li>
@@ -110,8 +103,6 @@ if(!isset($_SESSION['ad_email'])){
 
     <div id="content" class="col-10 w3-padding-row">
         <!--<h3>All Components</h3>-->
-
-
         <?php
 
         // to prevent undefined index notice
@@ -140,6 +131,22 @@ if(!isset($_SESSION['ad_email'])){
             echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
             echo "<p><strong>{$name}</strong> already exists in your cart! </p>";
             echo "<p>Please Update cart from checkout.</p>";
+            echo "</div>";
+        }
+        if($action=='edited'){
+
+            echo "<div class='w3-container w3-section w3-green'>";
+            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+            echo "<p>Your details were updated successfully</p>";
+            echo "</div>";
+        }
+
+
+        if($action=='failed'){
+
+            echo "<div class='w3-container w3-section w3-red'>";
+            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+            echo "<p>Something went wrong!</p>";
             echo "</div>";
         }
 
@@ -176,7 +183,7 @@ if(!isset($_SESSION['ad_email'])){
                 ?>
 
 
-                <article class="col-4 itemBox w3-margin-bottom  w3-container w3-card-4">
+                <article class="col-4 itemBox w3-margin-bottom  w3-container ">
                     <div class="row">
                         <div class="col-12 col-m-12 itemPic  w3-center ">
                             <a class="w3-margin-right " href="item.php?assetID=<?php echo $row['assetID']; ?>">
@@ -206,8 +213,6 @@ if(!isset($_SESSION['ad_email'])){
                         </div>
                     </div>
                 </article>
-
-
                 <?php
 
             }

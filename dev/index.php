@@ -1,64 +1,5 @@
-<?php
-
-//GET when accessed through URL
-if($_SERVER['REQUEST_METHOD']==='GET'){
-    session_start(); //check if session is set
-    if(isset($_SESSION["ad_email"]))
-    {
-        //send user to adminhome.php
-        header("Location: home.php");
-    }
-    /*else{
-        show_index_page();
-    }*/
-}
-else if($_SERVER['REQUEST_METHOD']==='POST'){	//Post is used when the form is submitted
-    //read input details from index.php
-    $email=$_POST['u'];
-    $password=$_POST['p'];
-    $username = "";
-    if(user_registered($email,$password)){	//See function below
-        session_start();	//start the session
-        $_SESSION["ad_email"]=$email;//assign the admin email address to the session
-
-        header("Location: home.php");	//send admin to adminhome.php
-    }
-    else{
-        //show_index_page();	//This isn't necessary anymore
-        echo "<script>alert('Invalid administrator details');</script>";
-    }
-}
-//FUNCTIONS:
-function user_registered($email,$password) {
-    //test to discover if the user is already in the DB
-    //to do that, we can find out if the email address already exists in any row
-    include("functions/functions.php");
-    if($db->connect_errno){		//check if there was a connection error and respond accordingly
-        die('Connection failed:'.connect_error);
-    }
-    else{
-        //select all values from database using the entered values as filter
-        $query="SELECT ad_email, ad_password, ad_firstname
-					FROM administrators
-					WHERE ad_email = ? AND ad_password = ?";
-        $stmt = $db->prepare($query);
-        $stmt->bind_param("ss",$_POST['u'],$_POST['p']);
-        $stmt->execute() or die("Error: ".$query."<br>".$db->error);
-        if(mysqli_stmt_fetch($stmt)){	//if the sql query returns a value
-            return TRUE; 	//indicate that a value was returned, and user exists in database
-
-        }
-        else{
-            return false; //indicate a value wasn't returned, and user doesn't exist in database
-        }
-        $db->close(); // Closing Connection
-    }
-}
-?>
-
-
 <!DOCTYPE html>
-<html >
+<html  lang="en">
 <head>
     <meta charset="UTF-8">
     <title> Admin </title>
@@ -77,19 +18,42 @@ function user_registered($email,$password) {
 </header>
 <main>
     <!-- Login form -->
+    <?php
+
+    $errors = array(
+        1=>"Invalid user name or password, Try again",
+        2=>"Please login to access this area"
+    );
+
+    $error_id = isset($_GET['err']) ? (int)$_GET['err'] : 0;
+
+    if ($error_id == 1) {
+        echo "<div class='w3-container w3-section w3-red'>";
+        echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+        echo "<p>".$errors[$error_id]."</p>";
+        echo "</div>";
+
+    }elseif ($error_id == 2) {
+        echo "<div class='w3-container w3-section w3-red'>";
+        echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+        echo "<p>".$errors[$error_id]."</p>";
+        echo "</div>";
+
+    }
+    ?>
+
     <div id=loginform class="w3-modal-content w3-card-8 " style="max-width:450px; margin-top:100px; ">
         <div class="w3-center">
             <br>
             <img src="assets/images/Robert_Gordon_University_logo.svg.png" alt="Avatar" style="width:60%" class=" w3-margin-top">
         </div>
-
-        <form name="userlogin" method="post" action="index.php" class="w3-container">
+        <form name="userlogin" method="post" action="authenticate.php" class="w3-container">
             <div class="w3-section">
                 <label><b>E-mail</b></label>
-                <input type="email" name="u" placeholder="Enter Email..."  class=" w3-input w3-border w3-round-large" required/>
+                <input type="email" name="email" placeholder="Enter Email..."  class=" w3-input w3-border w3-round-large" required/>
 
                 <label><b>Password</b></label>
-                <input type="password" name="p" placeholder="Enter Password..."  class=" w3-input w3-border w3-round-large" required/>
+                <input type="password" name="password" placeholder="Enter Password..."  class=" w3-input w3-border w3-round-large" required/>
 
                 <button type="submit" name="submit" class="w3-btn-block w3-section w3-purple w3-round-xxlarge" value="login"> Log in </button>
                 <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me

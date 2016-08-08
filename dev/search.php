@@ -1,9 +1,9 @@
 <?php
 session_start();
-if(!isset($_SESSION['ad_email'])){
-    header("Location: home.php");
+$role = $_SESSION['sess_userrole'];
+if(!isset($_SESSION['sess_username']) && $role!="admin"){
+    header('Location: index.php?err=2');
 }
-
 include 'functions\functions.php';
 
 // Page title
@@ -41,8 +41,14 @@ $page_title ="Order Details";
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="#">My Profile</a>
-                    <a href="adminviewitems.php">Dashboard</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
+                    <?php
+                    if ($role == "admin" ) {
+                        ?>
+                        <a href="adminviewitems.php">Dashboard</a>
+                        <?php
+                    }
+                    ?>
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>
@@ -53,11 +59,14 @@ $page_title ="Order Details";
                     $cart_count= count($_SESSION['cart_items']);
                     ?><i class="fa fa-shopping-cart w3-large"></i>
                     <span class="w3-badge" id="comparison-count"><?php echo $cart_count; ?></span>
+                    item(s)
                 </a>
             </li>
         </ul>
     </nav>
 </header>
+
+
 
 <!-- Main Start Item details -->
 
@@ -65,8 +74,8 @@ $page_title ="Order Details";
     <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2"style="width:160px">
 
         <div class="w3-accordion">
-            <a onclick="myAccFunc('demoAcc')" href="#"><h4>Assets <i class="fa fa-caret-down"></i></h4></a>
-            <div id="demoAcc" class="w3-accordion-content w3-white w3-card-4">
+            <a onclick="myAccFunc('assets')" href="#"><h4>Assets <i class="fa fa-caret-down"></i></h4></a>
+            <div id="assets" class="w3-accordion-content w3-white w3-card-4">
                 <a href="adminviewitems.php" class="w3-padding-16">View All Items</a>
                 <a href="newItem.php" class="w3-padding-16" >New Item</a>
             </div>
@@ -74,7 +83,7 @@ $page_title ="Order Details";
         <div class="w3-accordion">
             <a onclick="myAccFunc('trans')" href="#"><h4>Transactions <i class="fa fa-caret-down"></i></h4></a>
             <div id="trans" class="w3-accordion-content w3-white w3-card-4">
-                <a href="adminvieworders.php" class="w3-padding-16" >View all orders</a>
+                <a href="vieworders.php" class="w3-padding-16" >View all orders</a>
                 <a href="adminapprove.php" class="w3-padding-16" >Approve order</a>
                 <a href="admincheckin.php" class="w3-padding-16" >Check In Order</a>
             </div>
@@ -83,6 +92,8 @@ $page_title ="Order Details";
         <div class="w3-accordion">
             <a onclick="myAccFunc('user')" href="#"><h4>Users<i class="fa fa-caret-down"></i></h4></a>
             <div id="user" class="w3-accordion-content w3-white w3-card-4">
+                <a href="createuser.php" class="w3-padding-16" >Create User</a>
+                <a href="viewusers.php" class="w3-padding-16" >View all Users</a>
                 <a href="#" class="w3-padding-16" >Register User</a>
                 <a href="#" class="w3-padding-16" >View all Users</a>
             </div>

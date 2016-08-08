@@ -12,8 +12,10 @@ if(!isset($_SESSION['sess_username']) && $role!="admin"){
 }
 
 include 'functions\functions.php';
+
+
 // Page title
-$page_title ="Create new asset";
+$page_title ="View all Orders";
 ?>
 
 
@@ -48,7 +50,7 @@ $page_title ="Create new asset";
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Account</a>
                     <?php
                     if ($role == "admin" ) {
                         ?>
@@ -72,7 +74,6 @@ $page_title ="Create new asset";
         </ul>
     </nav>
 </header>
-
 
 
 <!-- Main Start Item details -->
@@ -108,67 +109,104 @@ $page_title ="Create new asset";
     </div>
 
     <div class="w3-container" id="assetOptionscontent" style=" margin-left:160px;">
-        <h3>New Asset</h3>
-       <?php
-       $action = isset($_GET['action']) ? $_GET['action'] : "";
-       if($action=='added'){
+        <?php
 
-        echo "<div class='w3-container w3-section w3-green'>";
+        // to prevent undefined index notice
+
+        $action = isset($_GET['action']) ? $_GET['action'] : "";
+
+
+
+
+        if($action=='approved'){
+
+            echo "<div class='w3-container w3-section w3-green'>";
             echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
-            echo "<p>Asset created!</p>";
+            echo "<p>Order was approved!</p>";
             echo "</div>";
-        }?>
+        }
 
-        <!-- Form Start-->
 
-        <form class="w3-container"  action="upload.php" method="post" enctype="multipart/form-data">
-            <!--<label for="assetID">Asset ID</label>
-            <input type="number" id="assetID" value="" required >
-            <br><br>-->
-            <label class="w3-label w3-validate" for="assetName">Asset Name</label>
-            <input class="w3-input w3-theme-border w3-border w3-round-large" type="text" id="assetName" name="assetName" value="" required >
-            <br><br>
-            <label class="w3-label w3-validate" for="assetCategory">Asset Category</label>
-            <select class="w3-select w3-theme-border" id="assetCategory" name="assetCategory" required>
-                <option value="" disabled selected>Select Category</option>
-                <option value="Actuators">Actuators</option>
-                <option value="Connectors">Connectors</option>
-                <option value="LCD_Matrix">LCD & Matrix</option>
-                <option value="Passive_Active">Passive & Active</option>
-                <option value="Sensors">Sensors</option>
-            </select>
-            <br><br>
-            <label class="w3-label w3-validate"  for="assetDescription">Asset Description</label>
-            <textarea class="w3-input w3-theme-border w3-border w3-round-large" required id="assetDescription" name="assetDescription" cols="30" rows="3" value=""></textarea>
-            <br> <br>
-            <label class="w3-label w3-validate"  for="totalstock">Total number in stock</label>
-            <input class="w3-input w3-theme-border w3-border w3-round-large" type="number" id="totalstock" name="totalstock" value="" maxlength="10" required >
-            <br><br>
-            <label class="w3-label w3-validate"  for="totalowned">Total number owned</label>
-            <input class="w3-input w3-theme-border w3-border w3-round-large" type="number" id="totalowned" name="totalowned" value="" maxlength="10" required >
-            <br><br>
-            <label class="w3-label w3-validate"  for="assetCondition">Condition</label>
-            <select class="w3-select w3-theme-border" name="assetCondition" id="assetCondition">
-                <option value="Good">Good working condition</option>
-                <option value="Bad">Not working</option>
-            </select>
-            <br> <br>
-            Select image to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload">
+        if($action=='failed'){
 
-            <p>
-                <button type="submit" class="w3-btn w3-theme" value="Upload Item" name="submit">Create Asset</button>
-            </p>
-        </form>
+            echo "<div class='w3-container w3-section w3-red'>";
+            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+            echo "<p>Something went wrong, Order was not approved.</p>";
+            echo "</div>";
+        }
+        ?>
+
+
+        <h3>Orders Table</h3>
+
+        <div class="w3-row w3-padding-8 ">
+
+            <div class="w3-half">
+                <input type="text" class=" w3-border w3-navitem" style="width:100%">
+            </div>
+
+            <div class="w3-quarter">
+                <ul class="w3-navbar">
+                    <li class="w3-left"><a href="#"><i class="fa fa-search"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="w3-responsive">
+            <form name="approveorder" id="approveorder" action="#" method="#">
+                <table class="w3-table w3-bordered w3-reverse-striped w3-border w3-hoverable" id="table">
+                    <tr class="w3-light-grey">
+                        <th>SN</th>
+                        <th>Asset ID</th>
+                        <th>Asset Name</th>
+                        <th>Quantity Requested</th>
+                        <th>Date ordered</th>
+                        <th>OrderID</th>
+                        <th>Return date</th>
+                        <th>Status</th>
+                    </tr>
+
+                    <?php
+                    $sql_query = "SELECT * FROM `checkout`";
+                    $result =  $db->query($sql_query);
+                    if(mysqli_num_rows($result)>0){
+                        $counter = 0;
+                        while ($row = $result->fetch_array())
+                        {
+                            $counter++;
+                            ?>
+                            <tr>
+                                <td><?php echo $counter;?></td>
+                                <td><?php echo $row['c_assetID'];?></td>
+                                <td><?php echo $row['c_assetName'];?></td>
+                                <td><?php echo $row['quantity'];?></td>
+                                <td><?php echo $row['c_created'];?></td>
+                                <td><?php echo $row['orderID'];?></td>
+                                <td><?php echo $row['c_duedate'];?></td>
+                                <td><?php echo $row['status'];?></td>
+                            </tr>
+                            <?php
+                        }
+                    }
+                    ?>
+
+                </table>
+            </form>
+        </div>
     </div>
 
 
 
 </main>
 
-<footer>
-    <p>Designed by [Somto Eluwa, 1412632] [2016]</p>
+<!-- Footer -->
+<!--<footer class="w3-container w3-light-grey">
+    <p> Designed by Somto Eluwa</p>
 </footer>
+-->
+
 
 
 
@@ -186,5 +224,7 @@ $page_title ="Create new asset";
         }
     }
 </script>
+
+
 </body>
 </html>

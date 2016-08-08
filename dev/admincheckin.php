@@ -6,9 +6,10 @@
  * Time: 12:43 PM
  */
 session_start();
-if(!isset($_SESSION['ad_email'])){
-    header("Location: home.php");}
-
+$role = $_SESSION['sess_userrole'];
+if(!isset($_SESSION['sess_username']) && $role!="admin"){
+    header('Location: index.php?err=2');
+}
 include 'functions\functions.php';
 ?>
 
@@ -86,7 +87,7 @@ include 'functions\functions.php';
         <div class="w3-accordion">
             <a onclick="myAccFunc('trans')" href="#"><h4>Transactions <i class="fa fa-caret-down"></i></h4></a>
             <div id="trans" class="w3-accordion-content w3-white w3-card-4">
-                <a href="adminvieworders.php" class="w3-padding-16" >Check Out</a>
+                <a href="html/adminvieworders.php" class="w3-padding-16" >Check Out</a>
                 <a href="admincheckin.php" class="w3-padding-16" >Check In</a>
             </div>
         </div>

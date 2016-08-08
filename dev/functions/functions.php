@@ -253,5 +253,16 @@ function updateUser() {
 //end function
 
 
+// Simple function to avoid SQL Injection.
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+// end function
+
+
 
 ?>

@@ -6,10 +6,7 @@
  * Time: 1:26 AM
  */
 
-	//THIS PAGE LOGS OUT AN ADMIN
 	session_start();
-	if(session_destroy()) // Destroying All Sessions
-    {
-        header("Location: adminviewitems.php"); // Redirecting To Login Page
-    }
+	session_destroy();
+	header('Location: index.php');
 ?>
