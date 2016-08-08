@@ -8,6 +8,7 @@
 // Start session
 session_start();
 $role = $_SESSION['sess_userrole'];
+$userid = $_SESSION['sess_user_id'];
 if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
     header('Location: index.php?err=2');
 }
@@ -108,7 +109,7 @@ $page_title ="My Account";
         if($_SERVER['REQUEST_METHOD']==='GET') {
             //get the users details
 
-            $userid = $_GET['userid'];
+            /*$userid = $_GET['userid'];*/
             $sql_query="select * from users where `userid` ='$userid'";
             $result=$db->query($sql_query);
             $row = $result->fetch_assoc();
@@ -156,7 +157,7 @@ $page_title ="My Account";
                 <?php
             }else{
                 header('Location:home.php?action=failed');
-                
+
             }
         }
         else if ($_SERVER['REQUEST_METHOD']==='POST'){
