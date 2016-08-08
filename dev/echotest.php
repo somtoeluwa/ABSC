@@ -5,6 +5,7 @@
  * Date: 8/8/2016
  * Time: 11:52 PM
  */
+session_start();
 $role = $_SESSION['sess_userrole'];
 
 if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
