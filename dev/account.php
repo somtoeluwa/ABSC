@@ -113,41 +113,51 @@ $page_title ="My Account";
             $result=$db->query($sql_query);
             $row = $result->fetch_assoc();
 
-            ?>
-            <!-- Form Start-->
-            <h3>User Details</h3>
+            if(mysqli_num_rows($result) >0) {
 
-            <form class="w3-container" action="account.php" method="post">
+                ?>
+                <!-- Form Start-->
+                <h3>User Details</h3>
 
-                <label class="w3-label w3-validate" for="firstname">First Name</label>
-                <input class="w3-input w3-theme-border w3-border w3-round-large" type="text" id="firstname"
-                       name="firstname" value="<?php echo $row['firstname'];?>" required>
-                <br><br>
-                <label class="w3-label w3-validate" for="surname">Last Name</label>
-                <input class="w3-input w3-theme-border w3-border w3-round-large" type="text" id="surname" name="surname"
-                       value="<?php echo $row['surname'];?>" required>
-                <br> <br>
-                <label class="w3-label w3-validate" for="email">Email address</label>
-                <input class="w3-input w3-theme-border w3-border w3-round-large" type="email" id="email" name="email"
-                       value="<?php echo $row['email'];?>"  required>
-                <br> <br>
-                <label class="w3-label w3-validate" for="password">Password</label>
-                <input class="w3-input w3-theme-border w3-border w3-round-large" type="password" id="password"
-                       name="password" value="<?php echo $row['password'];?>" required>
-                <br> <br>
-                <label class="w3-label w3-validate" for="confirmpassword">Confirm Password</label>
-                <input class="w3-input w3-theme-border w3-border w3-round-large" type="password" id="confirmpassword"
-                       name="confirmpassword" value="<?php echo $row['password'];?>" required>
-                <br> <br>
-                <br><br>
-                <p>
-                    <input type="hidden" name="userid" value="<?php echo $row['userid'];?>">
-                    <button type="submit" class="w3-btn w3-theme confirmation" value="update" name="update">Update
-                    </button>
-                    <!--<a href="deleteuser.php?userid=<?php /*echo $row['userid'];*/?>"><button type="button" class="w3-btn w3-red w3-right confirmation">Delete User</button></a>
+                <form class="w3-container" action="account.php" method="post">
+
+                    <label class="w3-label w3-validate" for="firstname">First Name</label>
+                    <input class="w3-input w3-theme-border w3-border w3-round-large" type="text" id="firstname"
+                           name="firstname" value="<?php echo $row['firstname']; ?>" required>
+                    <br><br>
+                    <label class="w3-label w3-validate" for="surname">Last Name</label>
+                    <input class="w3-input w3-theme-border w3-border w3-round-large" type="text" id="surname"
+                           name="surname"
+                           value="<?php echo $row['surname']; ?>" required>
+                    <br> <br>
+                    <label class="w3-label w3-validate" for="email">Email address</label>
+                    <input class="w3-input w3-theme-border w3-border w3-round-large" type="email" id="email"
+                           name="email"
+                           value="<?php echo $row['email']; ?>" required>
+                    <br> <br>
+                    <label class="w3-label w3-validate" for="password">Password</label>
+                    <input class="w3-input w3-theme-border w3-border w3-round-large" type="password" id="password"
+                           name="password" value="<?php echo $row['password']; ?>" required>
+                    <br> <br>
+                    <label class="w3-label w3-validate" for="confirmpassword">Confirm Password</label>
+                    <input class="w3-input w3-theme-border w3-border w3-round-large" type="password"
+                           id="confirmpassword"
+                           name="confirmpassword" value="<?php echo $row['password']; ?>" required>
+                    <br> <br>
+                    <br><br>
+                    <p>
+                        <input type="hidden" name="userid" value="<?php echo $row['userid']; ?>">
+                        <button type="submit" class="w3-btn w3-theme confirmation" value="update" name="update">Update
+                        </button>
+                        <!--<a href="deleteuser.php?userid=<?php /*echo $row['userid'];*/
+                        ?>"><button type="button" class="w3-btn w3-red w3-right confirmation">Delete User</button></a>
 -->                </p>
-            </form>
-            <?php
+                </form>
+                <?php
+            }else{
+                header('Location:home.php?action=failed');
+                
+            }
         }
         else if ($_SERVER['REQUEST_METHOD']==='POST'){
 
