@@ -9,7 +9,7 @@
 // Start session
 session_start();
 $role = $_SESSION['sess_userrole'];
-$userid = 'test1'; /*$_SESSION['sess_user_id'];*/
+$userid = $_SESSION['sess_user_id'];
 if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
     header('Location: index.php?err=2');
 }
