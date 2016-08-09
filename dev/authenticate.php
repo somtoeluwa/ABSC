@@ -36,7 +36,7 @@ if($query->rowCount() == 0){
     $row = $query->fetch(PDO::FETCH_ASSOC);
 
     session_regenerate_id();
-    $_SESSION['userid'] = $row['id'];
+    $_SESSION['userid'] = $row['userid'];
     $_SESSION['sess_email'] = $row['email'];
     $_SESSION['sess_firstname'] = $row['firstname'];
     $_SESSION['sess_surname'] = $row['surname'];

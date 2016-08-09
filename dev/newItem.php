@@ -122,9 +122,6 @@ $page_title ="Create new asset";
         <!-- Form Start-->
 
         <form class="w3-container"  action="upload.php" method="post" enctype="multipart/form-data">
-            <!--<label for="assetID">Asset ID</label>
-            <input type="number" id="assetID" value="" required >
-            <br><br>-->
             <label class="w3-label w3-validate" for="assetName">Asset Name</label>
             <input class="w3-input w3-theme-border w3-border w3-round-large" type="text" id="assetName" name="assetName" value="" required >
             <br><br>
