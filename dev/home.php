@@ -49,7 +49,7 @@ $page_title ="Arduino component booking system";
     <!-- top panel-->
     <div class="w3-container">
         <img id="logo" src="assets/images/Robert_Gordon_University_logo.svg.png" alt="Home logo" style="width:30%">
-        <marquee><h2 id="login_title" class="w3-xlarge"><?php echo $_SESSION['userid']; ?> </h2></marquee>
+        <marquee><h2 id="login_title" class="w3-xlarge"><?php echo isset($page_title) ? $page_title : "Arduino component booking System"; ?></h2></marquee>
     </div>
     <!-- Responsive Top navigation bar -->
     <nav>
@@ -60,7 +60,7 @@ $page_title ="Arduino component booking system";
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="account.php?userid=<?php echo $userid ;?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['userid']; ?> "><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
                     <?php
                     if ($role == "admin" ) {
                         ?>
