@@ -59,7 +59,7 @@ $page_title ="Asset Details";
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['userid'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
                     <?php
                     if ($role == "admin" ) {
                         ?>
@@ -129,7 +129,7 @@ $page_title ="Asset Details";
                         <form name="add_cart" action="add_to_cart.php" method="post">
                             <div id="qty">
                                 <span style="color: black">Quantity: </span>
-                                <input type="number" class="w3-input w3-border" style="width: 3em;" name="quantity" value="1" max="<?php echo"{$row['total_stock']}";?>" maxlength="6" size="4" />
+                                <input type="number" class="w3-input w3-border" style="width: 10em;" name="quantity" value="1" max="<?php echo"{$row['total_stock']}";?>" maxlength="6" size="4" />
                             </div>
                             <div class="buttonAddToCart">
                                 <input type="hidden" name="assetID" value="<?php echo $row['assetID'];?>" />
