@@ -78,7 +78,7 @@ $page_title ="Approve CheckOut";
 <!-- Main Start Item details -->
 
 <main class="w3-padding-row">
-    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2" style="width:160px">
+    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2"style="width:160px">
 
         <div class="w3-accordion">
             <a onclick="myAccFunc('demoAcc')" href="#"><h5>Assets <i class="fa fa-caret-down"></i></h5></a>
@@ -131,10 +131,17 @@ $page_title ="Approve CheckOut";
             echo "<p>Something went wrong, Order was not approved.</p>";
             echo "</div>";
         }
-        ?>
 
+                    $sql_query = "SELECT checkout.*,users.email,asset.assetName,asset.total_stock,asset.total_owned
+                              FROM `checkout`,`users`,`asset`
+                              WHERE checkout.userid = users.userid
+                              AND checkout.assetID = asset.assetID
+                              AND `status` = 'approved'";
+                    $result =  $db->query($sql_query);
+                    if(mysqli_num_rows($result)>0){
+                        $counter = 0;
 
-
+                        ?>
 
         <div class="w3-responsive">
             <form name="approveorderviewall" id="approveorderiewall" action="checkin.php" method="post">
@@ -153,16 +160,7 @@ $page_title ="Approve CheckOut";
                         <th>User email</th>
 
                     </tr>
-
                     <?php
-                    $sql_query = "SELECT checkout.*,users.email,asset.assetName,asset.total_stock,asset.total_owned
-                              FROM `checkout`,`users`,`asset`
-                              WHERE checkout.userid = users.userid
-                              AND checkout.assetID = asset.assetID
-                              AND `status` = 'approved'";
-                    $result =  $db->query($sql_query);
-                    if(mysqli_num_rows($result)>0){
-                        $counter = 0;
                         while ($row = $result->fetch_array())
                         {
                             $counter++;
@@ -186,32 +184,30 @@ $page_title ="Approve CheckOut";
                                 <td><?php echo $row['email'];?></td>
 
                             </tr>
-                </table>
-                <?php
-                }
-                ?>
-                <button type="submit"  class="w3-btn w3-right w3-margin confirmation">Check In</button>
-            </form>
+
                             <?php
-
-                    } else{
-
+                        }
                     ?>
-                    <div id="response" class="w3-container w3-card-2 " align="center">
-                        <div id="empty_category" class="w3-center">
-                            <p>No orders to check in</p>
-                            <a href="adminapprove.php"><button class="w3-center"> Go Back</button></a>
-                        </div>
-                    </div>
-                    <?php
-                    }
-                    ?>
-
-
-
-
-
+                    </table>
+                <button type="submit"  class="w3-btn w3-right w3-margin confirmation">Check In</button>Check In</button>
+            </form>
         </div>
+                        <?
+                    }
+                    else
+                    {
+        ?>
+                        <div id="response" class="w3-container w3-card-2 " align="center">
+                            <div id="empty_category" align="left">
+                                <p>No orders to check in</p>
+                                <a href="adminapprove.php"><button class="w3-center"> Go Back</button></a>
+                            </div>
+                        </div>
+
+                    <?
+                    }
+
+        ?>
 
     </div>
 
