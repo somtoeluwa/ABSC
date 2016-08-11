@@ -155,7 +155,7 @@
 
 .test2 {
     white-space: nowrap;
-    width: 230px;
+    width: 200px;
 
     overflow: hidden;
     text-overflow: ellipsis;
