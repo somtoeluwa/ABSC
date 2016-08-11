@@ -3,10 +3,6 @@ session_start();
 include 'functions\functions.php';
 
 
-$decision = "approved";
-
-$orderID = $_POST['orderID'];
-
 
 for ($i = 0; $i < count($_POST['orderselected']); $i++) {
     $quantity = $_POST['quantity'][$i];
