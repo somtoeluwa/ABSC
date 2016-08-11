@@ -186,8 +186,14 @@ $page_title ="Approve CheckOut";
                                 <td><?php echo $row['email'];?></td>
 
                             </tr>
+                </table>
+                <?php
+                }
+                ?>
+                <button type="submit"  class="w3-btn w3-right w3-margin confirmation">Check In</button>
+            </form>
                             <?php
-                        }
+
                     } else{
 
                     ?>
@@ -202,9 +208,8 @@ $page_title ="Approve CheckOut";
                     ?>
 
 
-                </table>
-                <button type="submit"  class="w3-btn w3-right w3-margin confirmation">Check In</button>
-            </form>
+
+
 
         </div>
 
