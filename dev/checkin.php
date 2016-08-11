@@ -27,10 +27,10 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
         $result2= $db->query($sql2);
 
         echo "Successful";
-        header("Location: admincheckout.php?action=approved");
+        header("Location: vieworders.php?action=approved");
     } else {
         echo "Error" . $sql . '<br>' . mysqli_error($db);
-        /*header('Location: admincheckout.php?action=failed');*/
+        header('Location: vieworders.php?action=failed');
     }
 
 
