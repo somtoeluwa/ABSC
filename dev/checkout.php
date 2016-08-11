@@ -159,7 +159,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
             echo "<th>$newitemparam3</th>";
             echo "<th>$duedate</th>";
             echo "</tr>";
-
+            echo "</table>";
 
 
 
@@ -191,15 +191,15 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
                 $message->setTo(array($email => $firstname));
 // Give it a body
                 $message->setBody('<p>Hello, '.$firstname.'</p>
-        <p>Thank you for using the Arduino booking System.</p>
-        <p>Your order has been placed. Your order number is:<b>'. $orderID.'</b> </p>
-        <p>Present this number to the Module co-ordinator to recieve your items.</p>
-        <br><br>
-        <span>King Regards,</span>
-		<br><br>
-		<span>Admin</span>
-		<br><br>
-        ','text/html');
+                                    <p>Thank you for using the Arduino booking System.</p>
+                                    <p>Your order has been placed. Your order number is:<b>'. $orderID.'</b> </p>
+                                    <p>Present this number to the Module co-ordinator to recieve your items.</p>
+                                    <br><br>
+                                    <span>King Regards,</span>
+                                    <br><br>
+                                    <span>Admin</span>
+                                    <br><br>
+                                    ','text/html');
 // Send the message
                 $numSent = $mailer->send($message);
 
@@ -211,7 +211,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
             }
 
         }
-        echo "</table>";
+
 
         }
 
