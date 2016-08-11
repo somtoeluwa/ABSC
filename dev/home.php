@@ -194,9 +194,11 @@ $page_title ="Arduino component booking system";
                             </a>
                         </div>
                         <div class="col-12 col-m-12">
-                            <h6 class="productTitle test2"><a
-                                    href="item.php?assetID=<?php echo $row['assetID']; ?>"><?php echo $row['assetName']; ?></a>
-                            </h6>
+                            <a href="item.php?assetID=<?php echo $row['assetID']; ?>">
+                                <h6 class="productTitle test2" style="font-family: 'Montserrat', sans-serif; font-weight: 700;">
+                                    <?php echo $row['assetName']; ?>
+                                </h6>
+                            </a>
                             <div class="listingDescription test2"><?php echo "{$row['assetDescription']}"; ?></div>
                         </div>
                         <div class="row">
