@@ -146,7 +146,7 @@ if(count($_SESSION['cart_items'])>0){
                 <input type="hidden" name="assetName[]" value="<?php echo"{$_SESSION['cart_items'][$row['assetID']]['assetName']}";?>"/></td>
 
             <td><a href='remove_from_cart.php?assetID=<?php echo $row['assetID']?>&assetName=<?php echo $row['assetName']?>' class='btn btn-danger'>
-                    <span class='fa fa-remove'></span>Remove from cart</a>
+                    <span class='fa fa-remove'></span><button>Remove from cart</button></a>
             </td>
         </tr>
        <?php
