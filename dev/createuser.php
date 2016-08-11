@@ -178,9 +178,9 @@ $page_title ="Create User";
             $password = test_input($_POST['password']);
             $role = test_input($_POST['role']);
 
-            echo "'$email','$password','$firstname','$surname','$role'";
+/*            echo "'$email','$password','$firstname','$surname','$role'";*/
 
-           /* $sql = "insert into users (email,password,firstname,surname,role)
+            $sql = "insert into users (email,password,firstname,surname,role)
             values('$email','$password','$firstname','$surname','$role')";
 
             if($result = mysqli_query($db,$sql)) {
@@ -189,8 +189,9 @@ $page_title ="Create User";
             }else{
 
                 echo "Error:" . $sql . "<br>" . mysqli_error($db);
+                header('location: createuser.php?action=failed');
 
-            }*/
+            }
 
         }
         else{
