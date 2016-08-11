@@ -194,7 +194,7 @@ $page_title ="Arduino component booking system";
                             </a>
                         </div>
                         <div class="col-12 col-m-12">
-                            <h6 class="productTitle"><a
+                            <h6 class="productTitle test2"><a
                                     href="item.php?assetID=<?php echo $row['assetID']; ?>"><?php echo $row['assetName']; ?></a>
                             </h6>
                             <div class="listingDescription test2"><?php echo "{$row['assetDescription']}"; ?></div>
