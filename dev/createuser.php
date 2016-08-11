@@ -165,12 +165,12 @@ $page_title ="Create User";
         else if ($_SERVER['REQUEST_METHOD']==='POST'){
 
             // Function to test data and allow those with special characters inputted  to be posted
-            function test_input($data) {
+            /*function test_input($data) {
                 $data = trim($data);
                 $data = stripslashes($data);
                 $data = htmlspecialchars($data);
                 return $data;
-            }
+            }*/
 
             $firstname = test_input($_POST['firstname']);
             $surname = test_input($_POST['surname']);
