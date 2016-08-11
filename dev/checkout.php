@@ -21,7 +21,7 @@ if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
 include 'functions/functions.php';
 
 // Page title
-$page_title ="Arduino component booking system";
+$page_title ="Checkout";
 
 
 
@@ -104,35 +104,21 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
     </ul>
 
     <div id="content" class="col-10 w3-padding-row">
+
+
         <?php
+        if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
 
+        }
+            $created = date('Y-m-d H:i:s');;
+            $t = time();
+            $a = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 4);
+            $orderID = $a . $t;
+            // set default due date for one week from checkout
+            $nextWeek = $t + (7 * 24 * 60 * 60);
+            $duedate = date('Y-m-d 00:00:00',$nextWeek);
 
-        echo "<h2>Receipt</h2>";
-        echo "<p>Thank you for using the Arduino booking System.</p>";
-
-        $created = date('Y-m-d H:i:s');;
-        $t = time();
-        $a = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 4);
-        $orderID = $a . $t;
-        // set default due date for one week from checkout
-        $nextWeek = $t + (7 * 24 * 60 * 60);
-        $duedate = date('Y-m-d 00:00:00',$nextWeek);
-
-        echo "<p>Your order has been placed. Your order number is : {$orderID }</p>";
-        echo "<p>Present this number to the Module co-ordinator to recieve your items.</p>";
-        echo "<h3>Order Summary</h3>";
-
-        echo "<table class='w3-table w3-bordered  w3-border w3-hoverable '>";
-
-        // our table heading
-        echo "<tr class=' w3-light-grey'>";
-        echo "<th>AssetID</th>";
-        echo "<th>Asset Name</th>";
-        echo "<th>Quantity</th>";
-        echo "<th>Due Date</th>";
-        echo "</tr>";
-
-        for ($i = 0; $i < count($_POST['cart_quantity']); $i++) {
+            for ($i = 0; $i < count($_POST['cart_quantity']); $i++) {
 
             $id = $_POST['assetID'][$i];
             $name = $_POST['assetName'][$i];
@@ -142,10 +128,26 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['cart_items'] = array();
             }
 
-            // incase quantity has been updated . Insert new values into array
+                // incase quantity has been updated . Insert new values into array
             $_SESSION['cart_items'][$id] = array('assetID' => $id, 'assetName' => $name, 'quantity' => $quantity);
 
-        }
+            }
+
+            echo "<h2>Receipt</h2>";
+            echo "<p>Thank you for using the Arduino booking System.</p>";
+            echo "<p>Your order has been placed. Your order number is : {$orderID }</p>";
+            echo "<p>Present this number to the Module co-ordinator to recieve your items.</p>";
+            echo "<h3>Order Summary</h3>";
+
+            echo "<table class='w3-table w3-bordered  w3-border w3-hoverable '>";
+
+        // our table heading
+        echo "<tr class=' w3-light-grey'>";
+        echo "<th>AssetID</th>";
+        echo "<th>Asset Name</th>";
+        echo "<th>Quantity</th>";
+        echo "<th>Due Date</th>";
+        echo "</tr>";
 
 
         foreach ($_SESSION['cart_items'] as $key => $value) {
