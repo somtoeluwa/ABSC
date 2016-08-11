@@ -2,7 +2,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:700);
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6,th,thead{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
@@ -166,6 +166,13 @@ h1,h2,h3,h4,h5,h6{
     text-overflow: ellipsis;
 }
 
+body{
+    min-height: 50%;
+}
+
+th{
+
+}
 /**Footer styling*/
 footer {
 

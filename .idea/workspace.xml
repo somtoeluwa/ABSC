@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="efc93979-8b02-4a32-b930-e13fc4ed231b" name="Default" comment="Css">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/admincheckin.php" afterPath="$PROJECT_DIR$/dev/admincheckin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/main.css" afterPath="$PROJECT_DIR$/dev/css/main.css" />
     </list>
     <ignored path="ABSC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,37 +38,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cart.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/cart.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="41.692307">
-              <caret line="127" column="27" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
-              <folding>
-                <marker date="1470897323459" expanded="true" signature="4487:4595" placeholder="SELECT asset... asset" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="search.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.5">
-              <caret line="177" column="18" selection-start-line="168" selection-start-column="16" selection-end-line="177" selection-end-column="18" />
+            <state vertical-scroll-proportion="-24.038462">
+              <caret line="165" column="18" selection-start-line="165" selection-start-column="18" selection-end-line="165" selection-end-column="18" />
               <folding>
                 <marker date="1470907260348" expanded="true" signature="4653:5020" placeholder="SELECT check... checkout" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="authenticate.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/authenticate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.846153">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-              <folding>
-                <marker date="1470740374914" expanded="true" signature="345:406" placeholder="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -77,8 +53,8 @@
       <file leaf-file-name="approve.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/approve.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.192308">
-              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+            <state vertical-scroll-proportion="-8.5">
+              <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding>
                 <marker date="1470888480148" expanded="true" signature="387:480" placeholder="UPDATE `asse... " />
                 <marker date="1470888480148" expanded="true" signature="563:655" placeholder="Update `chec... " />
@@ -87,25 +63,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminviewitems.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/adminviewitems.php">
+      <file leaf-file-name="adminapprove.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="22.884615">
-              <caret line="109" column="11" selection-start-line="109" selection-start-column="11" selection-end-line="109" selection-end-column="11" />
+            <state vertical-scroll-proportion="11.769231">
+              <caret line="76" column="67" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewusers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/viewusers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.807692">
+              <caret line="135" column="11" selection-start-line="135" selection-start-column="11" selection-end-line="135" selection-end-column="11" />
               <folding>
-                <marker date="1470907260335" expanded="true" signature="6504:6523" placeholder="SELECT * FRO... asset" />
+                <marker date="1470907260343" expanded="true" signature="6460:6479" placeholder="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admincheckin.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vieworders.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/vieworders.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5384617">
+              <caret line="174" column="68" selection-start-line="174" selection-start-column="68" selection-end-line="174" selection-end-column="68" />
+              <folding>
+                <marker date="1470907260307" expanded="true" signature="6391:6398" placeholder="SELECT * FRO... checkout" />
+                <marker date="1470907260307" expanded="true" signature="6391:6668" placeholder="SELECT check... checkout" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admincheckin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/admincheckin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2636535">
-              <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+            <state vertical-scroll-proportion="-20.423077">
+              <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
               <folding>
-                <marker date="1470908633551" expanded="true" signature="6629:6962" placeholder="SELECT check... checkout" />
+                <marker date="1470909678203" expanded="true" signature="5797:6130" placeholder="SELECT check... checkout" />
+                <marker date="1470909678203" expanded="true" signature="9661:9740" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -123,26 +123,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminapprove.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
+      <file leaf-file-name="checkin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/checkin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.23077">
-              <caret line="76" column="66" selection-start-line="76" selection-start-column="66" selection-end-line="76" selection-end-column="66" />
-              <folding />
+            <state vertical-scroll-proportion="-11.5">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <marker date="1470915729155" expanded="true" signature="331:438" placeholder="UPDATE `asse... " />
+                <marker date="1470915729155" expanded="true" signature="509:564" placeholder="DELETE FROM " />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="account.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/account.php">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5">
-              <caret line="106" column="48" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
-              <folding>
-                <element signature="e#6#89#0#PHP" expanded="true" />
-                <marker date="1470906746382" expanded="true" signature="4406:4451" placeholder="select * fro... users" />
-                <marker date="1470906746382" expanded="true" signature="7519:7764" placeholder="UPDATE `user... " />
-              </folding>
+            <state vertical-scroll-proportion="0.5814889">
+              <caret line="168" column="5" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -174,8 +173,6 @@
         <option value="$PROJECT_DIR$/dev/deleteasset.php" />
         <option value="$PROJECT_DIR$/dev/upload.php" />
         <option value="$PROJECT_DIR$/dev/cart.php" />
-        <option value="$PROJECT_DIR$/dev/checkin.php" />
-        <option value="$PROJECT_DIR$/dev/css/main.css" />
         <option value="$PROJECT_DIR$/dev/home.php" />
         <option value="$PROJECT_DIR$/dev/account.php" />
         <option value="$PROJECT_DIR$/dev/adminviewitems.php" />
@@ -190,6 +187,8 @@
         <option value="$PROJECT_DIR$/dev/adminapprove.php" />
         <option value="$PROJECT_DIR$/dev/item.php" />
         <option value="$PROJECT_DIR$/dev/admincheckin.php" />
+        <option value="$PROJECT_DIR$/dev/checkin.php" />
+        <option value="$PROJECT_DIR$/dev/css/main.css" />
       </list>
     </option>
   </component>
@@ -203,10 +202,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -357,30 +355,6 @@
       <created>1469586337508</created>
       <option name="number" value="Default" />
       <updated>1469586337508</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-added item feedback&#10;">
-      <created>1470442313993</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1470442313993</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;- checkout approval page&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-added item feedback&#10;&#10;">
-      <created>1470451612849</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1470451612849</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;- checkout approval page&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-added item feedback&#10;- accordion&#10;&#10;">
-      <created>1470452329068</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1470452329068</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;- checkout approval page&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-added item feedback&#10;- accordion&#10;&#10;">
-      <created>1470452401295</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1470452401295</updated>
     </task>
     <task id="LOCAL-00016" summary="Version 3.1 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;- checkout approval page&#10;- checkin approval&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-added item feedback&#10;- accordion&#10;&#10;">
       <created>1470477844512</created>
@@ -652,14 +626,38 @@
       <option name="project" value="LOCAL" />
       <updated>1470907579490</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Css">
+      <created>1470908641729</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1470908641729</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Css">
+      <created>1470909683791</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1470909683791</updated>
+    </task>
+    <task id="LOCAL-00063" summary="working out bugs">
+      <created>1470915514399</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1470915514399</updated>
+    </task>
+    <task id="LOCAL-00064" summary="buggs">
+      <created>1470915970102</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1470915970102</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="0" width="697" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14977308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31083202" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -734,7 +732,9 @@
     <MESSAGE value="bug testing and checkin.php" />
     <MESSAGE value="bug testing" />
     <MESSAGE value="Css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Css" />
+    <MESSAGE value="working out bugs" />
+    <MESSAGE value="buggs" />
+    <option name="LAST_COMMIT_MESSAGE" value="buggs" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1030,14 +1030,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.1153846">
@@ -1055,27 +1047,6 @@
         <state vertical-scroll-proportion="-12.576923">
           <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/viewusers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="26.0">
-          <caret line="135" column="11" selection-start-line="135" selection-start-column="11" selection-end-line="135" selection-end-column="11" />
-          <folding>
-            <marker date="1470907260343" expanded="true" signature="6460:6479" placeholder="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/vieworders.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.807693">
-          <caret line="81" column="66" selection-start-line="81" selection-start-column="66" selection-end-line="81" selection-end-column="66" />
-          <folding>
-            <marker date="1470907260307" expanded="true" signature="6391:6398" placeholder="SELECT * FRO... checkout" />
-            <marker date="1470907260307" expanded="true" signature="6391:6668" placeholder="SELECT check... checkout" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,25 +1119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/checkin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.5">
-          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
-          <folding>
-            <marker date="1470897735833" expanded="true" signature="387:494" placeholder="UPDATE `asse... " />
-            <marker date="1470897735833" expanded="true" signature="565:620" placeholder="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.23077">
-          <caret line="76" column="66" selection-start-line="76" selection-start-column="66" selection-end-line="76" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5">
@@ -1179,12 +1131,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="41.692307">
+          <caret line="127" column="27" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
+          <folding>
+            <marker date="1470897323459" expanded="true" signature="4487:4595" placeholder="SELECT asset... asset" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/authenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.846153">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <marker date="1470740374914" expanded="true" signature="345:406" placeholder="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/adminviewitems.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="22.884615">
+        <state vertical-scroll-proportion="28.76923">
           <caret line="109" column="11" selection-start-line="109" selection-start-column="11" selection-end-line="109" selection-end-column="11" />
           <folding>
             <marker date="1470907260335" expanded="true" signature="6504:6523" placeholder="SELECT * FRO... asset" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="140" column="1" selection-start-line="140" selection-start-column="1" selection-end-line="140" selection-end-column="1" />
+          <folding>
+            <marker date="1470907564141" expanded="true" signature="4371:4417" placeholder="SELECT * FRO... asset" />
           </folding>
         </state>
       </provider>
@@ -1200,20 +1182,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/cart.php">
+    <entry file="file://$PROJECT_DIR$/dev/viewusers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="41.692307">
-          <caret line="127" column="27" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
+        <state vertical-scroll-proportion="-18.807692">
+          <caret line="135" column="11" selection-start-line="135" selection-start-column="11" selection-end-line="135" selection-end-column="11" />
           <folding>
-            <marker date="1470897323459" expanded="true" signature="4487:4595" placeholder="SELECT asset... asset" />
+            <marker date="1470907260343" expanded="true" signature="6460:6479" placeholder="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.038462">
+          <caret line="165" column="18" selection-start-line="165" selection-start-column="18" selection-end-line="165" selection-end-column="18" />
+          <folding>
+            <marker date="1470907260348" expanded="true" signature="4653:5020" placeholder="SELECT check... checkout" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/approve.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.192308">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+        <state vertical-scroll-proportion="-8.5">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
             <marker date="1470888480148" expanded="true" signature="387:480" placeholder="UPDATE `asse... " />
             <marker date="1470888480148" expanded="true" signature="563:655" placeholder="Update `chec... " />
@@ -1221,43 +1213,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/authenticate.php">
+    <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.846153">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <marker date="1470740374914" expanded="true" signature="345:406" placeholder="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.5">
-          <caret line="177" column="18" selection-start-line="168" selection-start-column="16" selection-end-line="177" selection-end-column="18" />
-          <folding>
-            <marker date="1470907260348" expanded="true" signature="4653:5020" placeholder="SELECT check... checkout" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769">
-          <caret line="140" column="1" selection-start-line="140" selection-start-column="1" selection-end-line="140" selection-end-column="1" />
-          <folding>
-            <marker date="1470907564141" expanded="true" signature="4371:4417" placeholder="SELECT * FRO... asset" />
-          </folding>
+        <state vertical-scroll-proportion="11.769231">
+          <caret line="76" column="67" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/admincheckin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2636535">
-          <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+        <state vertical-scroll-proportion="-20.423077">
+          <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
           <folding>
-            <marker date="1470908633551" expanded="true" signature="6629:6962" placeholder="SELECT check... checkout" />
+            <marker date="1470909678203" expanded="true" signature="5797:6130" placeholder="SELECT check... checkout" />
+            <marker date="1470909678203" expanded="true" signature="9661:9740" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/vieworders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="174" column="68" selection-start-line="174" selection-start-column="68" selection-end-line="174" selection-end-column="68" />
+          <folding>
+            <marker date="1470907260307" expanded="true" signature="6391:6398" placeholder="SELECT * FRO... checkout" />
+            <marker date="1470907260307" expanded="true" signature="6391:6668" placeholder="SELECT check... checkout" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/checkin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.5">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <marker date="1470915729155" expanded="true" signature="331:438" placeholder="UPDATE `asse... " />
+            <marker date="1470915729155" expanded="true" signature="509:564" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5814889">
+          <caret line="168" column="5" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
