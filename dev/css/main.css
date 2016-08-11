@@ -29,6 +29,8 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    font-family: 'Roboto', sans-serif;
+    /*font-weight: 400;*/
 }
 
 /* Create col- class for grid view column width
