@@ -90,7 +90,7 @@ $page_title ="Asset Details";
     <div class="row">
         <ul id="sidenavbar" class=" w3-ul w3-card-2 w3-theme-l4  w3-hoverable col-2" >
             <!-- Navbar header-->
-            <li><a href="home.php" class="w3-border-bottom"><h3>Components</h3></a></li>
+            <li><a href="home.php" class="w3-border-bottom"><h5>Components</h5></a></li>
 
             <!-- Navbar content -->
 

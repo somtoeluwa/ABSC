@@ -82,14 +82,14 @@ $page_title ="Create User";
     <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2"style="width:160px">
 
         <div class="w3-accordion">
-            <a onclick="myAccFunc('assets')" href="#"><h4>Assets <i class="fa fa-caret-down"></i></h4></a>
+            <a onclick="myAccFunc('assets')" href="#"><h5>Assets <i class="fa fa-caret-down"></i></h5></a>
             <div id="assets" class="w3-accordion-content w3-white w3-card-4">
                 <a href="adminviewitems.php" class="w3-padding-16">View All Items</a>
                 <a href="newItem.php" class="w3-padding-16" >New Item</a>
             </div>
         </div>
         <div class="w3-accordion">
-            <a onclick="myAccFunc('trans')" href="#"><h4>Transactions <i class="fa fa-caret-down"></i></h4></a>
+            <a onclick="myAccFunc('trans')" href="#"><h5>Transactions <i class="fa fa-caret-down"></i></h5></a>
             <div id="trans" class="w3-accordion-content w3-white w3-card-4">
                 <a href="vieworders.php" class="w3-padding-16" >View all orders</a>
                 <a href="adminapprove.php" class="w3-padding-16" >Approve order</a>
@@ -98,7 +98,7 @@ $page_title ="Create User";
         </div>
 
         <div class="w3-accordion">
-            <a onclick="myAccFunc('user')" href="#"><h4>Users<i class="fa fa-caret-down"></i></h4></a>
+            <a onclick="myAccFunc('user')" href="#"><h5>Users<i class="fa fa-caret-down"></i></h5></a>
             <div id="user" class="w3-accordion-content w3-white w3-card-4">
                 <a href="createuser.php" class="w3-padding-16" >Create User</a>
                 <a href="viewusers.php" class="w3-padding-16" >View all Users</a>
@@ -113,7 +113,7 @@ $page_title ="Create User";
         if($_SERVER['REQUEST_METHOD']==='GET') {
             ?>
 
-            <h3>New User</h3>
+            <h5>New User</h5>
             <?php
             $action = isset($_GET['action']) ? $_GET['action'] : "";
             if ($action == 'added') {

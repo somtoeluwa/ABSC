@@ -88,7 +88,7 @@ $page_title ="Checkout";
 
     <ul id="sidenavbar" class=" w3-ul w3-card-2 w3-theme-l4  w3-hoverable col-2" >
         <!-- Navbar header-->
-        <li><a href="home.php" class="w3-border-bottom"><h3>Components</h3></a></li>
+        <li><a href="home.php" class="w3-border-bottom"><h5>Components</h5></a></li>
 
         <!-- Navbar content from database (move PHP to functions at later time)-->
 
@@ -129,11 +129,11 @@ $page_title ="Checkout";
 
             }
 
-            echo "<h2>Receipt</h2>";
+            echo "<h4>Receipt</h4>";
             echo "<p>Thank you for using the Arduino booking System.</p>";
             echo "<p>Your order has been placed. Your order number is : {$orderID }</p>";
             echo "<p>Present this number to the Module co-ordinator to recieve your items.</p>";
-            echo "<h3>Order Summary</h3>";
+            echo "<h4>Order Summary</h4>";
 
             echo "<table class='w3-table w3-bordered  w3-border w3-hoverable '>";
 

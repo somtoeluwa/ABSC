@@ -193,7 +193,7 @@ $page_title ="Arduino component booking system";
                                      height="182"/>
                             </a>
                             <a href="item.php?assetID=<?php echo $row['assetID']; ?>">
-                                <h6 class="productTitle test2 w3-theme">
+                                <h6 class="productTitle test2">
                                     <?php echo $row['assetName']; ?>
                                 </h6>
                             </a>
