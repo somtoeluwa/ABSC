@@ -146,7 +146,7 @@ if(count($_SESSION['cart_items'])>0){
                 <input type="hidden" name="assetName[]" value="<?php echo"{$_SESSION['cart_items'][$row['assetID']]['assetName']}";?>"/></td>
 
             <td><a href='remove_from_cart.php?assetID=<?php echo $row['assetID']?>&assetName=<?php echo $row['assetName']?>' class='btn btn-danger'>
-                    <button class='fa fa-remove'>Remove from cart</button></a>
+                    <button class='fa fa-remove remove'>Remove from cart</button></a>
             </td>
         </tr>
        <?php
@@ -196,6 +196,15 @@ else{
     var elems = document.getElementsByClassName('confirmation');
     var confirmIt = function (e) {
         if (!confirm('Are you sure you want to checkout? ')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('remove');
+    var confirmIt = function (e) {
+        if (!confirm('Do you want to remove this item? ')) e.preventDefault();
     };
     for (var i = 0, l = elems.length; i < l; i++) {
         elems[i].addEventListener('click', confirmIt, false);
