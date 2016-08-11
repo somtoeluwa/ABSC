@@ -145,7 +145,7 @@ $page_title ="Checkout";
         echo "<th>Due Date</th>";
         echo "</tr>";
 
-
+            $counter = 0;
         foreach ($_SESSION['cart_items'] as $key => $value) {
             $newitemparam1 = $value['assetID'];
             $newitemparam2 = $value['assetName'];

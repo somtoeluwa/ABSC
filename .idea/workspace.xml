@@ -28,11 +28,12 @@
       <file leaf-file-name="checkout.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/checkout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38430583">
-              <caret line="141" column="48" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.6921529">
+              <caret line="226" column="35" selection-start-line="226" selection-start-column="35" selection-end-line="226" selection-end-column="35" />
               <folding>
-                <marker date="1470891474939" expanded="true" signature="5927:6123" placeholder="..." />
-                <marker date="1470891474939" expanded="true" signature="6180:6375" placeholder="INSERT INTO `checkout`... " />
+                <marker date="1470894393610" expanded="true" signature="5904:6100" placeholder="..." />
+                <marker date="1470894393610" expanded="true" signature="6125:6320" placeholder="INSERT INTO `checkout`... " />
+                <marker date="1470894393610" expanded="true" signature="8542:8588" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -41,8 +42,8 @@
       <file leaf-file-name="cart.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/cart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.884615">
-              <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.307693">
+              <caret line="154" column="12" selection-start-line="154" selection-start-column="12" selection-end-line="154" selection-end-column="12" />
               <folding>
                 <marker date="1470891024618" expanded="true" signature="4487:4595" placeholder="SELECT asset... asset" />
               </folding>
@@ -165,24 +166,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ABSC" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ABSC" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -529,7 +512,19 @@
       <option name="project" value="LOCAL" />
       <updated>1470891030174</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Check in done, confirmations and final adjustments">
+      <created>1470891484235</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1470891484235</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Mailer Adjustments">
+      <created>1470894186177</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1470894186177</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -606,7 +601,8 @@
     <MESSAGE value="working out some userid  bugs" />
     <MESSAGE value="User accounts (User id)" />
     <MESSAGE value="Check in done, confirmations and final adjustments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Check in done, confirmations and final adjustments" />
+    <MESSAGE value="Mailer Adjustments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mailer Adjustments" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1113,8 +1109,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/cart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.884615">
-          <caret line="212" column="0" selection-start-line="212" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+        <state vertical-scroll-proportion="-9.307693">
+          <caret line="154" column="12" selection-start-line="154" selection-start-column="12" selection-end-line="154" selection-end-column="12" />
           <folding>
             <marker date="1470891024618" expanded="true" signature="4487:4595" placeholder="SELECT asset... asset" />
           </folding>
@@ -1123,11 +1119,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/checkout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38430583">
-          <caret line="141" column="48" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.6921529">
+          <caret line="226" column="35" selection-start-line="226" selection-start-column="35" selection-end-line="226" selection-end-column="35" />
           <folding>
-            <marker date="1470891474939" expanded="true" signature="5927:6123" placeholder="..." />
-            <marker date="1470891474939" expanded="true" signature="6180:6375" placeholder="INSERT INTO `checkout`... " />
+            <marker date="1470894393610" expanded="true" signature="5904:6100" placeholder="..." />
+            <marker date="1470894393610" expanded="true" signature="6125:6320" placeholder="INSERT INTO `checkout`... " />
+            <marker date="1470894393610" expanded="true" signature="8542:8588" placeholder="..." />
           </folding>
         </state>
       </provider>
