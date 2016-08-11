@@ -1,5 +1,7 @@
 /* Purple theme colours*/
 
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
 .w3-theme-l5 {color:#000 !important; background-color:#fbf5fe !important}
 .w3-theme-l4 {color:#000 !important; background-color:#f1dcfc !important}
 .w3-theme-l3 {color:#000 !important; background-color:#e4baf9 !important}
@@ -110,12 +112,12 @@
     */
 
 }
-#productTitle{
+.productTitle{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
 
-#listingDescription{
+.listingDescription{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
