@@ -23,10 +23,6 @@ include 'functions/functions.php';
 // Page title
 $page_title ="Checkout";
 
-
-
-if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
-
 ?>
 <!--HTML DOC START-->
 
@@ -109,7 +105,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
         <?php
         if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
 
-        }
+
             $created = date('Y-m-d H:i:s');;
             $t = time();
             $a = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 4);
@@ -155,44 +151,45 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
             $newitemparam2 = $value['assetName'];
             $newitemparam3 = $value['quantity'];
 
+            $counter++;
+
             echo "<tr>";
             echo "<th>$newitemparam1</th>";
             echo "<th>$newitemparam2</th>";
             echo "<th>$newitemparam3</th>";
             echo "<th>$duedate</th>";
             echo "</tr>";
-            echo "</table>";
-
-
-
 
             $sql = "INSERT INTO `checkout`(`assetID`,`quantity`,`c_created`,`orderID`,`c_duedate`,`userid`)
                       VALUES ('$newitemparam1','$newitemparam3','$created','$orderID','$duedate','$userid')";
 
             if ($result = mysqli_query($db, $sql)) {
-                // When sucessful return to View all assets
-                require_once 'swiftmailer/lib/swift_required.php';
+
+
+// When sucessful show receipt page send email and unset session
+                if ($counter==1){
+                    require_once 'swiftmailer/lib/swift_required.php';
 
 // Create the Transport
-                $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
-                    ->setUsername('somtoeluwa@gmail.com')
-                    ->setPassword('h3ll0sommy')
-                ;
+                    $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
+                        ->setUsername('somtoeluwa@gmail.com')
+                        ->setPassword('h3ll0sommy')
+                    ;
 // Create the Mailer using your created Transport
-                $mailer = Swift_Mailer::newInstance($transport);
+                    $mailer = Swift_Mailer::newInstance($transport);
 
 
 
 // Create the message
-                $message = Swift_Message::newInstance();
+                    $message = Swift_Message::newInstance();
 // Give the message a subject
-                $message->setSubject('Your order has been placed');
+                    $message->setSubject('Your order has been placed');
 // Set the From address with an associative array
-                $message->setFrom(array('somtoeluwa@gmail.com' => 'Somto Eluwa'));
+                    $message->setFrom(array('somtoeluwa@gmail.com' => 'Somto Eluwa'));
 // Set the To addresses with an associative array
-                $message->setTo(array($email => $firstname));
+                    $message->setTo(array($email => $firstname));
 // Give it a body
-                $message->setBody('<p>Hello, '.$firstname.'</p>
+                    $message->setBody('<p>Hello, '.$firstname.'</p>
                                     <p>Thank you for using the Arduino booking System.</p>
                                     <p>Your order has been placed. Your order number is:<b>'. $orderID.'</b> </p>
                                     <p>Present this number to the Module co-ordinator to recieve your items.</p>
@@ -202,10 +199,14 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
                                     <span>Admin</span>
                                     <br><br>
                                     ','text/html');
-// Send the message
-                $numSent = $mailer->send($message);
 
-// Destroy Session 'Cart items'
+
+// Send the message
+                    $numSent = $mailer->send($message);
+
+                }
+
+
                 unset($_SESSION['cart_items']);
             } else {
 
@@ -213,7 +214,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
             }
 
         }
-
+            echo "</table>";
 
         }
 
