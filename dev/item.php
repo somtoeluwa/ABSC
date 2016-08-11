@@ -111,7 +111,7 @@ $page_title ="Asset Details";
                 $sql_asset = "SELECT * FROM asset WHERE assetID = '$assetID' ";
             }
             else{
-                $sql_asset = "SELECT * FROM asset";
+                header('location:home.php');
             }
             $result2 =  $db->query($sql_asset);
             while ($row = $result2->fetch_array()){
@@ -129,7 +129,7 @@ $page_title ="Asset Details";
                         <form name="add_cart" action="add_to_cart.php" method="post">
                             <div id="qty">
                                 <span style="color: black">Quantity: </span>
-                                <input type="number" class="w3-input w3-border" style="width: 10em;" name="quantity" value="1" max="<?php echo"{$row['total_stock']}";?>" maxlength="6" size="4" />
+                                <input type="number" class="w3-input w3-border" style="width: 5em;" name="quantity" value="1" max="<?php echo"{$row['total_stock']}";?>" maxlength="6" size="4" />
                             </div>
                             <div class="buttonAddToCart">
                                 <input type="hidden" name="assetID" value="<?php echo $row['assetID'];?>" />

@@ -10,6 +10,9 @@
 // Start session
 session_start();
 $role = $_SESSION['sess_userrole'];
+$email= $_SESSION['sess_email'];
+$userid = $_SESSION['userid'];
+$firstname = $_SESSION['sess_firstname'];
 if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
     header('Location: index.php?err=2');
 }
@@ -161,12 +164,46 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
 
 
 
-            $sql = "INSERT INTO `checkout`(`c_assetID`,`c_assetName`,`quantity`,`c_created`,`orderID`,`c_duedate`)
-                      VALUES ('$newitemparam1','$newitemparam2','$newitemparam3','$created','$orderID','$duedate')";
+            $sql = "INSERT INTO `checkout`(`assetID`,`quantity`,`c_created`,`orderID`,`c_duedate`,`userid`)
+                      VALUES ('$newitemparam1','$newitemparam3','$created','$orderID','$duedate','$userid')";
 
             if ($result = mysqli_query($db, $sql)) {
                 // When sucessful return to View all assets
+                require_once 'swiftmailer/lib/swift_required.php';
 
+// Create the Transport
+                $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
+                    ->setUsername('somtoeluwa@gmail.com')
+                    ->setPassword('h3ll0sommy')
+                ;
+// Create the Mailer using your created Transport
+                $mailer = Swift_Mailer::newInstance($transport);
+
+
+
+// Create the message
+                $message = Swift_Message::newInstance();
+// Give the message a subject
+                $message->setSubject('Your order has been placed');
+// Set the From address with an associative array
+                $message->setFrom(array('somtoeluwa@gmail.com' => 'Somto Eluwa'));
+// Set the To addresses with an associative array
+                $message->setTo(array($email => $firstname));
+// Give it a body
+                $message->setBody('<p>Hello, '.$firstname.'</p>
+        <p>Thank you for using the Arduino booking System.</p>
+        <p>Your order has been placed. Your order number is:<b>'. $orderID.'</b> </p>
+        <p>Present this number to the Module co-ordinator to recieve your items.</p>
+        <br><br>
+        <span>King Regards,</span>
+		<br><br>
+		<span>Admin</span>
+		<br><br>
+        ','text/html');
+// Send the message
+                $numSent = $mailer->send($message);
+
+// Destroy Session 'Cart items'
                 unset($_SESSION['cart_items']);
             } else {
 

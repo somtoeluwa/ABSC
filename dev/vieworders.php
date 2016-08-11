@@ -50,7 +50,7 @@ $page_title ="View all Orders";
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Account</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['userid'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Account</a>
                     <?php
                     if ($role == "admin" ) {
                         ?>
@@ -102,8 +102,6 @@ $page_title ="View all Orders";
             <div id="user" class="w3-accordion-content w3-white w3-card-4">
                 <a href="createuser.php" class="w3-padding-16" >Create User</a>
                 <a href="viewusers.php" class="w3-padding-16" >View all Users</a>
-                <a href="#" class="w3-padding-16" >Register User</a>
-                <a href="#" class="w3-padding-16" >View all Users</a>
             </div>
         </div>
     </div>
@@ -138,38 +136,30 @@ $page_title ="View all Orders";
 
 
         <h3>Orders Table</h3>
-
-        <div class="w3-row w3-padding-8 ">
-
-            <div class="w3-half">
-                <input type="text" class=" w3-border w3-navitem" style="width:100%">
-            </div>
-
-            <div class="w3-quarter">
-                <ul class="w3-navbar">
-                    <li class="w3-left"><a href="#"><i class="fa fa-search"></i></a></li>
-
-                </ul>
-            </div>
-        </div>
-
-
         <div class="w3-responsive">
-            <form name="approveorder" id="approveorder" action="#" method="#">
+            <form name="approveorder" id="approveorder" action="approve.php" method="post">
                 <table class="w3-table w3-bordered w3-reverse-striped w3-border w3-hoverable" id="table">
                     <tr class="w3-light-grey">
+                        <th></th>
                         <th>SN</th>
                         <th>Asset ID</th>
                         <th>Asset Name</th>
                         <th>Quantity Requested</th>
-                        <th>Date ordered</th>
+                        <th>Total in Stock</th>
+                        <th>Total Owned</th>
                         <th>OrderID</th>
+                        <th>Date ordered</th>
                         <th>Return date</th>
+                        <th>User ID</th>
+                        <th>User email</th>
                         <th>Status</th>
                     </tr>
 
                     <?php
-                    $sql_query = "SELECT * FROM `checkout`";
+                    $sql_query = "SELECT checkout.*,users.email,asset.assetName,asset.total_stock,asset.total_owned
+                              FROM `checkout`,`users`,`asset`
+                              WHERE checkout.userid = users.userid
+                              AND checkout.assetID = asset.assetID";
                     $result =  $db->query($sql_query);
                     if(mysqli_num_rows($result)>0){
                         $counter = 0;
@@ -178,21 +168,32 @@ $page_title ="View all Orders";
                             $counter++;
                             ?>
                             <tr>
+                                <td><input type="checkbox"   name="orderselected[]" id="orderselected" value="<?php echo $row['c_id'];?>"/>
+                                    <input type="hidden" name="total_stock[]" value="<?php echo $row['total_stock']; ?>"/>
+                                    <input type="hidden" name="quantity[]" value="<?php echo $row['quantity']; ?>"/>
+                                    <input type="hidden" name="orderID" value="<?php echo $row['orderID']; ?>"/>
+                                    <input type="hidden" name="assetID[]" value="<?php echo $row['assetID'];?>"/></td>
+
                                 <td><?php echo $counter;?></td>
-                                <td><?php echo $row['c_assetID'];?></td>
-                                <td><?php echo $row['c_assetName'];?></td>
+                                <td><?php echo $row['assetID'];?></td>
+                                <td><?php echo $row['assetName'];?></td>
                                 <td><?php echo $row['quantity'];?></td>
-                                <td><?php echo $row['c_created'];?></td>
+                                <td><?php echo $row['total_stock'];?></td>
+                                <td><?php echo $row['total_owned'];?></td>
                                 <td><?php echo $row['orderID'];?></td>
+                                <td><?php echo $row['c_created'];?></td>
                                 <td><?php echo $row['c_duedate'];?></td>
+                                <td><?php echo $row['userid'];?></td>
+                                <td><?php echo $row['email'];?></td>
                                 <td><?php echo $row['status'];?></td>
+
                             </tr>
                             <?php
                         }
                     }
                     ?>
-
                 </table>
+                <button type="submit"  class="w3-btn w3-right w3-margin confirmation">Approve</button>
             </form>
         </div>
     </div>
@@ -222,6 +223,15 @@ $page_title ="View all Orders";
             x.previousElementSibling.className =
                 x.previousElementSibling.className.replace(" w3-purple", "");
         }
+    }
+</script>
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Approve this order?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
     }
 </script>
 

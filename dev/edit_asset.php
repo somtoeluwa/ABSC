@@ -5,189 +5,193 @@
  * Date: 7/6/2016
  * Time: 12:43 PM
  */
+session_start();
+$role = $_SESSION['sess_userrole'];
+if(!isset($_SESSION['sess_username']) && $role!="admin"){
+    header('Location: index.php?err=2');
+}
 
 include 'functions\functions.php';
 
-session_start();
-if(!isset($_SESSION['ad_email'])){
-    header("Location: index.php");
-}
-
-if(isset($_GET['assetID'])){
-    $assetPicked = $_GET['assetID'];
-    $sql_query="select * from asset where `assetID` ='$assetPicked'";
-    $result=$db->query($sql_query);
-    $row = $result->fetch_assoc();
-}
-else{
-    header("location: adminviewitems.php");
-}
+// Page title
+$page_title ="Edit Asset";
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Arduino Booking System</title>
+    <title><?php echo isset($page_title) ? $page_title : "Arduino component booking System"; ?> - Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-purple.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 
-<body>
+<body class="w3-content">
 <!-- Header start -->
-<header>
-    <img id="logo" src="assets/images/logo.png" alt="Home logo">
-    <h3 id="title">Arduino component booking system</h3>
+<header class="w3-light-grey">
+    <!-- top panel-->
+    <div class="w3-container">
+        <img id="logo" src="assets/images/Robert_Gordon_University_logo.svg.png" alt="Home logo" style="width:30%">
+        <marquee><h2 id="login_title" class="w3-xlarge"><?php echo isset($page_title) ? $page_title : "Store Home"; ?> </h2></marquee>
+    </div>
+    <!-- Responsive Top navigation bar -->
+    <nav>
+        <ul class="w3-navbar w3-theme w3-large w3-border">
 
-    <nav >
-        <ul class="topnav">
-            <li>
-                <a href="home.php"><i title="Home" class="fa fa-home" style="font-size:36px;color: #ac76af;"></i></a>
-            </li>
-            <li>
-                <form action="#" class="navSearch">
-                    <i class="fa fa-search" aria-hidden="true" style="color:#ac76af"></i>
-                    <input type="search" name="componentsearch"  placeholder="Search here ...">
-
-                    <select title="searchCategories"">
+            <li><a href="home.php"><i title="home" class="fa fa-home w3-large"></i></a></li>
+            <li><a href="#"><i class="fa fa-search w3-large" aria-hidden="true"></i></a></li>
+            <li class="w3-dropdown-hover w3-right" id="profile">
+                <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
+                <div class="w3-dropdown-content w3-white w3-card-2">
+                    <a href="account.php?userid=<?php echo $_SESSION['userid'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Account</a>
                     <?php
-                    $sql_search = "SELECT categoryID,categoryName FROM category";
-                    $result_search = $db->query($sql_search);
-                    if(mysqli_num_rows($result_search)>0){
-                        $counter=0;
-
-                        while($row_search = $result_search->fetch_array()){
-
-                            ?>
-                            <option value="<?php echo $row_search['categoryID'];?>"><?php echo $row_search['categoryName'];?></option>
-                            <?
-                        }
-
+                    if ($role == "admin" ) {
+                        ?>
+                        <a href="adminviewitems.php">Dashboard</a>
+                        <?php
                     }
-                    $result_search->close()
-
                     ?>
-                    <input type="submit" name="search" id="search">
-                </form>
-            </li>
-            <li class="dropdown right" id="profile">
-                <a class="dropbtn" href="#"><i class="fa fa-user" aria-hidden="true" style="font-size:36px;color:#ac76af"></i></a>
-                <div class="dropdown-content">
-                    <a href="#"><?php echo $_SESSION['ad_firstname']; ?>'s Profile</a>
-                    <a href="adminviewitems.php">Dashboard</a>
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>
-            <li class="right">
-                <a href="#"><i class="fa fa-shopping-cart" style="font-size:36px;color:#ac76af"></i></a>
+            <li class="w3-right" <?php echo $page_title=="Cart" ? "class='active'" : ""; ?> >
+                <a href="cart.php">
+                    <?php
+                    // count products in cart
+                    $cart_count= count($_SESSION['cart_items']);
+                    ?><i class="fa fa-shopping-cart w3-large"></i>
+                    <span class="w3-badge" id="comparison-count"><?php echo $cart_count; ?></span>
+                    item(s)
+                </a>
             </li>
-
         </ul>
     </nav>
 </header>
 
 
-<!-- Sub header -->
+<main class="w3-padding-row">
+    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2"style="width:160px">
 
-<div id="pageSubHeader">
-    <div class="row">
-        <div class="col-8 col-m-8">
-            <div id="BreadCrumb">
-                <a href="home.php">Home</a>&nbsp;&gt;&nbsp; All Components
+        <div class="w3-accordion">
+            <a onclick="myAccFunc('assets')" href="#"><h4>Assets <i class="fa fa-caret-down"></i></h4></a>
+            <div id="assets" class="w3-accordion-content w3-white w3-card-4">
+                <a href="adminviewitems.php" class="w3-padding-16">View All Items</a>
+                <a href="newItem.php" class="w3-padding-16" >New Item</a>
             </div>
         </div>
-        <div class="col-4 col-m-4">
+        <div class="w3-accordion">
+            <a onclick="myAccFunc('trans')" href="#"><h4>Transactions <i class="fa fa-caret-down"></i></h4></a>
+            <div id="trans" class="w3-accordion-content w3-white w3-card-4">
+                <a href="vieworders.php" class="w3-padding-16" >View all orders</a>
+                <a href="adminapprove.php" class="w3-padding-16" >Approve order</a>
+                <a href="admincheckin.php" class="w3-padding-16" >Check In Order</a>
+            </div>
+        </div>
+
+        <div class="w3-accordion">
+            <a onclick="myAccFunc('user')" href="#"><h4>Users<i class="fa fa-caret-down"></i></h4></a>
+            <div id="user" class="w3-accordion-content w3-white w3-card-4">
+                <a href="createuser.php" class="w3-padding-16" >Create User</a>
+                <a href="viewusers.php" class="w3-padding-16" >View all Users</a>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Main Start Item details -->
-<main>
-    <div class="row">
-        <div  id="AssetOptions" class="col-2" style="border: 1px dashed black">
-            <ul class="menu">
-                <li>Assets</li>
-                <ul>
-                    <li><a href="adminviewitems.php" >View All</a></li>
-                    <li><a href="newItem.php" >New Item</a></li>
-                    <li><a href="newCategory.php">New item category</a></li>
-                    <li><a href="viewcategory.php">View item categories</a></li>
-                    <li><a href="addquantity.php">Add item quantity</a></li>
-                </ul>
-                <li>Transactions</li>
-                <ul>
-                    <li><a href="#" id="checkIn">Check In</a></li>
-                    <li><a href="#" id="checkOut">Check Out</a></li>
-                </ul>
-                <li>Users</li>
-                <ul>
-                    <li><a href="#" id="checkIn">Regiter User</a></li>
-                    <li><a href="#" id="checkOut">View all Users</a></li>
-                </ul>
-            </ul>
-        </div>
+    <div class="w3-container" id="assetOptionscontent" style=" margin-left:160px;">
+        <?php
+        if($_SERVER['REQUEST_METHOD']==='GET') {
 
-        <div class="col-10" id="assetOptionscontent" style="border: 1px dashed black">
-            <h3>New Asset</h3>
-                <form class="newAsset">
-                    <!--<label for="assetID">Asset ID</label>
-                    <input type="number" id="assetID" value="" required >
-                    <br><br>-->
-                    <label for="assetName">Asset Name</label>
-                    <input type="text" id="assetName" value="<?php echo $row['assetName'];?>" required >
-                    <br><br>
-                    <label for="assetType">Asset Type</label>
-                    <input type="text" id="assetType" value="<?php echo $row['assetType'];?>" required >
-                    <br><br>
-                    <label for="assetDescription">Asset Description</label>
-                    <textarea required id="assetDescription" cols="30" rows="3"><?php echo $row['assetDescription'];?></textarea>
-                    <br> <br>
-                    <label for="quantity">Quantity</label>
-                    <input type="number" id="quantity" value="<?php echo $row['quantity'];?>" maxlength="10" required >
-                    <br><br>
-                    <label for="assetCategory">Item Category</label>
-                    <select id="assetCategory">
-                        <?php
-                            $sql_form = "SELECT categoryID,categoryName FROM category";
-                            $result_form = $db->query($sql_form);
-                            if(mysqli_num_rows($result_form)>0){
-                                $counter=0;
-                                while($row_form = $result_form->fetch_array()){
-                                    ?>
-                                    <option value="<?php echo $row_form['categoryID'];?>"><?php echo $row_form['categoryName'];?></option>
-                                    <?
-                                }
-                            }
-                            $result_form->close()
-                        ?>
-                    </select>
-                    <br> <br>
-                    <label for="serialnumber">Serial Number</label>
-                    <input type="text" id="serialnumber"  value="<?php echo $row['serial_number'];?>">
-                    <br> <br>
-                    <label for="condtion">Condition</label>
-                        <select  id="assetcondition">
-                            <option value="good">Good working condition</option>
-                            <option value="bad">Not working</option>
-                        </select>
-                    <br> <br>
-                    <input type="submit" value="submit">
-                </form>
 
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    Select image to upload:
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Upload Image" name="submitImage">
-                </form>
+            $assetPicked = $_GET['assetID'];
+            $sql_query="select * from asset where `assetID` ='$assetPicked'";
+            $result=$db->query($sql_query);
+            $row = $result->fetch_assoc();
 
-        </div>
+            ?>
+
+
+
+            <h3>Update Asset</h3>
+            <!-- Form Start-->
+
+            <form class="w3-container"  action="upload.php" method="post" enctype="multipart/form-data">
+                <label class="w3-label w3-validate" for="assetName">Asset Name</label>
+                <input class="w3-input w3-theme-border w3-border w3-round-large" type="text" id="assetName" name="assetName" value=" <?php echo $row['assetName'];?>" required >
+                <br><br>
+                <label class="w3-label w3-validate" for="assetCategory">Asset Category</label>
+                <select class="w3-select w3-theme-border" id="assetCategory" name="assetCategory" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Actuators">Actuators</option>
+                    <option value="Connectors">Connectors</option>
+                    <option value="LCD_Matrix">LCD & Matrix</option>
+                    <option value="Passive_Active">Passive & Active</option>
+                    <option value="Sensors">Sensors</option>
+                </select>
+                <br><br>
+                <label class="w3-label w3-validate"  for="assetDescription">Asset Description</label>
+            <textarea class="w3-input w3-theme-border w3-border w3-round-large" required id="assetDescription" name="assetDescription" cols="30" rows="3" >
+                <?php echo $row['assetDescription'];?>
+            </textarea>
+                <br> <br>
+                <label class="w3-label w3-validate"  for="totalstock">Total number in stock</label>
+                <input class="w3-input w3-theme-border w3-border w3-round-large" type="number" id="totalstock" name="totalstock" value="<?php echo $row['totalstock'];?>" maxlength="10" required >
+                <br><br>
+                <label class="w3-label w3-validate"  for="totalowned">Total number owned</label>
+                <input class="w3-input w3-theme-border w3-border w3-round-large" type="number" id="totalowned" name="totalowned" value="<?php echo $row['totalowned'];?>" maxlength="10" required >
+                <br><br>
+                <label class="w3-label w3-validate"  for="assetCondition">Condition</label>
+                <select class="w3-select w3-theme-border" name="assetCondition" id="assetCondition">
+                    <option value="Good">Good working condition</option>
+                    <option value="Bad">Not working</option>
+                </select>
+                <br> <br>
+                <p>
+                    <input type="hidden" name="assetID" value="<?php echo $row['assetID'];?>">
+                    <button type="submit" class="w3-btn w3-theme update" value="Upload Item" name="submit">Update Asset</button>
+                    <a href="deleteasset.php?assetid=<?php echo $row['userid'];?>"><button type="button" class="w3-btn w3-red w3-right confirmation">Delete User</button></a>
+                </p>
+            </form>
+            <?php
+        }
+        else if ($_SERVER['REQUEST_METHOD']==='POST'){
+
+            $assetid = test_input($_POST['assetID']);
+            $asset_name = test_input($_POST['assetName']);
+            $asset_category = test_input($_POST['assetCategory']);
+            $asset_description = test_input($_POST['assetDescription']);
+            $total_stock = test_input($_POST['totalstock']);
+            $total_owned = test_input($_POST['totalowned']);
+            $condition = test_input($_POST['assetCondition']);
+
+            $sql = "UPDATE `asset`
+        SET `assetName` = '$asset_name' ,
+        `assetCategory` = '$asset_category',
+        `assetDescription` = '$asset_description',
+        `total_stock` = '$total_stock',
+        `total_owned` = '$total_owned',
+        `condition` = $condition
+
+        WHERE `assetID` = '$assetid'";
+
+
+            if($sql= $db->query($sql)){
+
+                header('location: adminviewitems.php?action=edited');
+
+            }else{
+                echo "Error: " . $sql . "<br>" . mysqli_error($db);
+                header('Location: adminviewitems.php?action=failed');
+            }
+
+        }
+        ?>
     </div>
+
 
 
 </main>
@@ -195,6 +199,26 @@ else{
 <footer>
 
 </footer>
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Delete this asset?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('update');
+    var confirmIt = function (e) {
+        if (!confirm('Edit this asset?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>
+
+
 
 </body>
 </html>

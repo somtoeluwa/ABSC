@@ -50,7 +50,7 @@ $page_title ="Create User";
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Account</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['userid'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Account</a>
                     <?php
                     if ($role == "admin" ) {
                         ?>
@@ -102,8 +102,7 @@ $page_title ="Create User";
             <div id="user" class="w3-accordion-content w3-white w3-card-4">
                 <a href="createuser.php" class="w3-padding-16" >Create User</a>
                 <a href="viewusers.php" class="w3-padding-16" >View all Users</a>
-                <a href="#" class="w3-padding-16" >Register User</a>
-                <a href="#" class="w3-padding-16" >View all Users</a>
+
             </div>
         </div>
     </div>
@@ -157,7 +156,7 @@ $page_title ="Create User";
                 </select>
                 <br><br>
                 <p>
-                    <button type="submit" class="w3-btn w3-theme" value="create" name="submit">Create User
+                    <button type="submit" class="w3-btn w3-theme confirmation" value="create" name="submit">Create User
                     </button>
                 </p>
             </form>
@@ -232,5 +231,16 @@ $page_title ="Create User";
         }
     }
 </script>
+
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Create this user? ')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>
+
 </body>
 </html>

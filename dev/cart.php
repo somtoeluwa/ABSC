@@ -132,7 +132,7 @@ if(count($_SESSION['cart_items'])>0){
                             <th>Action</th>
                         </tr>
        <?php
-       $query = "SELECT assetID, assetName,assetCategory  FROM asset WHERE assetID IN ({$ids}) ORDER BY assetName";
+       $query = "SELECT assetID, assetName,assetCategory,total_stock  FROM asset WHERE assetID IN ({$ids}) ORDER BY assetName";
        $stmt = $db->query( $query );
        $total_price=0;
        while ($row = $stmt->fetch_array()){
@@ -141,7 +141,7 @@ if(count($_SESSION['cart_items'])>0){
         <tr>
             <td><a href="item.php?assetID=<?php echo $row['assetID']; ?>"><?php echo $row['assetName'];?></a></td>
             <td ><?php echo $row['assetCategory'];?></td>
-            <td><input type="number" name="cart_quantity[]" value="<?php echo $_SESSION['cart_items'][$row['assetID']]['quantity'] ;?>">
+            <td><input type="number" name="cart_quantity[]" value="<?php echo $_SESSION['cart_items'][$row['assetID']]['quantity'] ;?>" max="<?php echo $row['total_stock']?>">
                 <input type="hidden" name="assetID[]" value="<?php echo $_SESSION['cart_items'][$row['assetID']]['assetID'];?>" />
                 <input type="hidden" name="assetName[]" value="<?php echo"{$_SESSION['cart_items'][$row['assetID']]['assetName']}";?>"/></td>
 

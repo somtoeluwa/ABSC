@@ -151,7 +151,7 @@ $page_title ="Edit Users";
                 <br><br>
                 <p>
                     <input type="hidden" name="userid" value="<?php echo $row['userid'];?>">
-                    <button type="submit" class="w3-btn w3-theme" value="update" name="update">Update
+                    <button type="submit" class="w3-btn w3-theme update" value="update" name="update">Update
                     </button>
                     <a href="deleteuser.php?userid=<?php echo $row['userid'];?>"><button type="button" class="w3-btn w3-red w3-right confirmation">Delete User</button></a>
                 </p>
@@ -226,6 +226,15 @@ $page_title ="Edit Users";
     var elems = document.getElementsByClassName('confirmation');
     var confirmIt = function (e) {
         if (!confirm('Delete this user? ')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('update');
+    var confirmIt = function (e) {
+        if (!confirm('Edit this asset?')) e.preventDefault();
     };
     for (var i = 0, l = elems.length; i < l; i++) {
         elems[i].addEventListener('click', confirmIt, false);

@@ -48,7 +48,7 @@ $page_title ="Create new asset";
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['userid'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
                     <?php
                     if ($role == "admin" ) {
                         ?>
@@ -78,7 +78,7 @@ $page_title ="Create new asset";
 <!-- Main Start Item details -->
 
 <main class="w3-padding-row">
-    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2"style="width:160px">
+    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2" style="width:160px">
 
         <div class="w3-accordion">
             <a onclick="myAccFunc('assets')" href="#"><h4>Assets <i class="fa fa-caret-down"></i></h4></a>
@@ -91,8 +91,8 @@ $page_title ="Create new asset";
             <a onclick="myAccFunc('trans')" href="#"><h4>Transactions <i class="fa fa-caret-down"></i></h4></a>
             <div id="trans" class="w3-accordion-content w3-white w3-card-4">
                 <a href="vieworders.php" class="w3-padding-16" >View all orders</a>
-                <a href="adminapprove.php" class="w3-padding-16" >Approve order</a>
-                <a href="admincheckin.php" class="w3-padding-16" >Check In Order</a>
+                <a href="adminapprove.php" class="w3-padding-16">Approve order</a>
+                <a href="admincheckin.php" class="w3-padding-16">Check In Order</a>
             </div>
         </div>
 
@@ -101,8 +101,6 @@ $page_title ="Create new asset";
             <div id="user" class="w3-accordion-content w3-white w3-card-4">
                 <a href="createuser.php" class="w3-padding-16" >Create User</a>
                 <a href="viewusers.php" class="w3-padding-16" >View all Users</a>
-                <a href="#" class="w3-padding-16" >Register User</a>
-                <a href="#" class="w3-padding-16" >View all Users</a>
             </div>
         </div>
     </div>
@@ -154,7 +152,7 @@ $page_title ="Create new asset";
             <input type="file" name="fileToUpload" id="fileToUpload">
 
             <p>
-                <button type="submit" class="w3-btn w3-theme" value="Upload Item" name="submit">Create Asset</button>
+                <button type="submit" class="w3-btn w3-theme confirmation" value="Upload Item" name="submit">Create Asset</button>
             </p>
         </form>
     </div>
@@ -183,5 +181,6 @@ $page_title ="Create new asset";
         }
     }
 </script>
+
 </body>
 </html>

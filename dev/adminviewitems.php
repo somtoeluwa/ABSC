@@ -50,7 +50,7 @@ $page_title = "Admin-Home"
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Account</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['userid'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Account</a>
                     <?php
                     if ($role == "admin" ) {
                         ?>
@@ -102,14 +102,44 @@ $page_title = "Admin-Home"
             <div id="user" class="w3-accordion-content w3-white w3-card-4">
                 <a href="createuser.php" class="w3-padding-16" >Create User</a>
                 <a href="viewusers.php" class="w3-padding-16" >View all Users</a>
-                <a href="#" class="w3-padding-16" >Register User</a>
-                <a href="#" class="w3-padding-16" >View all Users</a>
             </div>
         </div>
     </div>
 
     <div class="w3-container" id="assetOptionscontent" style=" margin-left:160px;">
         <h3>Assets Table</h3>
+        <?php
+        $action = isset($_GET['action']) ? $_GET['action'] : "";
+        if ($action == 'added') {
+
+            echo "<div class='w3-container w3-section w3-green'>";
+            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+            echo "<p>Asset created!</p>";
+            echo "</div>";
+        }
+        if ($action == 'edited') {
+
+            echo "<div class='w3-container w3-section w3-green'>";
+            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+            echo "<p>Asset updated!</p>";
+            echo "</div>";
+        }
+        if ($action == 'deleted') {
+
+            echo "<div class='w3-container w3-section w3-red'>";
+            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+            echo "<p>Asset deleted!</p>";
+            echo "</div>";
+        }
+        if ($action == 'failed') {
+
+            echo "<div class='w3-container w3-section w3-red'>";
+            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+            echo "<p>Something went wrong</p>";
+            echo "</div>";
+        }?>
+
+
         <div class="w3-responsive">
             <table class="w3-table w3-bordered w3-reverse-striped w3-border w3-hoverable">
                 <tr class="w3-light-grey">

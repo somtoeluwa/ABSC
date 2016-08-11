@@ -31,7 +31,7 @@ if (($userid == $_SESSION['sess_user_id']) || ($userid == 1) ){
     if ($result = $db->query($sql)) {
         header('Location:viewusers.php?action=deleted');
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($dbs);
+        echo "Error: " . $sql . "<br>" . mysqli_error($db);
         header('location: viewusers.php?action=failed');
     }
 }

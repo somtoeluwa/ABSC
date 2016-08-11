@@ -41,6 +41,7 @@ $page_title ="Arduino component booking system";
     <![endif]-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700|Roboto:400' rel='stylesheet' type='text/css'>
 </head>
 
 <body class="w3-content">
@@ -196,7 +197,7 @@ $page_title ="Arduino component booking system";
                             <h6 class="productTitle"><a
                                     href="item.php?assetID=<?php echo $row['assetID']; ?>"><?php echo $row['assetName']; ?></a>
                             </h6>
-                            <div class="listingDescription"><?php echo "{$row['assetDescription']}"; ?></div>
+                            <div class="listingDescription test2"><?php echo "{$row['assetDescription']}"; ?></div>
                         </div>
                         <div class="row">
                             <!-- <div class="col-6 col-m-6">

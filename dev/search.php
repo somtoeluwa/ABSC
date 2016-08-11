@@ -41,7 +41,7 @@ $page_title ="Order Details";
             <li class="w3-dropdown-hover w3-right" id="profile">
                 <a class="w3-hover-purple" href="#"><i class="fa fa-user w3-large" aria-hidden="true"></i><i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-white w3-card-2">
-                    <a href="account.php?userid=<?php echo $_SESSION['sess_user_id'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
+                    <a href="account.php?userid=<?php echo $_SESSION['userid'];?>"><?php echo $_SESSION['sess_firstname'];?>'s Profile</a>
                     <?php
                     if ($role == "admin" ) {
                         ?>
@@ -71,7 +71,7 @@ $page_title ="Order Details";
 <!-- Main Start Item details -->
 
 <main class="w3-padding-row">
-    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2"style="width:160px">
+    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2" style="width:160px">
 
         <div class="w3-accordion">
             <a onclick="myAccFunc('assets')" href="#"><h4>Assets <i class="fa fa-caret-down"></i></h4></a>
@@ -94,8 +94,6 @@ $page_title ="Order Details";
             <div id="user" class="w3-accordion-content w3-white w3-card-4">
                 <a href="createuser.php" class="w3-padding-16" >Create User</a>
                 <a href="viewusers.php" class="w3-padding-16" >View all Users</a>
-                <a href="#" class="w3-padding-16" >Register User</a>
-                <a href="#" class="w3-padding-16" >View all Users</a>
             </div>
         </div>
     </div>
@@ -103,7 +101,11 @@ $page_title ="Order Details";
     <div class="w3-container" id="assetOptionscontent" style=" margin-left:160px;">
         <?php
             $search = $_POST['search'];
-            $sql = "SELECT * FROM `checkout` WHERE  `orderID` = '" . $search . "' AND `status` = 'pending' ";
+            $sql = "SELECT checkout.*,users.email,asset.assetName,asset.total_stock,asset.total_owned
+                              FROM `checkout`,`users`,`asset`
+                              WHERE  `orderID` = '" . $search . "' AND `status` = 'pending'
+                              AND checkout.userid = users.userid
+                              AND checkout.assetID = asset.assetID";
             $result = $db->query($sql);
             if (mysqli_num_rows($result) > 0) {
                 $counter = 0;
@@ -114,13 +116,18 @@ $page_title ="Order Details";
                     <table class="w3-table w3-bordered w3-reverse-striped w3-border w3-hoverable" id="table">
                         <tr class="w3-light-grey">
                             <th></th>
-                            <th>Checkout ID</th>
+                            <th>SN</th>
                             <th>Asset ID</th>
                             <th>Asset Name</th>
                             <th>Quantity Requested</th>
-                            <th>Date ordered</th>
+                            <th>Total in Stock</th>
+                            <th>Total Owned</th>
                             <th>OrderID</th>
+                            <th>Date ordered</th>
                             <th>Return date</th>
+                            <th>User ID</th>
+                            <th>User email</th>
+                            <th>Status</th>
                         </tr>
 
                         <?
@@ -128,16 +135,25 @@ $page_title ="Order Details";
                             $counter++;
                             ?>
                             <tr>
-                                <td><input type="checkbox" name="orderselected[]" value="<?php echo $row['c_id']; ?>"/>
+                                <td><input type="checkbox"   name="orderselected[]" id="orderselected" value="<?php echo $row['c_id'];?>"/>
+                                    <input type="hidden" name="total_stock[]" value="<?php echo $row['total_stock']; ?>"/>
+                                    <input type="hidden" name="quantity[]" value="<?php echo $row['quantity']; ?>"/>
                                     <input type="hidden" name="orderID" value="<?php echo $row['orderID']; ?>"/>
-                                </td>
-                                <td><?php echo $counter; ?></td>
-                                <td><?php echo $row['c_assetID']; ?></td>
-                                <td><?php echo $row['c_assetName']; ?></td>
-                                <td><?php echo $row['quantity']; ?></td>
-                                <td><?php echo $row['c_created']; ?></td>
-                                <td><?php echo $row['orderID']; ?></td>
-                                <td><?php echo $row['c_duedate']; ?></td>
+                                    <input type="hidden" name="assetID[]" value="<?php echo $row['assetID'];?>"/></td>
+
+                                <td><?php echo $counter;?></td>
+                                <td><?php echo $row['assetID'];?></td>
+                                <td><?php echo $row['assetName'];?></td>
+                                <td><?php echo $row['quantity'];?></td>
+                                <td><?php echo $row['total_stock'];?></td>
+                                <td><?php echo $row['total_owned'];?></td>
+                                <td><?php echo $row['orderID'];?></td>
+                                <td><?php echo $row['c_created'];?></td>
+                                <td><?php echo $row['c_duedate'];?></td>
+                                <td><?php echo $row['userid'];?></td>
+                                <td><?php echo $row['email'];?></td>
+                                <td><?php echo $row['status'];?></td>
+
                             </tr>
                             <?
                         }
@@ -165,7 +181,7 @@ $page_title ="Order Details";
 <script type="text/javascript">
     var elems = document.getElementsByClassName('confirmation');
     var confirmIt = function (e) {
-        if (!confirm('Add this item to cart? ')) e.preventDefault();
+        if (!confirm('Approve this order?')) e.preventDefault();
     };
     for (var i = 0, l = elems.length; i < l; i++) {
         elems[i].addEventListener('click', confirmIt, false);

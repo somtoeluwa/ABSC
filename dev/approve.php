@@ -7,13 +7,25 @@ $decision = "approved";
 
 $orderID = $_POST['orderID'];
 
-foreach($_POST['orderselected'] as $cid) {
 
-    $sql = "Update `checkout`
-            set status = '$decision'
-             WHERE  `c_id` ={$cid}";
+for ($i = 0; $i < count($_POST['orderselected']); $i++) {
+    $quantity = $_POST['quantity'][$i];
+    $cid = $_POST['orderselected'][$i];
+    $assetPicked = $_POST['assetID'][$i];
+    $stock = $_POST['total_stock'][$i];
+    $newStock = $stock - $quantity;
 
-    if ($query = $db->query($sql)) {
+    $sql =  "UPDATE `asset`
+              SET `total_stock` = '$newStock'
+              WHERE `assetID` = $assetPicked;";
+    $result = $db->query($sql);
+    if ($result){
+
+        $sql2= "Update `checkout`
+                SET `status` = '$decision'
+                WHERE  `c_id` ={$cid};";
+        $result2= $db->query($sql2);
+
         echo "Successful";
         header("Location: vieworders.php?action=approved");
     } else {

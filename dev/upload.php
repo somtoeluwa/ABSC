@@ -69,7 +69,7 @@ if ($uploadOk == 0) {
         }else{
 
             echo "Error:" . $sql . "<br>" . mysqli_error($db);
-
+            header('location: newItem.php?action=failed');
         }
 
 
