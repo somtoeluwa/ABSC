@@ -188,8 +188,19 @@ $page_title ="Approve CheckOut";
                             </tr>
                             <?php
                         }
+                    } else{
+
+                    ?>
+                    <div id="response" class="w3-container w3-card-2 " align="center">
+                        <div id="empty_category" class="w3-center">
+                            <p>No orders to check in</p>
+                            <a href="adminapprove.php"><button class="w3-center"> Go Back</button></a>
+                        </div>
+                    </div>
+                    <?php
                     }
                     ?>
+
 
                 </table>
                 <button type="submit"  class="w3-btn w3-right w3-margin confirmation">Check In</button>

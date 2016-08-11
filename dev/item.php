@@ -135,7 +135,7 @@ $page_title ="Asset Details";
                                 <input type="hidden" name="assetID" value="<?php echo $row['assetID'];?>" />
                                 <input type="hidden" name="assetName" value="<?php echo"{$row['assetName']}";?>"/>
                                 <p class="quantity-in-cart">Quantity in Stock: <?php echo $row['total_stock'];?></p>
-                                <input type="submit" class="confirmation" value="Add to cart" />
+                                <input type="submit" class="confirmation w3-btn" value="Add to cart" />
                             </div>
                         </form>
                     </div>
