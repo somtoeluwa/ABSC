@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="efc93979-8b02-4a32-b930-e13fc4ed231b" name="Default" comment="bug testing">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/main.css" afterPath="$PROJECT_DIR$/dev/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/home.php" afterPath="$PROJECT_DIR$/dev/home.php" />
     </list>
     <ignored path="ABSC.iws" />
@@ -28,8 +29,8 @@
       <file leaf-file-name="checkout.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/checkout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154">
-              <caret line="199" column="44" selection-start-line="193" selection-start-column="39" selection-end-line="202" selection-end-column="36" />
+            <state vertical-scroll-proportion="-32.692307">
+              <caret line="205" column="21" selection-start-line="205" selection-start-column="21" selection-end-line="205" selection-end-column="21" />
               <folding>
                 <element signature="e#6#90#0#PHP" expanded="true" />
                 <marker date="1470897242988" expanded="true" signature="6175:6370" placeholder="INSERT INTO `checkout`... " />
@@ -52,12 +53,13 @@
       <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6647834">
-              <caret line="205" column="14" selection-start-line="205" selection-start-column="14" selection-end-line="205" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.56962025">
+              <caret line="215" column="52" selection-start-line="215" selection-start-column="52" selection-end-line="215" selection-end-column="52" />
               <folding>
-                <element signature="n#style#0;n#h6#0;n#a#0;n#div#1;n#div#0;n#article#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1470904064699" expanded="true" signature="6235:6310" placeholder="SELECT * FRO... asset" />
-                <marker date="1470904064699" expanded="true" signature="6363:6382" placeholder="SELECT * FRO... asset" />
+                <element signature="n#style#0;n#h6#0;n#a#1;n#div#0;n#div#0;n#article#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#a#2;n#div#0;n#div#0;n#article#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1470906225980" expanded="true" signature="6235:6310" placeholder="SELECT * FRO... asset" />
+                <marker date="1470906225980" expanded="true" signature="6363:6382" placeholder="SELECT * FRO... asset" />
               </folding>
             </state>
           </provider>
@@ -66,8 +68,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5">
-              <caret line="129" column="17" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="17" />
+            <state vertical-scroll-proportion="-15.038462">
+              <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -176,10 +178,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="y" value="364" />
+    <option name="width" value="1378" />
+    <option name="height" value="371" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -330,30 +332,6 @@
       <created>1469586337508</created>
       <option name="number" value="Default" />
       <updated>1469586337508</updated>
-    </task>
-    <task id="LOCAL-00002" summary="testing new image upload">
-      <created>1469594364875</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1469594364875</updated>
-    </task>
-    <task id="LOCAL-00003" summary="testing new image upload">
-      <created>1469594422146</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1469594422146</updated>
-    </task>
-    <task id="LOCAL-00004" summary="testing new image upload">
-      <created>1469644259639</created>
-      <option name="number" value="00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1469644259639</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Version 2.0 from  local disk">
-      <created>1469817280397</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1469817280397</updated>
     </task>
     <task id="LOCAL-00006" summary="Version 2.0 from  local disk">
       <created>1469817515090</created>
@@ -625,14 +603,38 @@
       <option name="project" value="LOCAL" />
       <updated>1470903770874</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="bug testing">
+      <created>1470904078444</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1470904078444</updated>
+    </task>
+    <task id="LOCAL-00052" summary="bug testing">
+      <created>1470904281543</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1470904281543</updated>
+    </task>
+    <task id="LOCAL-00053" summary="bug testing">
+      <created>1470905514142</created>
+      <option name="number" value="00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1470905514142</updated>
+    </task>
+    <task id="LOCAL-00054" summary="bug testing">
+      <created>1470905640339</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1470905640339</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="364" width="1378" height="371" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14977308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15022762" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1146,18 +1148,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/checkout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="199" column="44" selection-start-line="193" selection-start-column="39" selection-end-line="202" selection-end-column="36" />
-          <folding>
-            <element signature="e#6#90#0#PHP" expanded="true" />
-            <marker date="1470897242988" expanded="true" signature="6175:6370" placeholder="INSERT INTO `checkout`... " />
-            <marker date="1470897242988" expanded="true" signature="8641:8687" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-45.26923">
@@ -1166,22 +1156,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/checkout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-32.692307">
+          <caret line="205" column="21" selection-start-line="205" selection-start-column="21" selection-end-line="205" selection-end-column="21" />
+          <folding>
+            <element signature="e#6#90#0#PHP" expanded="true" />
+            <marker date="1470897242988" expanded="true" signature="6175:6370" placeholder="INSERT INTO `checkout`... " />
+            <marker date="1470897242988" expanded="true" signature="8641:8687" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5">
-          <caret line="129" column="17" selection-start-line="129" selection-start-column="17" selection-end-line="129" selection-end-column="17" />
+        <state vertical-scroll-proportion="-15.038462">
+          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6647834">
-          <caret line="205" column="14" selection-start-line="205" selection-start-column="14" selection-end-line="205" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.56962025">
+          <caret line="215" column="52" selection-start-line="215" selection-start-column="52" selection-end-line="215" selection-end-column="52" />
           <folding>
-            <element signature="n#style#0;n#h6#0;n#a#0;n#div#1;n#div#0;n#article#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1470904064699" expanded="true" signature="6235:6310" placeholder="SELECT * FRO... asset" />
-            <marker date="1470904064699" expanded="true" signature="6363:6382" placeholder="SELECT * FRO... asset" />
+            <element signature="n#style#0;n#h6#0;n#a#1;n#div#0;n#div#0;n#article#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#a#2;n#div#0;n#div#0;n#article#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1470906225980" expanded="true" signature="6235:6310" placeholder="SELECT * FRO... asset" />
+            <marker date="1470906225980" expanded="true" signature="6363:6382" placeholder="SELECT * FRO... asset" />
           </folding>
         </state>
       </provider>

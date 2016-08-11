@@ -1,6 +1,11 @@
 /* Purple theme colours*/
 
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
 
 .w3-theme-l5 {color:#000 !important; background-color:#fbf5fe !important}
 .w3-theme-l4 {color:#000 !important; background-color:#f1dcfc !important}
@@ -32,7 +37,7 @@
     text-decoration: none;
     list-style: none;
     font-family: 'Roboto', sans-serif;
-    /*font-weight: 400;*/
+    font-weight: 400;
 }
 
 /* Create col- class for grid view column width

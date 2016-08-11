@@ -187,20 +187,25 @@ $page_title ="Arduino component booking system";
 
                 <article class="col-4 itemBox w3-margin-bottom  w3-container ">
                     <div class="row">
-                        <div class="col-12 col-m-12 itemPic  w3-center ">
+                        <div class="col-12 col-m-12 itemPic w3-card-4  w3-center ">
                             <a class="w3-margin-right " href="item.php?assetID=<?php echo $row['assetID']; ?>">
                                 <img src="<?php echo $row['imagepath']; ?>" alt="Asset Image" width="200"
                                      height="182"/>
                             </a>
-                        </div>
-                        <div class="col-12 col-m-12">
                             <a href="item.php?assetID=<?php echo $row['assetID']; ?>">
                                 <h6 class="productTitle test2" style="font-family: 'Montserrat', sans-serif; font-weight: 700;">
                                     <?php echo $row['assetName']; ?>
                                 </h6>
                             </a>
-                            <div class="listingDescription test2"><?php echo "{$row['assetDescription']}"; ?></div>
+                            <p class="listingDescription test2"><?php echo "{$row['assetDescription']}"; ?></p>
+                            <a href="item.php?assetID=<?php echo $row['assetID'];?>"><button class="w3-btn w3-theme" style="width: 100%">
+                                    View Details
+                                </button></a>
                         </div>
+                        <!--<div class="col-12 col-m-12">
+
+
+                        </div>-->
                         <div class="row">
                             <!-- <div class="col-6 col-m-6">
                                     <div class="stock_count"><strong><?php /*echo $row['total_stock']; */?></strong> In Stock</div>
@@ -209,9 +214,7 @@ $page_title ="Arduino component booking system";
                                 <!-- <a href="add_to_cart.php?assetID=<?php /*echo $row['assetID'];*/?>&assetName=<?php /*echo $row['assetName'];*/?>&quantity=1"><button class="w3-btn w3-theme" id="add_to_cart_button" value="Add to Cart" title="Add this item to cart">
                                         Add to cart
                                     </button></a>-->
-                                <a href="item.php?assetID=<?php echo $row['assetID'];?>"><button class="w3-btn w3-theme" style="width: 100%">
-                                        View Details
-                                    </button></a>
+
 
                             </div>
                         </div>
