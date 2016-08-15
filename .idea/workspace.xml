@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efc93979-8b02-4a32-b930-e13fc4ed231b" name="Default" comment="create user test">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/uploads/web.config" afterPath="" />
+    <list default="true" id="efc93979-8b02-4a32-b930-e13fc4ed231b" name="Default" comment="web">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/css/main.css" afterPath="$PROJECT_DIR$/dev/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/html/index.html" afterPath="$PROJECT_DIR$/dev/html/index.html" />
     </list>
     <ignored path="ABSC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,10 +61,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="approve.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="approve.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/approve.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36466166">
+            <state vertical-scroll-proportion="0.0">
               <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <marker date="1470888480148" expanded="true" signature="387:480" placeholder="UPDATE `asse... " />
@@ -73,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminapprove.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="67" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
+            <state vertical-scroll-proportion="-0.65384614">
+              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -122,11 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="172" column="3" selection-start-line="172" selection-start-column="3" selection-end-line="172" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.5449331">
+              <caret line="116" column="6" selection-start-line="116" selection-start-column="6" selection-end-line="116" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -185,8 +186,9 @@
         <option value="$PROJECT_DIR$/dev/item.php" />
         <option value="$PROJECT_DIR$/dev/admincheckin.php" />
         <option value="$PROJECT_DIR$/dev/checkin.php" />
-        <option value="$PROJECT_DIR$/dev/css/main.css" />
         <option value="$PROJECT_DIR$/dev/createuser.php" />
+        <option value="$PROJECT_DIR$/dev/html/index.html" />
+        <option value="$PROJECT_DIR$/dev/css/main.css" />
       </list>
     </option>
   </component>
@@ -200,10 +202,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-7" />
     <option name="width" value="1378" />
-    <option name="height" value="744" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -230,7 +231,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -295,6 +295,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ABSC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ABSC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -302,6 +320,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -321,8 +340,14 @@
       <recent name="C:\Users\Sommy B\PhpstormProjects\ABSC\dev\transactions" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.home.php">
+  <component name="RunManager" selected="PHP Script.index.php">
     <configuration default="false" name="home.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ABSC/dev/home.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ABSC/dev/html/index.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/dev/index.php">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -353,12 +378,16 @@
       <envs />
       <method />
     </configuration>
-    <list size="1">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.home.php" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <item index="2" class="java.lang.String" itemvalue="PHP Script.index.php" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.home.php" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.index.php" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.home.php" />
       </list>
     </recent_temporary>
   </component>
@@ -372,12 +401,6 @@
       <created>1469586337508</created>
       <option name="number" value="Default" />
       <updated>1469586337508</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Version 4.1 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;- checkout approval page&#10;- checkin approval&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out with order number&#10;- confirmations &#10;&#10;">
-      <created>1470511439222</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1470511439222</updated>
     </task>
     <task id="LOCAL-00023" summary="Version 4.1 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;- checkout approval page&#10;- checkin approval&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out with order number&#10;- confirmations &#10;&#10;">
       <created>1470517164457</created>
@@ -667,14 +690,20 @@
       <option name="project" value="LOCAL" />
       <updated>1471122565207</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="web">
+      <created>1471205878146</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1471205878147</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
-    <editor active="false" />
+    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15629742" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1585736" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -688,7 +717,7 @@
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -752,7 +781,8 @@
     <MESSAGE value="buggs" />
     <MESSAGE value="Css" />
     <MESSAGE value="create user test" />
-    <option name="LAST_COMMIT_MESSAGE" value="create user test" />
+    <MESSAGE value="web" />
+    <option name="LAST_COMMIT_MESSAGE" value="web" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -762,32 +792,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/newItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/functions/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="233" column="5" selection-start-line="233" selection-start-column="5" selection-end-line="233" selection-end-column="5" />
-          <folding>
-            <marker date="1470683258538" expanded="true" signature="631:833" placeholder="insert into asset... " />
-            <marker date="1470683258538" expanded="true" signature="3556:3611" placeholder="select * fro... administrators" />
-            <marker date="1470683258538" expanded="true" signature="4049:4134" placeholder="select * fro... administrators" />
-            <marker date="1470683258538" expanded="true" signature="4785:4832" placeholder="select * fro... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5041:5141" placeholder="select * fro... submissions" />
-            <marker date="1470683258538" expanded="true" signature="5082:5140" placeholder="select vol_i... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5345:5666" placeholder="select quest... answers" />
-            <marker date="1470683258538" expanded="true" signature="5446:5588" placeholder="select submi... submissions" />
-            <marker date="1470683258538" expanded="true" signature="5529:5587" placeholder="select vol_i... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5854:5906" placeholder="delete from " />
-            <marker date="1470683258538" expanded="true" signature="6076:6130" placeholder="select * fro... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="7016:7389" placeholder="update volun... " />
-            <marker date="1470683258538" expanded="true" signature="7496:7854" placeholder="update volun... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,21 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="233" column="5" selection-start-line="233" selection-start-column="5" selection-end-line="233" selection-end-column="5" />
-          <folding>
-            <marker date="1470683258538" expanded="true" signature="631:833" placeholder="insert into asset... " />
-            <marker date="1470683258538" expanded="true" signature="3556:3611" placeholder="select * fro... administrators" />
-            <marker date="1470683258538" expanded="true" signature="4049:4134" placeholder="select * fro... administrators" />
-            <marker date="1470683258538" expanded="true" signature="4785:4832" placeholder="select * fro... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5041:5141" placeholder="select * fro... submissions" />
-            <marker date="1470683258538" expanded="true" signature="5082:5140" placeholder="select vol_i... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5345:5666" placeholder="select quest... answers" />
-            <marker date="1470683258538" expanded="true" signature="5446:5588" placeholder="select submi... submissions" />
-            <marker date="1470683258538" expanded="true" signature="5529:5587" placeholder="select vol_i... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5854:5906" placeholder="delete from " />
-            <marker date="1470683258538" expanded="true" signature="6076:6130" placeholder="select * fro... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="7016:7389" placeholder="update volun... " />
-            <marker date="1470683258538" expanded="true" signature="7496:7854" placeholder="update volun... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -859,21 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="233" column="5" selection-start-line="233" selection-start-column="5" selection-end-line="233" selection-end-column="5" />
-          <folding>
-            <marker date="1470683258538" expanded="true" signature="631:833" placeholder="insert into asset... " />
-            <marker date="1470683258538" expanded="true" signature="3556:3611" placeholder="select * fro... administrators" />
-            <marker date="1470683258538" expanded="true" signature="4049:4134" placeholder="select * fro... administrators" />
-            <marker date="1470683258538" expanded="true" signature="4785:4832" placeholder="select * fro... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5041:5141" placeholder="select * fro... submissions" />
-            <marker date="1470683258538" expanded="true" signature="5082:5140" placeholder="select vol_i... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5345:5666" placeholder="select quest... answers" />
-            <marker date="1470683258538" expanded="true" signature="5446:5588" placeholder="select submi... submissions" />
-            <marker date="1470683258538" expanded="true" signature="5529:5587" placeholder="select vol_i... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5854:5906" placeholder="delete from " />
-            <marker date="1470683258538" expanded="true" signature="6076:6130" placeholder="select * fro... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="7016:7389" placeholder="update volun... " />
-            <marker date="1470683258538" expanded="true" signature="7496:7854" placeholder="update volun... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -902,21 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="233" column="5" selection-start-line="233" selection-start-column="5" selection-end-line="233" selection-end-column="5" />
-          <folding>
-            <marker date="1470683258538" expanded="true" signature="631:833" placeholder="insert into asset... " />
-            <marker date="1470683258538" expanded="true" signature="3556:3611" placeholder="select * fro... administrators" />
-            <marker date="1470683258538" expanded="true" signature="4049:4134" placeholder="select * fro... administrators" />
-            <marker date="1470683258538" expanded="true" signature="4785:4832" placeholder="select * fro... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5041:5141" placeholder="select * fro... submissions" />
-            <marker date="1470683258538" expanded="true" signature="5082:5140" placeholder="select vol_i... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5345:5666" placeholder="select quest... answers" />
-            <marker date="1470683258538" expanded="true" signature="5446:5588" placeholder="select submi... submissions" />
-            <marker date="1470683258538" expanded="true" signature="5529:5587" placeholder="select vol_i... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5854:5906" placeholder="delete from " />
-            <marker date="1470683258538" expanded="true" signature="6076:6130" placeholder="select * fro... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="7016:7389" placeholder="update volun... " />
-            <marker date="1470683258538" expanded="true" signature="7496:7854" placeholder="update volun... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -945,21 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="233" column="5" selection-start-line="233" selection-start-column="5" selection-end-line="233" selection-end-column="5" />
-          <folding>
-            <marker date="1470683258538" expanded="true" signature="631:833" placeholder="insert into asset... " />
-            <marker date="1470683258538" expanded="true" signature="3556:3611" placeholder="select * fro... administrators" />
-            <marker date="1470683258538" expanded="true" signature="4049:4134" placeholder="select * fro... administrators" />
-            <marker date="1470683258538" expanded="true" signature="4785:4832" placeholder="select * fro... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5041:5141" placeholder="select * fro... submissions" />
-            <marker date="1470683258538" expanded="true" signature="5082:5140" placeholder="select vol_i... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5345:5666" placeholder="select quest... answers" />
-            <marker date="1470683258538" expanded="true" signature="5446:5588" placeholder="select submi... submissions" />
-            <marker date="1470683258538" expanded="true" signature="5529:5587" placeholder="select vol_i... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5854:5906" placeholder="delete from " />
-            <marker date="1470683258538" expanded="true" signature="6076:6130" placeholder="select * fro... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="7016:7389" placeholder="update volun... " />
-            <marker date="1470683258538" expanded="true" signature="7496:7854" placeholder="update volun... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1002,21 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="26" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="29" />
-          <folding>
-            <marker date="1470683258538" expanded="true" signature="631:833" placeholder="insert into asset... " />
-            <marker date="1470683258538" expanded="true" signature="3556:3611" placeholder="select * fro... administrators" />
-            <marker date="1470683258538" expanded="true" signature="4049:4134" placeholder="select * fro... administrators" />
-            <marker date="1470683258538" expanded="true" signature="4785:4832" placeholder="select * fro... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5041:5141" placeholder="select * fro... submissions" />
-            <marker date="1470683258538" expanded="true" signature="5082:5140" placeholder="select vol_i... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5345:5666" placeholder="select quest... answers" />
-            <marker date="1470683258538" expanded="true" signature="5446:5588" placeholder="select submi... submissions" />
-            <marker date="1470683258538" expanded="true" signature="5529:5587" placeholder="select vol_i... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="5854:5906" placeholder="delete from " />
-            <marker date="1470683258538" expanded="true" signature="6076:6130" placeholder="select * fro... volunteers" />
-            <marker date="1470683258538" expanded="true" signature="7016:7389" placeholder="update volun... " />
-            <marker date="1470683258538" expanded="true" signature="7496:7854" placeholder="update volun... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1143,7 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="76" column="67" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,14 +1109,6 @@
             <marker date="1470915729155" expanded="true" signature="331:438" placeholder="UPDATE `asse... " />
             <marker date="1470915729155" expanded="true" signature="509:564" placeholder="DELETE FROM " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="172" column="3" selection-start-line="172" selection-start-column="3" selection-end-line="172" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1229,12 +1153,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/approve.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36466166">
+        <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <marker date="1470888480148" expanded="true" signature="387:480" placeholder="UPDATE `asse... " />
             <marker date="1470888480148" expanded="true" signature="563:655" placeholder="Update `chec... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5449331">
+          <caret line="116" column="6" selection-start-line="116" selection-start-column="6" selection-end-line="116" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

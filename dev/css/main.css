@@ -110,7 +110,7 @@ h1,h2,h3,h4,h5,h6,th,thead{
 
 /* Content sidenav styling*/
 #sidenavbar{
-    height: 100vh;
+    height: auto;
     background-color: inherit;
     /*
         border: 1px dashed black;
