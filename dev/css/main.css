@@ -112,11 +112,14 @@ h1,h2,h3,h4,h5,h6,th,thead{
 #sidenavbar{
     height: 70vh;
     background-color: inherit;
-    /*
-        border: 1px dashed black;
-    */
 
 }
+
+
+#itemPicContainer img {
+    width: 100%;
+}
+
 .productTitle{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
