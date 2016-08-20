@@ -14,23 +14,7 @@ $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
 
 
-function add_asset() {
-    $asset_ID = $_POST['assetID'];
-    $asset_Name = $_POST['assetName'];
-    $asset_Type = $_POST['assetType'];
-    $asset_Description = $_POST['assetDescription'];
-    $quantity = $_POST['quantity'];
-    $cat_ID = $_POST['categoryID'];
-    $image = saveImage();
 
-    $sql = "insert into asset (assetID,assetName,assetType,assetDescription,image,quantity,categoryID)
-            values('$asset_ID','$asset_Name','$asset_Type','$asset_Description','$quantity','$image','$cat_ID')";
-
-    $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
-    $mysqli->query($sql);
-    $mysqli->close();
-}
-//end function
 
 
 function savePic(){
@@ -163,94 +147,6 @@ function is_admin() {
 }
 //end function
 
-
-function getAllRegisteredUsers() {
-    $sql = "select * from volunteers ORDER BY vol_firstname";
-    $mysqli = new mysqli(host, user, password, database);
-    $result = $mysqli->query($sql);
-    $mysqli->close();
-    return $result;
-}
-//end function
-function getUserSubmissions($vol_email){
-    $sql = "select * from submissions where vol_id= (select vol_id from volunteers where vol_email='$vol_email')";
-    $mysqli = new mysqli(host, user, password, database);
-    $result = $mysqli->query($sql);
-    $mysqli->close();
-    return $result;
-}
-function getEventDetails($event_date, $vol_email){
-    $sql = "select question_text, answer_text_req, answer_text_opt from answers, questions where submission_id =(select submission_id from submissions where event_date ='$event_date' and vol_id =(select vol_id from volunteers where vol_email='$vol_email')) and questions.question_id = answers.question_id group by answers.question_id";
-    $mysqli = new mysqli(host, user, password, database);
-    $result = $mysqli->query($sql);
-    $mysqli->close();
-    return $result;
-}
-function deleteUser($login_name) {
-    $sql = "delete from volunteers where vol_email='$login_name'";
-    $mysqli = new mysqli(host, user, password, database);
-    $mysqli->query($sql);
-    $mysqli->close();
-}
-//end function
-function getUser($login_name) {
-    $sql = "select * from volunteers where vol_email='$login_name'";
-    $mysqli = new mysqli(host, user, password, database);
-    $result = $mysqli->query($sql);
-//    $mysqli->close();
-    return $result;
-}
-//end function
-function updateUser() {
-    $login_name = $_POST['loginName'];
-    $password = $_POST['password'];
-    $firstName = $_POST['firstName'];
-    $surName = $_POST['surName'];
-    $childMatched = $_POST['child_matched'];
-    $login_name_prev = $_POST['user_login_prev'];
-    $result = getUser($login_name_prev);
-    $row = mysqli_fetch_array($result);
-    $imageurl_old = $row['imageurl'];
-    $imageurl = saveImage();
-    if (strlen($imageurl) == 0) {
-
-        $imageurl = $imageurl_old;
-    } else {
-        unlink($imageurl_old);
-    }
-    if($childMatched==true){
-        $child_gender=$_POST['child_gender'];
-        $child_date_of_birth = $_POST['date_of_birth'];
-        $dob="date'".$child_date_of_birth."'";
-        $sql = "update volunteers
-            set vol_email='$login_name',
-                vol_password='$password',
-                vol_firstname='$firstName',
-                vol_surname='$surName',
-                vol_child_matched=".$childMatched.",
-                vol_child_gender='$child_gender',
-                vol_child_dob=".$dob."
-            where vol_email='$login_name_prev'";
-    }
-    else{
-        /*$child_gender = "other";
-        $dob = "date'1991-03-12'";*/
-        $sql = "update volunteers
-            set vol_email='$login_name',
-                vol_password='$password',
-                vol_firstname='$firstName',
-                vol_surname='$surName',
-                vol_child_matched=".$childMatched.",
-                vol_child_gender=NULL,
-                vol_child_dob=NULL
-            where vol_email='$login_name_prev'";
-    }
-    $mysqli = new mysqli(host, user, password, database);
-    $mysqli->query($sql) or die("Error: ".$sql."<br>".$mysqli->error);
-    $mysqli->close();
-
-}
-//end function
 
 
 // Simple function to avoid SQL Injection.

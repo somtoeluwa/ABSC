@@ -77,7 +77,7 @@ $page_title ="Edit Users";
 <!-- Main Start Item details -->
 
 <main class="w3-padding-row">
-    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2" style="width:160px">
+    <div  id="AssetOptions" class="w3-sidenav w3-white w3-card-2"style="width:160px">
 
         <div class="w3-accordion">
             <a onclick="myAccFunc('assets')" href="#"><h5>Assets <i class="fa fa-caret-down"></i></h5></a>
@@ -100,8 +100,7 @@ $page_title ="Edit Users";
             <div id="user" class="w3-accordion-content w3-white w3-card-4">
                 <a href="createuser.php" class="w3-padding-16" >Create User</a>
                 <a href="viewusers.php" class="w3-padding-16" >View all Users</a>
-                <a href="#" class="w3-padding-16" >Register User</a>
-                <a href="#" class="w3-padding-16" >View all Users</a>
+
             </div>
         </div>
     </div>
