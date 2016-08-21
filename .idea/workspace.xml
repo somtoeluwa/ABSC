@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="efc93979-8b02-4a32-b930-e13fc4ed231b" name="Default" comment="Testing new email address">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/checkout.php" afterPath="$PROJECT_DIR$/dev/checkout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/master/checkout.php" afterPath="$PROJECT_DIR$/master/checkout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/newItem.php" afterPath="$PROJECT_DIR$/dev/newItem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/upload.php" afterPath="$PROJECT_DIR$/dev/upload.php" />
     </list>
     <ignored path="ABSC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,13 +33,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="checkout.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="checkout.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/checkout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19962335">
+            <state vertical-scroll-proportion="-4.076923">
               <caret line="171" column="23" selection-start-line="171" selection-start-column="23" selection-end-line="171" selection-end-column="23" />
               <folding>
                 <marker date="1471805807938" expanded="true" signature="6175:6370" placeholder="INSERT INTO `checkout`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newItem.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/newItem.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.39171374">
+              <caret line="143" column="28" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/upload.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.8461537">
+              <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+              <folding>
+                <marker date="1471807936994" expanded="true" signature="2020:2277" placeholder="insert into `asset`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminviewitems.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/adminviewitems.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.653846">
+              <caret line="133" column="8" selection-start-line="133" selection-start-column="8" selection-end-line="139" selection-end-column="9" />
+              <folding>
+                <marker date="1470907260335" expanded="true" signature="6504:6523" placeholder="SELECT * FRO... asset" />
               </folding>
             </state>
           </provider>
@@ -123,7 +157,6 @@
         <option value="$PROJECT_DIR$/dev/cart.php" />
         <option value="$PROJECT_DIR$/dev/home.php" />
         <option value="$PROJECT_DIR$/dev/adminviewitems.php" />
-        <option value="$PROJECT_DIR$/dev/newItem.php" />
         <option value="$PROJECT_DIR$/dev/viewusers.php" />
         <option value="$PROJECT_DIR$/dev/vieworders.php" />
         <option value="$PROJECT_DIR$/dev/search.php" />
@@ -136,7 +169,6 @@
         <option value="$PROJECT_DIR$/dev/css/main.css" />
         <option value="$PROJECT_DIR$/dev/adminapprove.php" />
         <option value="$PROJECT_DIR$/dev/authenticate.php" />
-        <option value="$PROJECT_DIR$/dev/upload.php" />
         <option value="$PROJECT_DIR$/dev/edituser.php" />
         <option value="$PROJECT_DIR$/dev/functions/functions.php" />
         <option value="$PROJECT_DIR$/master/functions/functions.php" />
@@ -146,6 +178,8 @@
         <option value="$PROJECT_DIR$/master/index.php" />
         <option value="$PROJECT_DIR$/master/checkout.php" />
         <option value="$PROJECT_DIR$/dev/checkout.php" />
+        <option value="$PROJECT_DIR$/dev/upload.php" />
+        <option value="$PROJECT_DIR$/dev/newItem.php" />
       </list>
     </option>
   </component>
@@ -232,11 +266,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="functions" />
+              <option name="myItemId" value="dev" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -325,12 +355,6 @@
       <created>1469586337508</created>
       <option name="number" value="Default" />
       <updated>1469586337508</updated>
-    </task>
-    <task id="LOCAL-00037" summary="working out some userid  bugs">
-      <created>1470697059744</created>
-      <option name="number" value="00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1470697059744</updated>
     </task>
     <task id="LOCAL-00038" summary="working out some userid  bugs">
       <created>1470740387237</created>
@@ -620,7 +644,13 @@
       <option name="project" value="LOCAL" />
       <updated>1471804127878</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Testing new email address">
+      <created>1471805818973</created>
+      <option name="number" value="00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1471805818973</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TodoView">
@@ -636,7 +666,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08396369" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20877458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -849,13 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/newItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1153846">
-          <caret line="83" column="57" selection-start-line="83" selection-start-column="57" selection-end-line="83" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/edit_asset.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-49.03846">
@@ -874,13 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.423077">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/adminviewitems.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="28.76923">
-          <caret line="109" column="11" selection-start-line="109" selection-start-column="11" selection-end-line="109" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1031,16 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.091954">
-          <caret line="85" column="2" selection-start-line="85" selection-start-column="2" selection-end-line="85" selection-end-column="2" />
-          <folding>
-            <marker date="1471735336958" expanded="true" signature="1807:2064" placeholder="insert into `asset`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/authenticate.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.5210728">
@@ -1155,11 +1161,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/checkout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19962335">
+        <state vertical-scroll-proportion="-4.076923">
           <caret line="171" column="23" selection-start-line="171" selection-start-column="23" selection-end-line="171" selection-end-column="23" />
           <folding>
             <marker date="1471805807938" expanded="true" signature="6175:6370" placeholder="INSERT INTO `checkout`... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/adminviewitems.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.653846">
+          <caret line="133" column="8" selection-start-line="133" selection-start-column="8" selection-end-line="139" selection-end-column="9" />
+          <folding>
+            <marker date="1470907260335" expanded="true" signature="6504:6523" placeholder="SELECT * FRO... asset" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+          <folding>
+            <marker date="1471807936994" expanded="true" signature="2020:2277" placeholder="insert into `asset`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/newItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39171374">
+          <caret line="143" column="28" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

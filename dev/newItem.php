@@ -115,7 +115,51 @@ $page_title ="Create new asset";
             echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
             echo "<p>Asset created!</p>";
             echo "</div>";
-        }?>
+        }
+
+       if($action=='notImage'){
+           echo "<div class='w3-container w3-section w3-red'>";
+           echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+           echo "<p>File is not an image</p>";
+           echo "</div>";
+       }
+
+       if($action=='exists'){
+           echo "<div class='w3-container w3-section w3-red'>";
+           echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+           echo "<p>Image already exists!</p>";
+           echo "</div>";
+       }
+
+       if($action=='large'){
+           echo "<div class='w3-container w3-section w3-red'>";
+           echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+           echo "<p>Image file is too large</p>";
+           echo "</div>";
+       }
+
+       if($action=='noimage'){
+           echo "<div class='w3-container w3-section w3-red'>";
+           echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+           echo "<p>no image selected</p>";
+           echo "</div>";
+       }
+       if ($action == 'failed') {
+
+           echo "<div class='w3-container w3-section w3-red'>";
+           echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+           echo "<p>Asset not created</p>";
+           echo "</div>";
+       }
+
+
+
+
+
+
+
+
+       ?>
 
         <!-- Form Start-->
 
