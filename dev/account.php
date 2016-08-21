@@ -17,9 +17,7 @@ if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
 include 'functions/functions.php';
 
 // Page title
-$page_title ="My Account";
-
-
+$page_title ="My Profile";
 ?>
 
 
@@ -148,9 +146,7 @@ $page_title ="My Account";
                         <input type="hidden" name="userid" value="<?php echo $row['userid']; ?>">
                         <button type="submit" class="w3-btn w3-theme confirmation" value="update" name="update">Update
                         </button>
-                        <!--<a href="deleteuser.php?userid=<?php /*echo $row['userid'];*/
-                        ?>"><button type="button" class="w3-btn w3-red w3-right confirmation">Delete User</button></a>
--->                </p>
+                    </p>
                 </form>
                 <?php
             }else{

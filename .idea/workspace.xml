@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efc93979-8b02-4a32-b930-e13fc4ed231b" name="Default" comment="creating Master folder&#10;- editing functions and cleaning up code">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/master/css/loginpage.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/master/css/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/master/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/master/css/w3.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/master/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/account.php" afterPath="$PROJECT_DIR$/dev/account.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/master/index.php" afterPath="$PROJECT_DIR$/master/index.php" />
     </list>
     <ignored path="ABSC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,12 +33,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="adminapprove.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.423077">
+              <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/master/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.12806027">
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3678161">
+            <state vertical-scroll-proportion="-27.461538">
               <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/home.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.6153846">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="16" />
+              <folding>
+                <marker date="1470906746377" expanded="true" signature="6248:6323" placeholder="SELECT * FRO... asset" />
+                <marker date="1470906746377" expanded="true" signature="6376:6395" placeholder="SELECT * FRO... asset" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,7 +101,6 @@
         <option value="$PROJECT_DIR$/dev/deleteasset.php" />
         <option value="$PROJECT_DIR$/dev/cart.php" />
         <option value="$PROJECT_DIR$/dev/home.php" />
-        <option value="$PROJECT_DIR$/dev/account.php" />
         <option value="$PROJECT_DIR$/dev/adminviewitems.php" />
         <option value="$PROJECT_DIR$/dev/newItem.php" />
         <option value="$PROJECT_DIR$/dev/viewusers.php" />
@@ -90,6 +119,10 @@
         <option value="$PROJECT_DIR$/dev/upload.php" />
         <option value="$PROJECT_DIR$/dev/edituser.php" />
         <option value="$PROJECT_DIR$/dev/functions/functions.php" />
+        <option value="$PROJECT_DIR$/master/functions/functions.php" />
+        <option value="$PROJECT_DIR$/master/uploads/index.php" />
+        <option value="$PROJECT_DIR$/dev/account.php" />
+        <option value="$PROJECT_DIR$/master/index.php" />
       </list>
     </option>
   </component>
@@ -103,9 +136,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1378" />
-    <option name="height" value="735" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -188,7 +222,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/master/uploads" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -198,6 +232,7 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sommy B\PhpstormProjects\ABSC\master" />
+      <recent name="C:\Users\Sommy B\PhpstormProjects\ABSC\master\uploads" />
       <recent name="C:\Users\Sommy B\PhpstormProjects\ABSC\dev" />
       <recent name="C:\Users\Sommy B\PhpstormProjects\ABSC\dev\uploads" />
     </key>
@@ -263,24 +298,6 @@
       <created>1469586337508</created>
       <option name="number" value="Default" />
       <updated>1469586337508</updated>
-    </task>
-    <task id="LOCAL-00030" summary="User management &#10;&#10;new login system and priviledges">
-      <created>1470694809269</created>
-      <option name="number" value="00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1470694809269</updated>
-    </task>
-    <task id="LOCAL-00031" summary="account bug">
-      <created>1470695547839</created>
-      <option name="number" value="00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1470695547839</updated>
-    </task>
-    <task id="LOCAL-00032" summary="account bug">
-      <created>1470695975047</created>
-      <option name="number" value="00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1470695975047</updated>
     </task>
     <task id="LOCAL-00033" summary="account bug">
       <created>1470696054720</created>
@@ -558,7 +575,25 @@
       <option name="project" value="LOCAL" />
       <updated>1471735737467</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="creating Master folder&#10;- editing functions and cleaning up code">
+      <created>1471780691724</created>
+      <option name="number" value="00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1471780691724</updated>
+    </task>
+    <task id="LOCAL-00080" summary="creating Master folder&#10;- editing functions and cleaning up code">
+      <created>1471781430707</created>
+      <option name="number" value="00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1471781430707</updated>
+    </task>
+    <task id="LOCAL-00081" summary="master">
+      <created>1471784111101</created>
+      <option name="number" value="00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1471784111101</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TodoView">
@@ -571,10 +606,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16009104" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20499243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -628,7 +663,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detedtion phase ...&#10;" />
     <MESSAGE value="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-upload bug&#10;" />
     <MESSAGE value="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-added item feedback&#10;" />
     <MESSAGE value="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;- checkout approval page&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-added item feedback&#10;&#10;" />
@@ -653,7 +687,8 @@
     <MESSAGE value="Change to Css" />
     <MESSAGE value="Change to Css itempic" />
     <MESSAGE value="creating Master folder&#10;- editing functions and cleaning up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating Master folder&#10;- editing functions and cleaning up code" />
+    <MESSAGE value="master" />
+    <option name="LAST_COMMIT_MESSAGE" value="master" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -663,31 +698,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/adminviewitems.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/newItem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="196" column="0" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/functions/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="233" column="5" selection-start-line="233" selection-start-column="5" selection-end-line="233" selection-end-column="5" />
-          <folding>
-            <marker date="1471735633064" expanded="true" signature="2910:2965" placeholder="select * fro... administrators" />
-            <marker date="1471735633064" expanded="true" signature="3403:3488" placeholder="select * fro... administrators" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -854,13 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
-          <caret line="106" column="48" selection-start-line="106" selection-start-column="48" selection-end-line="106" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/adminviewitems.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="28.76923">
@@ -951,17 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55258125">
-          <caret line="203" column="16" selection-start-line="203" selection-start-column="16" selection-end-line="203" selection-end-column="16" />
-          <folding>
-            <marker date="1470906746377" expanded="true" signature="6248:6323" placeholder="SELECT * FRO... asset" />
-            <marker date="1470906746377" expanded="true" signature="6376:6395" placeholder="SELECT * FRO... asset" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/checkout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82217973">
@@ -969,14 +961,6 @@
           <folding>
             <marker date="1470907260318" expanded="true" signature="6175:6370" placeholder="INSERT INTO `checkout`... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21988527">
-          <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1072,18 +1056,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/master/index.php">
+    <entry file="file://$PROJECT_DIR$/master/functions/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.9961686">
+          <caret line="97" column="47" selection-start-line="97" selection-start-column="47" selection-end-line="97" selection-end-column="47" />
+          <folding>
+            <marker date="1471780990704" expanded="true" signature="2910:2962" placeholder="select * fro... administrators" />
+            <marker date="1471780990704" expanded="true" signature="3400:3485" placeholder="select * fro... administrators" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master/uploads/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10261569">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master/account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1471782835155" expanded="true" signature="4404:4449" placeholder="select * fro... users" />
+            <marker date="1471782835155" expanded="true" signature="7309:7554" placeholder="UPDATE `user... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9235412">
+          <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+          <folding>
+            <marker date="1471782835155" expanded="true" signature="4404:4449" placeholder="select * fro... users" />
+            <marker date="1471782835155" expanded="true" signature="7309:7554" placeholder="UPDATE `user... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.423077">
+          <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="16" />
+          <folding>
+            <marker date="1470906746377" expanded="true" signature="6248:6323" placeholder="SELECT * FRO... asset" />
+            <marker date="1470906746377" expanded="true" signature="6376:6395" placeholder="SELECT * FRO... asset" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3678161">
+        <state vertical-scroll-proportion="-27.461538">
           <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12806027">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
           <folding />
         </state>
       </provider>
