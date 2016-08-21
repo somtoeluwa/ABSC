@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efc93979-8b02-4a32-b930-e13fc4ed231b" name="Default" comment="creating Master folder&#10;- editing functions and cleaning up code">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/master/functions/Config.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/index.php" afterPath="$PROJECT_DIR$/dev/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/checkout.php" afterPath="$PROJECT_DIR$/dev/checkout.php" />
     </list>
     <ignored path="ABSC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,6 +33,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="checkout.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/checkout.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.32768363">
+              <caret line="187" column="102" selection-start-line="187" selection-start-column="102" selection-end-line="187" selection-end-column="102" />
+              <folding>
+                <marker date="1471804021920" expanded="true" signature="6175:6370" placeholder="INSERT INTO `checkout`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/master/functions/Config.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="adminapprove.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -45,18 +68,18 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/master/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6153846">
-              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+            <state vertical-scroll-proportion="-17.0">
+              <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22410546">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -105,7 +128,6 @@
         <option value="$PROJECT_DIR$/dev/vieworders.php" />
         <option value="$PROJECT_DIR$/dev/search.php" />
         <option value="$PROJECT_DIR$/dev/edit_asset.php" />
-        <option value="$PROJECT_DIR$/dev/checkout.php" />
         <option value="$PROJECT_DIR$/dev/item.php" />
         <option value="$PROJECT_DIR$/dev/admincheckin.php" />
         <option value="$PROJECT_DIR$/dev/checkin.php" />
@@ -120,8 +142,9 @@
         <option value="$PROJECT_DIR$/master/functions/functions.php" />
         <option value="$PROJECT_DIR$/master/uploads/index.php" />
         <option value="$PROJECT_DIR$/dev/account.php" />
-        <option value="$PROJECT_DIR$/master/index.php" />
         <option value="$PROJECT_DIR$/dev/index.php" />
+        <option value="$PROJECT_DIR$/master/index.php" />
+        <option value="$PROJECT_DIR$/dev/checkout.php" />
       </list>
     </option>
   </component>
@@ -195,6 +218,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ABSC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ABSC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="functions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -297,18 +338,6 @@
       <created>1469586337508</created>
       <option name="number" value="Default" />
       <updated>1469586337508</updated>
-    </task>
-    <task id="LOCAL-00034" summary="account bug">
-      <created>1470696183026</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1470696183026</updated>
-    </task>
-    <task id="LOCAL-00035" summary="working out some userid  bugs">
-      <created>1470696335236</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1470696335236</updated>
     </task>
     <task id="LOCAL-00036" summary="working out some userid  bugs">
       <created>1470696914827</created>
@@ -592,7 +621,19 @@
       <option name="project" value="LOCAL" />
       <updated>1471802117713</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="creating Master folder&#10;- editing functions and cleaning up code">
+      <created>1471802263175</created>
+      <option name="number" value="00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1471802263175</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Index redirect fixed">
+      <created>1471802383937</created>
+      <option name="number" value="00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1471802383937</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TodoView">
@@ -606,7 +647,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20499243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -662,7 +703,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-upload bug&#10;" />
     <MESSAGE value="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-added item feedback&#10;" />
     <MESSAGE value="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;- checkout approval page&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-added item feedback&#10;&#10;" />
     <MESSAGE value="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;- checkout approval page&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-added item feedback&#10;- accordion&#10;&#10;" />
@@ -687,7 +727,8 @@
     <MESSAGE value="Change to Css itempic" />
     <MESSAGE value="master" />
     <MESSAGE value="creating Master folder&#10;- editing functions and cleaning up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating Master folder&#10;- editing functions and cleaning up code" />
+    <MESSAGE value="Index redirect fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Index redirect fixed" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -697,13 +738,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/adminviewitems.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -953,16 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/checkout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82217973">
-          <caret line="208" column="44" selection-start-line="208" selection-start-column="16" selection-end-line="208" selection-end-column="47" />
-          <folding>
-            <marker date="1470907260318" expanded="true" signature="6175:6370" placeholder="INSERT INTO `checkout`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/search.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45506692">
@@ -1104,14 +1128,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/master/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.576923">
@@ -1123,11 +1139,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/master/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.0">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22410546">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="2" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master/functions/Config.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/checkout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32768363">
+          <caret line="187" column="102" selection-start-line="187" selection-start-column="102" selection-end-line="187" selection-end-column="102" />
+          <folding>
+            <marker date="1471804021920" expanded="true" signature="6175:6370" placeholder="INSERT INTO `checkout`... " />
+          </folding>
         </state>
       </provider>
     </entry>

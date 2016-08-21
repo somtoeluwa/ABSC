@@ -174,20 +174,18 @@ $page_title ="Checkout";
 
 // Create the Transport
                         $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
-                            ->setUsername('somtoeluwa@gmail.com')
-                            ->setPassword('h3ll0sommy')
+                            ->setUsername('no.reply.ac.booking.system@gmail.com')
+                            ->setPassword('AcBsMth3s1s!')
                         ;
 // Create the Mailer using your created Transport
                         $mailer = Swift_Mailer::newInstance($transport);
-
-
 
 // Create the message
                         $message = Swift_Message::newInstance();
 // Give the message a subject
                         $message->setSubject('Your order has been placed');
 // Set the From address with an associative array
-                        $message->setFrom(array('somtoeluwa@gmail.com' => 'Somto Eluwa'));
+                        $message->setFrom(array('no.reply.ac.booking.system@gmail.com' => 'DoNotReply Arduino component Booking System'));
 // Set the To addresses with an associative array
                         $message->setTo(array($email => $firstname));
 // Give it a body
