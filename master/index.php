@@ -1,7 +1,13 @@
 <?php
-session_start();
+session_start(); //check if session is set
+if(isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin"))
+{
+    //send user to home.php
+    header("Location: home.php");
+}
 
 ?>
+
 <!DOCTYPE html>
 <html  lang="en">
 <head>
