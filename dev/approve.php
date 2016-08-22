@@ -11,7 +11,7 @@ $orderID = $_POST['orderID'];
 $cids = "";
 
     foreach($_POST['orderselected'] as $cids){
-       /* $cids = $cids . $cid . ",";*/
+        $cids = $cids . ",";
 
         echo $cids;
     }
