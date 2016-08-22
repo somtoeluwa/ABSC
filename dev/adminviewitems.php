@@ -149,7 +149,7 @@ $page_title = "Admin-Home"
                     <th>Asset Description</th>
                     <th>Total in Stock</th>
                     <th>Total Owned</th>
-                    <th>Condition</th>
+                    <th>Asset Condition</th>
                 </tr>
 
                 <?php
