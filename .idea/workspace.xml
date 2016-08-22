@@ -47,7 +47,7 @@
       <file leaf-file-name="adminapprove.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.7692308">
+            <state vertical-scroll-proportion="9.653846">
               <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
               <folding />
             </state>
@@ -69,16 +69,14 @@
       <file leaf-file-name="approve.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/approve.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32015067">
-              <caret line="14" column="36" selection-start-line="12" selection-start-column="7" selection-end-line="14" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.83239174">
+              <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
               <folding>
-                <marker date="1471879367771" expanded="true" signature="316:387" placeholder="SELECT check... checkout" />
-                <marker date="1471879367771" expanded="true" signature="316:424" placeholder="SELECT check... checkout" />
-                <marker date="1471879367771" expanded="true" signature="316:474" placeholder="SELECT check... checkout" />
-                <marker date="1471879367771" expanded="true" signature="783:809" placeholder="/*for (${$i}... " />
-                <marker date="1471879367771" expanded="true" signature="1071:1170" placeholder="SELECT * FRO... checkout" />
-                <marker date="1471879367771" expanded="true" signature="1684:1777" placeholder="UPDATE `asse... " />
-                <marker date="1471879367771" expanded="true" signature="1860:1952" placeholder="Update `chec... " />
+                <marker date="1471881541499" expanded="true" signature="116:140" placeholder="/*for (${$i}... " />
+                <marker date="1471881541499" expanded="true" signature="228:327" placeholder="SELECT check... checkout" />
+                <marker date="1471881541499" expanded="true" signature="228:380" placeholder="SELECT check... checkout" />
+                <marker date="1471881541499" expanded="true" signature="678:787" placeholder="UPDATE `asse... " />
+                <marker date="1471881541499" expanded="true" signature="909:1009" placeholder="Update `chec... " />
               </folding>
             </state>
           </provider>
@@ -331,42 +329,6 @@
       <created>1469586337508</created>
       <option name="number" value="Default" />
       <updated>1469586337508</updated>
-    </task>
-    <task id="LOCAL-00054" summary="bug testing">
-      <created>1470905640339</created>
-      <option name="number" value="00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1470905640339</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Css">
-      <created>1470906242975</created>
-      <option name="number" value="00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1470906242975</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Css">
-      <created>1470906326341</created>
-      <option name="number" value="00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1470906326341</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Css">
-      <created>1470906379347</created>
-      <option name="number" value="00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1470906379347</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Css">
-      <created>1470906520016</created>
-      <option name="number" value="00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1470906520016</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Css">
-      <created>1470907275666</created>
-      <option name="number" value="00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1470907275666</updated>
     </task>
     <task id="LOCAL-00060" summary="Css">
       <created>1470907579490</created>
@@ -626,7 +588,43 @@
       <option name="project" value="LOCAL" />
       <updated>1471879266084</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="debugging checkout">
+      <created>1471879371874</created>
+      <option name="number" value="00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1471879371874</updated>
+    </task>
+    <task id="LOCAL-00104" summary="debugging checkout">
+      <created>1471879616972</created>
+      <option name="number" value="00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1471879616972</updated>
+    </task>
+    <task id="LOCAL-00105" summary="debugging checkout">
+      <created>1471879840765</created>
+      <option name="number" value="00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1471879840765</updated>
+    </task>
+    <task id="LOCAL-00106" summary="debugging checkout">
+      <created>1471879916878</created>
+      <option name="number" value="00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1471879916878</updated>
+    </task>
+    <task id="LOCAL-00107" summary="debugging checkout">
+      <created>1471880446209</created>
+      <option name="number" value="00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1471880446209</updated>
+    </task>
+    <task id="LOCAL-00108" summary="debugging checkout">
+      <created>1471880994455</created>
+      <option name="number" value="00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1471880994455</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1099,24 +1097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/checkout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153">
-          <caret line="171" column="23" selection-start-line="171" selection-start-column="23" selection-end-line="171" selection-end-column="23" />
-          <folding>
-            <marker date="1471805807938" expanded="true" signature="6175:6370" placeholder="INSERT INTO `checkout`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.7692308">
-          <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/checkin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.3846154">
@@ -1159,18 +1139,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/adminapprove.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="9.653846">
+          <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/checkout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.346153">
+          <caret line="171" column="23" selection-start-line="171" selection-start-column="23" selection-end-line="171" selection-end-column="23" />
+          <folding>
+            <marker date="1471805807938" expanded="true" signature="6175:6370" placeholder="INSERT INTO `checkout`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/approve.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32015067">
-          <caret line="14" column="36" selection-start-line="12" selection-start-column="7" selection-end-line="14" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.83239174">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
           <folding>
-            <marker date="1471879367771" expanded="true" signature="316:387" placeholder="SELECT check... checkout" />
-            <marker date="1471879367771" expanded="true" signature="316:424" placeholder="SELECT check... checkout" />
-            <marker date="1471879367771" expanded="true" signature="316:474" placeholder="SELECT check... checkout" />
-            <marker date="1471879367771" expanded="true" signature="783:809" placeholder="/*for (${$i}... " />
-            <marker date="1471879367771" expanded="true" signature="1071:1170" placeholder="SELECT * FRO... checkout" />
-            <marker date="1471879367771" expanded="true" signature="1684:1777" placeholder="UPDATE `asse... " />
-            <marker date="1471879367771" expanded="true" signature="1860:1952" placeholder="Update `chec... " />
+            <marker date="1471881541499" expanded="true" signature="116:140" placeholder="/*for (${$i}... " />
+            <marker date="1471881541499" expanded="true" signature="228:327" placeholder="SELECT check... checkout" />
+            <marker date="1471881541499" expanded="true" signature="228:380" placeholder="SELECT check... checkout" />
+            <marker date="1471881541499" expanded="true" signature="678:787" placeholder="UPDATE `asse... " />
+            <marker date="1471881541499" expanded="true" signature="909:1009" placeholder="Update `chec... " />
           </folding>
         </state>
       </provider>
