@@ -17,7 +17,8 @@ $cids = "";
 
 $sql = "SELECT checkout.*,asset.total_stock
             FROM `checkout`,`asset`
-            WHERE `c_id` IN ({$cids})";
+            WHERE `c_id` IN ({$cids})
+            AND checkout.assetID = asset.assetID";
 $result = $db->query($sql);
 while ($row = $result->fetch_array()) {
     $assetPicked = $row['assetID'];
