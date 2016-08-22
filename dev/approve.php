@@ -14,7 +14,8 @@ $cids = "";
     }
     // remove the last comma
     $cids = rtrim($cids, ',');
-
+    echo $cids;
+/*
 $sql = "SELECT checkout.*,asset.total_stock
             FROM `checkout`,`asset`
             WHERE `c_id` IN ({$cids})
@@ -33,7 +34,7 @@ while ($row = $result->fetch_array()) {
     echo $stock;
     echo "<br><br>";
 
-}
+}*/
 
 
 
