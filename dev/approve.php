@@ -7,15 +7,15 @@ $decision = "approved";
 
 $orderID = $_POST['orderID'];
 
-$cids = "";
+/*$cids = "";
 
     foreach($_POST['orderselected'] as $cids){
-       /* $cids = $cids . ",";
+        $cids = $cids . ",";
         // remove the last comma
-        $cids = rtrim($cids, ',');*/
+        $cids = rtrim($cids, ',');
 
         echo $cids;
-    }
+    }*/
 
 /*
 $sql = "SELECT checkout.*,asset.total_stock
@@ -40,18 +40,16 @@ while ($row = $result->fetch_array()) {
 
 
 
-/*for ($i = 0; $i < count($_POST['orderselected']); $i++) {*/
-    /*$quantity = $_POST['quantity'][$i];*/
-/*    $cid = $_POST['orderselected'][$i];*/
-    /*$assetPicked = $_POST['assetID'][$i];
-    $stock = $_POST['total_stock'][$i];
-    $newStock = $stock - $quantity;*/
+for ($i = 0; $i < count($_POST['orderselected']); $i++) {
 
+    $cid = $_POST['orderselected'][$i];
 
-    /*$sql = "SELECT checkout.*,asset.total_stock
+    $sql = "SELECT checkout.*,asset.total_stock
             FROM `checkout`,`asset`
-            WHERE `c_id` = $cid;";
+            WHERE `c_id` = $cid;
+            AND checkout.assetID = asset.assetID";
     $result = $db->query($sql);
+
     if ($result) {
         while ($row = $result->fetch_array()) {
 
@@ -63,13 +61,24 @@ while ($row = $result->fetch_array()) {
             echo $quantity;
             echo "<br><br>";
 
-            $stock  = $row['total_stock'];
+            $stock = $row['total_stock'];
             echo $stock;
             echo "<br><br>";
         }
+    }else {
+        echo "Error" . $sql . '<br>' . mysqli_error($db);
     }
-    else {
-            echo "Error" . $sql . '<br>' . mysqli_error($db);}*/
+
+}
+
+    /*$assetPicked = $_POST['assetID'][$i];
+    $stock = $_POST['total_stock'][$i];
+    $newStock = $stock - $quantity;*/
+/*$quantity = $_POST['quantity'][$i];*/
+
+    /*
+
+    */
 
    /*  =  "UPDATE `asset`
               SET `total_stock` = '$newStock'
