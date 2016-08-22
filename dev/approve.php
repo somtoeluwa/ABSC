@@ -18,14 +18,18 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
 
     $sql = "SELECT * FROM `checkout` WHERE `cid` = $cid;";
     $result = $db->query($sql);
-    while ($row = $result->fetch_array()){
-        echo $row['quantity'];
-        echo"<br><br>";
-        echo $row['assetID'];
-        echo"<br><br>";
-        echo $row['total_stock'];
-        echo"<br><br>";
+    if ($result) {
+        while ($row = $result->fetch_array()) {
+            echo $row['quantity'];
+            echo "<br><br>";
+            echo $row['assetID'];
+            echo "<br><br>";
+            echo $row['total_stock'];
+            echo "<br><br>";
+        }
     }
+    else {
+            echo "Error" . $sql . '<br>' . mysqli_error($db);}
 
    /*  =  "UPDATE `asset`
               SET `total_stock` = '$newStock'
