@@ -15,7 +15,10 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
     $stock = $_POST['total_stock'][$i];
     $newStock = $stock - $quantity;
 
-    $sql =  "UPDATE `asset`
+
+    echo "$assetPicked<br><br>$quantity <br><br>$stock <br><br>$newStock" ;
+
+   /* $sql =  "UPDATE `asset`
               SET `total_stock` = '$newStock'
               WHERE `assetID` = $assetPicked;";
     $result = $db->query($sql);
@@ -31,5 +34,5 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
     } else {
         echo "Error" . $sql . '<br>' . mysqli_error($db);
         header('Location: vieworders.php?action=failed');
-    }
+    }*/
 }
