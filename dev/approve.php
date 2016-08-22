@@ -8,15 +8,27 @@ $decision = "approved";
 $orderID = $_POST['orderID'];
 
 
-for ($i = 0; $i < count($_POST['orderselected']); $i++) {
+$cids = "";
+
+    foreach($_POST['orderselected'] as $cid=>$value){
+        $cids = $cids . $cid . ",";
+        
+        echo $cids;
+    }
+
+    // remove the last comma
+    /*$ids = rtrim($ids, ',');*/
+
+
+/*for ($i = 0; $i < count($_POST['orderselected']); $i++) {*/
     /*$quantity = $_POST['quantity'][$i];*/
-    $cid = $_POST['orderselected'][$i];
+/*    $cid = $_POST['orderselected'][$i];*/
     /*$assetPicked = $_POST['assetID'][$i];
     $stock = $_POST['total_stock'][$i];
     $newStock = $stock - $quantity;*/
 
 
-    $sql = "SELECT checkout.*,asset.total_stock
+    /*$sql = "SELECT checkout.*,asset.total_stock
             FROM `checkout`,`asset`
             WHERE `c_id` = $cid;";
     $result = $db->query($sql);
@@ -37,7 +49,7 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
         }
     }
     else {
-            echo "Error" . $sql . '<br>' . mysqli_error($db);}
+            echo "Error" . $sql . '<br>' . mysqli_error($db);}*/
 
    /*  =  "UPDATE `asset`
               SET `total_stock` = '$newStock'
@@ -56,4 +68,4 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
         echo "Error" . $sql . '<br>' . mysqli_error($db);
         header('Location: vieworders.php?action=failed');
     }*/
-}
+/*}*/
