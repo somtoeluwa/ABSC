@@ -134,7 +134,7 @@ if(count($_SESSION['cart_items'])>0){
        <?php
        $query = "SELECT assetID, assetName,assetCategory,total_stock  FROM asset WHERE assetID IN ({$ids}) ORDER BY assetName";
        $stmt = $db->query( $query );
-       $total_price=0;
+
        while ($row = $stmt->fetch_array()){
         ?>
 

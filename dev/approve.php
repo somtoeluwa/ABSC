@@ -7,17 +7,33 @@ $decision = "approved";
 
 $orderID = $_POST['orderID'];
 
-
 $cids = "";
 
     foreach($_POST['orderselected'] as $cids){
         $cids = $cids . ",";
-
-        echo $cids;
     }
-
     // remove the last comma
-    /*$ids = rtrim($ids, ',');*/
+    $cids = rtrim($cids, ',');
+
+$sql = "SELECT checkout.*,asset.total_stock
+            FROM `checkout`,`asset`
+            WHERE `c_id` IN ({$cids})";
+$result = $db->query($sql);
+while ($row = $result->fetch_array()) {
+    $assetPicked = $row['assetID'];
+    echo $assetPicked;
+    echo "<br><br>";
+
+    $quantity = $row['quantity'];
+    echo $quantity;
+    echo "<br><br>";
+
+    $stock  = $row['total_stock'];
+    echo $stock;
+    echo "<br><br>";
+
+}
+
 
 
 /*for ($i = 0; $i < count($_POST['orderselected']); $i++) {*/
