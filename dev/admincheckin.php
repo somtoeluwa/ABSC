@@ -122,7 +122,13 @@ $page_title ="Approve CheckOut";
             echo "<p>Order was approved!</p>";
             echo "</div>";
         }
+        if($action=='empty'){
 
+            echo "<div class='w3-container w3-section w3-red'>";
+            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+            echo "<p>No order selected.</p>";
+            echo "</div>";
+        }
 
         if($action=='failed'){
 
@@ -166,12 +172,7 @@ $page_title ="Approve CheckOut";
                             $counter++;
                             ?>
                             <tr>
-                                <td><input type="checkbox" name="orderselected[]" value="<?php echo $row['c_id']; ?>"/>
-                                    <input type="hidden" name="quantity[]" value="<?php echo $row['quantity']; ?>"/>
-                                    <input type ="hidden" name="total_stock[]" value="<?php echo $row['total_stock']; ?>" />
-                                    <input type="hidden" name="orderID" value="<?php echo $row['orderID']; ?>"/>
-                                    <input type="hidden" name="assetID[]" value="<?php echo $row['assetID'];?>"/></td>
-
+                                <td><input type="checkbox" name="orderselected[]" value="<?php echo $row['c_id']; ?>"/></td>
                                 <td><?php echo $counter;?></td>
                                 <td><?php echo $row['assetID'];?></td>
                                 <td><?php echo $row['assetName'];?></td>

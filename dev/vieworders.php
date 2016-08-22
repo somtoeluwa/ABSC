@@ -174,12 +174,7 @@ $page_title ="View all Orders";
                             $counter++;
                             ?>
                             <tr>
-                                <td><input type="checkbox"   name="orderselected[]" id="orderselected" value="<?php echo $row['c_id'];?>"/>
-                                    <!--<input type="hidden" name="total_stock[]" value="<?php /*echo $row['total_stock']; */?>"/>
-                                    <input type="hidden" name="quantity[]" value="<?php /*echo $row['quantity']; */?>"/>
-                                    <input type="hidden" name="orderID" value="<?php /*echo $row['orderID']; */?>"/>
-                                    <input type="hidden" name="assetID[]" value="<?php /*echo $row['assetID'];*/?>"/></td>-->
-
+                                <td><input type="checkbox"   name="orderselected[]" id="orderselected" value="<?php echo $row['c_id'];?>"/></td>
                                 <td><?php echo $counter;?></td>
                                 <td><?php echo $row['assetID'];?></td>
                                 <td><?php echo $row['assetName'];?></td>

@@ -54,7 +54,7 @@ if(isset($_POST['orderselected'])) {
 }
 // If no order is selected before approve button is clicked
 else {
-    header('Location: vieworders.php?action=empty');
+    header('Location: admincheckin.php?action=empty');
 }
 
 
