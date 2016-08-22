@@ -46,7 +46,7 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
 
     $sql = "SELECT checkout.*,asset.total_stock
             FROM `checkout`,`asset`
-            WHERE `c_id` = $cid;
+            WHERE `c_id` = $cid
             AND checkout.assetID = asset.assetID;";
     $result = $db->query($sql);
 
