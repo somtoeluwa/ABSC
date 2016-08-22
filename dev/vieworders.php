@@ -123,7 +123,13 @@ $page_title ="View all Orders";
             echo "<p>Order was approved!</p>";
             echo "</div>";
         }
+        if($action=='empty'){
 
+            echo "<div class='w3-container w3-section w3-red'>";
+            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+            echo "<p>No order selected.</p>";
+            echo "</div>";
+        }
 
         if($action=='failed'){
 

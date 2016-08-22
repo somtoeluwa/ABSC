@@ -16,7 +16,9 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
             AND checkout.assetID = asset.assetID;";
     $result = $db->query($sql);
 
-    if ($result) {
+    if (mysqli_num_rows($result2) > 0) {
+
+
         while ($row = $result->fetch_array()) {
             $assetPicked = $row['assetID'];
             $quantity = $row['quantity'];
@@ -34,7 +36,6 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
                     WHERE  `c_id` ={$cid};";
                     $result3= $db->query($sql3);
 
-                    echo "Successful";
                     header("Location: vieworders.php?action=approved");
             }
             else {
@@ -43,7 +44,7 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
             }
         }
     }else {
-        echo "Error" . $sql . '<br>' . mysqli_error($db);
-        header('Location: vieworders.php?action=failed');
+
+            header('Location: vieworders.php?action=empty');
     }
 }
