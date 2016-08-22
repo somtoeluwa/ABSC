@@ -8,10 +8,10 @@ include 'functions\functions.php';
 
 
 $decision = "approved";
-$orderID = $_POST['orderID'];
 
+// If an order is selected
 if(isset($_POST['orderselected'])){
-
+    // get order details
     for ($i = 0; $i < count($_POST['orderselected']); $i++) {
 
         $cid = $_POST['orderselected'][$i];
@@ -21,21 +21,20 @@ if(isset($_POST['orderselected'])){
                 WHERE `c_id` = $cid
                 AND checkout.assetID = asset.assetID;";
         $result = $db->query($sql);
+    //  The result sent back has values
+        if (mysqli_num_rows($result) > 0) {
 
-        if (mysqli_num_rows($result2) > 0) {
-
-    
             while ($row = $result->fetch_array()) {
                 $assetPicked = $row['assetID'];
                 $quantity = $row['quantity'];
                 $stock = $row['total_stock'];
                 $newStock = $stock - $quantity;
-
+    //  Set the new stock value
                 $sql2 = "UPDATE `asset`
                           SET `total_stock` = '$newStock'
                           WHERE `assetID` = $assetPicked;";
                         $result2 = $db->query($sql2);
-
+    // Set the status from pending to approved
                 if ($result2){
                         $sql3= "Update `checkout`
                         SET `status` = '$decision'
@@ -52,6 +51,7 @@ if(isset($_POST['orderselected'])){
         }
     }
 }
+// If no order is selected before approve button is clicked
     else {
             header('Location: vieworders.php?action=empty');
     }
