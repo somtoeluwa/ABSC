@@ -19,11 +19,11 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
     $sql = "SELECT * FROM `checkout` WHERE `cid` = $cid;";
     $result = $db->query($sql);
     while ($row = $result->fetch_array()){
-        echo $_POST['quantity'];
+        echo $row['quantity'];
         echo"<br><br>";
-        echo $_POST['assetID'];
+        echo $row['assetID'];
         echo"<br><br>";
-        echo $_POST['total_stock'];
+        echo $row['total_stock'];
         echo"<br><br>";
     }
 
