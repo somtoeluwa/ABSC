@@ -16,7 +16,7 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
     $newStock = $stock - $quantity;*/
 
 
-    $sql = "SELECT * FROM `checkout` WHERE `cid` = $cid;";
+    $sql = "SELECT * FROM `checkout` WHERE `c_id` = $cid;";
     $result = $db->query($sql);
     if ($result) {
         while ($row = $result->fetch_array()) {
