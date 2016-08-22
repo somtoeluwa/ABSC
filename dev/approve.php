@@ -16,15 +16,23 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
     $newStock = $stock - $quantity;*/
 
 
-    $sql = "SELECT * FROM `checkout` WHERE `c_id` = $cid;";
+    $sql = "SELECT checkout.*,asset.total_stock
+            FROM `checkout`,`asset`
+            WHERE `c_id` = $cid;";
     $result = $db->query($sql);
     if ($result) {
         while ($row = $result->fetch_array()) {
-            echo $row['quantity'];
+
+            $assetPicked = $row['assetID'];
+            echo $assetPicked;
             echo "<br><br>";
-            echo $row['assetID'];
+
+            $quantity = $row['quantity'];
+            echo $quantity;
             echo "<br><br>";
-            echo $row['total_stock'];
+
+            $stock  = $row['total_stock'];
+            echo $stock;
             echo "<br><br>";
         }
     }
