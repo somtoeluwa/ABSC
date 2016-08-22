@@ -190,7 +190,7 @@ $page_title ="Approve CheckOut";
                         }
                     ?>
                     </table>
-                <button type="submit"  class="w3-btn w3-right w3-margin confirmation">Check In</button>Check In</button>
+                <button type="submit"  class="w3-btn w3-right w3-margin confirmation">Check In</button>
             </form>
         </div>
                         <?
