@@ -11,10 +11,10 @@ $cids = "";
 
     foreach($_POST['orderselected'] as $cids){
         $cids = $cids . ",";
-    }
-    // remove the last comma
-    $cids = rtrim($cids, ',');
-    echo $cids;
+        // remove the last comma
+        $cids = rtrim($cids, ',');
+        echo $cids;}
+
 /*
 $sql = "SELECT checkout.*,asset.total_stock
             FROM `checkout`,`asset`
