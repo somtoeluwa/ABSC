@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efc93979-8b02-4a32-b930-e13fc4ed231b" name="Default" comment="fixing upload error feedback">
+    <list default="true" id="efc93979-8b02-4a32-b930-e13fc4ed231b" name="Default" comment="debugging checkout">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/approve.php" afterPath="$PROJECT_DIR$/dev/approve.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/vieworders.php" afterPath="$PROJECT_DIR$/dev/vieworders.php" />
     </list>
     <ignored path="ABSC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,14 +43,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="approve.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vieworders.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/vieworders.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.24858756">
+              <caret line="159" column="52" selection-start-line="159" selection-start-column="52" selection-end-line="159" selection-end-column="52" />
+              <folding>
+                <marker date="1471874333195" expanded="true" signature="6391:6398" placeholder="SELECT * FRO... checkout" />
+                <marker date="1471874333195" expanded="true" signature="6391:6668" placeholder="SELECT check... checkout" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="approve.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/approve.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6165413">
-              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state vertical-scroll-proportion="-9.961538">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
-                <marker date="1471873210728" expanded="true" signature="467:560" placeholder="UPDATE `asse... " />
-                <marker date="1471873210728" expanded="true" signature="643:735" placeholder="Update `chec... " />
+                <marker date="1471874333150" expanded="true" signature="395:434" placeholder="SELECT * FRO... checkout" />
+                <marker date="1471874333150" expanded="true" signature="708:801" placeholder="UPDATE `asse... " />
+                <marker date="1471874333150" expanded="true" signature="884:976" placeholder="Update `chec... " />
               </folding>
             </state>
           </provider>
@@ -80,7 +95,6 @@
         <option value="$PROJECT_DIR$/dev/home.php" />
         <option value="$PROJECT_DIR$/dev/adminviewitems.php" />
         <option value="$PROJECT_DIR$/dev/viewusers.php" />
-        <option value="$PROJECT_DIR$/dev/vieworders.php" />
         <option value="$PROJECT_DIR$/dev/search.php" />
         <option value="$PROJECT_DIR$/dev/edit_asset.php" />
         <option value="$PROJECT_DIR$/dev/item.php" />
@@ -102,6 +116,7 @@
         <option value="$PROJECT_DIR$/dev/checkout.php" />
         <option value="$PROJECT_DIR$/dev/newItem.php" />
         <option value="$PROJECT_DIR$/dev/upload.php" />
+        <option value="$PROJECT_DIR$/dev/vieworders.php" />
         <option value="$PROJECT_DIR$/dev/approve.php" />
       </list>
     </option>
@@ -264,18 +279,6 @@
       <created>1469586337508</created>
       <option name="number" value="Default" />
       <updated>1469586337508</updated>
-    </task>
-    <task id="LOCAL-00040" summary="User accounts (User id)">
-      <created>1470844499391</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1470844499391</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Check in done, confirmations and final adjustments">
-      <created>1470889437944</created>
-      <option name="number" value="00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1470889437944</updated>
     </task>
     <task id="LOCAL-00042" summary="Check in done, confirmations and final adjustments">
       <created>1470890726651</created>
@@ -559,7 +562,19 @@
       <option name="project" value="LOCAL" />
       <updated>1471808261228</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="debugging checkout">
+      <created>1471873223329</created>
+      <option name="number" value="00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1471873223329</updated>
+    </task>
+    <task id="LOCAL-00090" summary="debugging checkout">
+      <created>1471873563627</created>
+      <option name="number" value="00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1471873563627</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TodoView">
@@ -577,6 +592,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1301059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -584,7 +600,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -629,7 +644,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version 3.0 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;- checkout approval page&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-added item feedback&#10;- accordion&#10;&#10;" />
     <MESSAGE value="Version 3.1 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;- checkout approval page&#10;- checkin approval&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out&#10;&#10;.....Bugg detection phase ...&#10;-added item feedback&#10;- accordion&#10;&#10;" />
     <MESSAGE value="Version 4.1 from  local disk&#10;&#10;Admin functions&#10;- create item&#10;- upload item picture&#10;- checkout approval page&#10;- checkin approval&#10;&#10;&#10;Customer functions&#10;- add to cart &#10;- remove from cart &#10;- check out with order number&#10;- confirmations &#10;&#10;" />
     <MESSAGE value="checkout complete. &#10;" />
@@ -654,7 +668,8 @@
     <MESSAGE value="Index redirect fixed" />
     <MESSAGE value="Testing new email address" />
     <MESSAGE value="fixing upload error feedback" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing upload error feedback" />
+    <MESSAGE value="debugging checkout" />
+    <option name="LAST_COMMIT_MESSAGE" value="debugging checkout" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -870,6 +885,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.78967494">
           <caret line="29" column="57" selection-start-line="23" selection-start-column="0" selection-end-line="29" selection-end-column="57" />
+          <folding>
+            <marker date="1470889248799" expanded="true" signature="365:409" placeholder="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -877,13 +895,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8374761">
           <caret line="66" column="5" selection-start-line="61" selection-start-column="8" selection-end-line="66" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/vieworders.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6577438">
-          <caret line="184" column="72" selection-start-line="184" selection-start-column="72" selection-end-line="184" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -902,6 +914,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.191571">
           <caret line="105" column="10" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="10" />
+          <folding>
+            <marker date="1471735633064" expanded="true" signature="4830:4875" placeholder="select * fro... users" />
+            <marker date="1471735633064" expanded="true" signature="7982:8264" placeholder="UPDATE `user... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -909,6 +925,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.61877394">
           <caret line="99" column="34" selection-start-line="81" selection-start-column="4" selection-end-line="107" selection-end-column="10" />
+          <folding>
+            <marker date="1470917702849" expanded="true" signature="8101:8231" placeholder="insert into users... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -941,6 +960,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1471782835155" expanded="true" signature="4404:4449" placeholder="select * fro... users" />
+            <marker date="1471782835155" expanded="true" signature="7309:7554" placeholder="UPDATE `user... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -948,6 +971,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.9235412">
           <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+          <folding>
+            <marker date="1471782835155" expanded="true" signature="4404:4449" placeholder="select * fro... users" />
+            <marker date="1471782835155" expanded="true" signature="7309:7554" placeholder="UPDATE `user... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -955,6 +982,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7118644">
           <caret line="189" column="69" selection-start-line="189" selection-start-column="69" selection-end-line="189" selection-end-column="69" />
+          <folding>
+            <marker date="1471805807954" expanded="true" signature="6175:6370" placeholder="INSERT INTO `checkout`... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1061,11 +1091,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/approve.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6165413">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state vertical-scroll-proportion="-9.961538">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <marker date="1471873210728" expanded="true" signature="467:560" placeholder="UPDATE `asse... " />
-            <marker date="1471873210728" expanded="true" signature="643:735" placeholder="Update `chec... " />
+            <marker date="1471874333150" expanded="true" signature="395:434" placeholder="SELECT * FRO... checkout" />
+            <marker date="1471874333150" expanded="true" signature="708:801" placeholder="UPDATE `asse... " />
+            <marker date="1471874333150" expanded="true" signature="884:976" placeholder="Update `chec... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/vieworders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24858756">
+          <caret line="159" column="52" selection-start-line="159" selection-start-column="52" selection-end-line="159" selection-end-column="52" />
+          <folding>
+            <marker date="1471874333195" expanded="true" signature="6391:6398" placeholder="SELECT * FRO... checkout" />
+            <marker date="1471874333195" expanded="true" signature="6391:6668" placeholder="SELECT check... checkout" />
           </folding>
         </state>
       </provider>

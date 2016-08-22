@@ -8,17 +8,26 @@ $decision = "approved";
 $orderID = $_POST['orderID'];
 
 
-for ($i = 0; $i < count($_POST['assetID']); $i++) {
-    $quantity = $_POST['quantity'][$i];
-    /*$cid = $_POST['orderselected'][$i];*/
-    $assetPicked = $_POST['assetID'][$i];
+for ($i = 0; $i < count($_POST['orderselected']); $i++) {
+    /*$quantity = $_POST['quantity'][$i];*/
+    $cid = $_POST['orderselected'][$i];
+    /*$assetPicked = $_POST['assetID'][$i];
     $stock = $_POST['total_stock'][$i];
-    $newStock = $stock - $quantity;
+    $newStock = $stock - $quantity;*/
 
 
-    echo "$assetPicked<br><br>$quantity <br><br>$stock <br><br>$newStock" ;
+    $sql = "SELECT * FROM `checkout` WHERE `cid` = $cid;";
+    $result = $db->query($sql);
+    while ($row = $result->fetch_array()){
+        echo $_POST['quantity'];
+        echo"<br><br>";
+        echo $_POST['assetID'];
+        echo"<br><br>";
+        echo $_POST['total_stock'];
+        echo"<br><br>";
+    }
 
-   /* $sql =  "UPDATE `asset`
+   /*  =  "UPDATE `asset`
               SET `total_stock` = '$newStock'
               WHERE `assetID` = $assetPicked;";
     $result = $db->query($sql);
