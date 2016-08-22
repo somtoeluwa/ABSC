@@ -52,22 +52,29 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
 
     if ($result) {
         while ($row = $result->fetch_array()) {
-
             $assetPicked = $row['assetID'];
-            echo $assetPicked;
-            echo "<br><br>";
-
             $quantity = $row['quantity'];
-            echo $quantity;
-            echo "<br><br>";
-
             $stock = $row['total_stock'];
-            echo $stock;
-            echo "<br><br>";
-
             $newStock = $stock - $quantity;
-            echo $newStock;
-            echo "<br><br>";
+
+            $sql2 = "UPDATE `asset`
+                      SET `total_stock` = '$newStock'
+                      WHERE `assetID` = $assetPicked;";
+                    $result2 = $db->query($sql2);
+
+            if ($result2){
+                    $sql3= "Update `checkout`
+                    SET `status` = '$decision'
+                    WHERE  `c_id` ={$cid};";
+                    $result3= $db->query($sql3);
+
+                    echo "Successful";
+                    header("Location: vieworders.php?action=approved");
+            }
+            else {
+                    echo "Error" . $sql . '<br>' . mysqli_error($db);
+                    header('Location: vieworders.php?action=failed');
+            }
         }
     }else {
         echo "Error" . $sql . '<br>' . mysqli_error($db);
