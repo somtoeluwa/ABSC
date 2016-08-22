@@ -8,9 +8,9 @@ $decision = "approved";
 $orderID = $_POST['orderID'];
 
 
-for ($i = 0; $i < count($_POST['orderselected']); $i++) {
+for ($i = 0; $i < count($_POST['assetID']); $i++) {
     $quantity = $_POST['quantity'][$i];
-    $cid = $_POST['orderselected'][$i];
+    /*$cid = $_POST['orderselected'][$i];*/
     $assetPicked = $_POST['assetID'][$i];
     $stock = $_POST['total_stock'][$i];
     $newStock = $stock - $quantity;
