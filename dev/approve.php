@@ -64,6 +64,10 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
             $stock = $row['total_stock'];
             echo $stock;
             echo "<br><br>";
+
+            $newStock = $stock - $quantity;
+            echo $newStock;
+            echo "<br><br>";
         }
     }else {
         echo "Error" . $sql . '<br>' . mysqli_error($db);
