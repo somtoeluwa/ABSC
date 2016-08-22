@@ -10,9 +10,9 @@ $orderID = $_POST['orderID'];
 
 $cids = "";
 
-    foreach($_POST['orderselected'] as $cid=>$value){
-        $cids = $cids . $cid . ",";
-        
+    foreach($_POST['orderselected'] as $cids){
+       /* $cids = $cids . $cid . ",";*/
+
         echo $cids;
     }
 
