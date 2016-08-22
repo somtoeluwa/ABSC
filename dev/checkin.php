@@ -5,22 +5,31 @@ include 'functions\functions.php';
 
 
 for ($i = 0; $i < count($_POST['orderselected']); $i++) {
-    $quantity = $_POST['quantity'][$i];
     $cid = $_POST['orderselected'][$i];
-    $assetPicked = $_POST['assetID'][$i];
-    $stock = $_POST['total_stock'][$i];
-    $newStock = $stock + $quantity;
 
-    $sql =  "UPDATE `asset`
+    $sql = "SELECT checkout.*,asset.total_stock
+            FROM `checkout`,`asset`
+            WHERE `c_id` = $cid
+            AND checkout.assetID = asset.assetID;";
+    $result = $db->query($sql);
+
+    if ($result) {
+        while ($row = $result->fetch_array()) {
+            $assetPicked = $row['assetID'];
+            $quantity = $row['quantity'];
+            $stock = $row['total_stock'];
+            $newStock = $stock + $quantity;
+
+    $sql2 =  "UPDATE `asset`
               SET `total_stock` = '$newStock'
               WHERE `assetID` = '$assetPicked';";
-    $result = $db->query($sql);
-    if ($result){
+    $result2 = $db->query($sql2);
+    if ($result2){
 
-        $sql2= "DELETE FROM `checkout`
+        $sql3= "DELETE FROM `checkout`
 
                 WHERE  `c_id` ={$cid};";
-        $result2= $db->query($sql2);
+        $result3= $db->query($sql3);
 
         echo "Successful";
         header("Location: vieworders.php?action=approved");
@@ -29,8 +38,10 @@ for ($i = 0; $i < count($_POST['orderselected']); $i++) {
         header('Location: vieworders.php?action=failed');
     }
 
-
-
-
-
 }
+    }else {
+        echo "Error" . $sql . '<br>' . mysqli_error($db);
+        header('Location: vieworders.php?action=failed');
+    }
+}
+
