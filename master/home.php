@@ -50,7 +50,7 @@ $page_title ="Arduino component booking system";
     <!-- top panel-->
     <div class="w3-container">
         <img id="logo" src="assets/images/Robert_Gordon_University_logo.svg.png" alt="Home logo" style="width:30%">
-        <h2 id="login_title" class="w3-xlarge"><?php echo isset($page_title) ? $page_title : "Arduino component booking System"; ?></h2>
+        <h2 id="login_title" class="w3-xlarge" style="text-align: center"><?php echo isset($page_title) ? $page_title : "Arduino component booking System"; ?></h2>
     </div>
     <!-- Responsive Top navigation bar -->
     <nav>
