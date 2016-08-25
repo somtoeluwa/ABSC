@@ -110,15 +110,12 @@ else if($action=='quantity_updated'){
 
 if(count($_SESSION['cart_items'])>0){
 
-    // get the product ids
+    // collect assets details
     $ids = "";
     foreach($_SESSION['cart_items'] as $id=>$value){
         $ids = $ids . $id . ",";
     }
-
-    // remove the last comma
     $ids = rtrim($ids, ',');
-
     ?>
 
    <!-- start table -->

@@ -6,13 +6,14 @@
  * Time: 12:43 PM
  */
 // Start session
-// Start session
-session_start();
-$role = $_SESSION['sess_userrole'];
-$userid = $_SESSION['userid'];
-if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
-    header('Location: index.php?err=2');
-}
+
+            // Start session
+            session_start();
+            $role = $_SESSION['sess_userrole'];
+            $userid = $_SESSION['userid'];
+            if(!isset($_SESSION['sess_email']) && ($role!="user"|| $role!="admin")){
+                header('Location: index.php?err=2');
+            }
 
 // include Database connection
 include 'functions/functions.php';
@@ -72,12 +73,14 @@ $page_title ="Arduino component booking system";
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>
-            <li class="w3-right" <?php echo $page_title=="Cart" ? "class='active'" : ""; ?> >
+            <li class="w3-right">
                 <a href="cart.php">
                     <?php
                     // count products in cart
                     $cart_count= count($_SESSION['cart_items']);
-                    ?><i class="fa fa-shopping-cart w3-large"></i>
+                    ?>
+
+                    <i class="fa fa-shopping-cart w3-large"></i>
                     <span class="w3-badge" id="comparison-count"><?php echo $cart_count; ?></span>
                     item(s)
                 </a>
@@ -111,7 +114,7 @@ $page_title ="Arduino component booking system";
 
         $action = isset($_GET['action']) ? $_GET['action'] : "";
         $name = isset($_GET['assetName']) ? $_GET['assetName'] : "";
-        $category= isset($_GET['assetCategory']) ? $_GET['assetCategory'] : "";
+
 
         //addtional params
         $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "1";
@@ -152,7 +155,7 @@ $page_title ="Arduino component booking system";
             echo "</div>";
         }
 
-
+        $category= isset($_GET['assetCategory']) ? $_GET['assetCategory'] : "";
         if ($category){
 
             $sql_asset = "SELECT * FROM asset WHERE assetCategory = '$category' ORDER BY assetID DESC";
@@ -163,7 +166,7 @@ $page_title ="Arduino component booking system";
 
         $result2 =  $db->query($sql_asset);
 
-        //If there are no items to display to customers or buyers, display a no item message to the screen and that's cool man
+        //If there are no items to display t
         if(mysqli_num_rows($result2) < 1)
         {
             ?>
@@ -177,14 +180,10 @@ $page_title ="Arduino component booking system";
         }
         else
         {
-            //If there are items in the asset table in the database available, then get all these items and display them as shown below
-
-
+            //If there are items in the asset table in the database available
             while ($row = $result2->fetch_array()) {
 
                 ?>
-
-
                 <article class="col-4 itemBox w3-margin-bottom  w3-container ">
                     <div class="row">
                         <div class="col-12 col-m-12 itemPic w3-card-4  w3-center ">
@@ -202,22 +201,7 @@ $page_title ="Arduino component booking system";
                                     View Details
                                 </button></a>
                         </div>
-                        <!--<div class="col-12 col-m-12">
 
-
-                        </div>-->
-                        <div class="row">
-                            <!-- <div class="col-6 col-m-6">
-                                    <div class="stock_count"><strong><?php /*echo $row['total_stock']; */?></strong> In Stock</div>
-                                </div>-->
-                            <div class="col-12">
-                                <!-- <a href="add_to_cart.php?assetID=<?php /*echo $row['assetID'];*/?>&assetName=<?php /*echo $row['assetName'];*/?>&quantity=1"><button class="w3-btn w3-theme" id="add_to_cart_button" value="Add to Cart" title="Add this item to cart">
-                                        Add to cart
-                                    </button></a>-->
-
-
-                            </div>
-                        </div>
                     </div>
                 </article>
                 <?php

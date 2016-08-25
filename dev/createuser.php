@@ -61,7 +61,7 @@ $page_title ="Create User";
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>
-            <li class="w3-right" <?php echo $page_title=="Cart" ? "class='active'" : ""; ?> >
+            <li class="w3-right">
                 <a href="cart.php">
                     <?php
                     // count products in cart
@@ -164,13 +164,6 @@ $page_title ="Create User";
         }
         else if ($_SERVER['REQUEST_METHOD']==='POST'){
 
-            // Function to test data and allow those with special characters inputted  to be posted
-            /*function test_input($data) {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                return $data;
-            }*/
 
             $firstname = test_input($_POST['firstname']);
             $surname = test_input($_POST['surname']);
@@ -178,12 +171,13 @@ $page_title ="Create User";
             $password = test_input($_POST['password']);
             $role = test_input($_POST['role']);
 
-/*            echo "'$email','$password','$firstname','$surname','$role'";*/
+
 
             $sql = "insert into users (email,password,firstname,surname,role)
             values('$email','$password','$firstname','$surname','$role')";
 
             if($result = mysqli_query($db,$sql)) {
+
                 // When sucessful return to View all assets
                 header('location: createuser.php?action=added');
             }else{
@@ -204,6 +198,8 @@ $page_title ="Create User";
     </div>
 </main>
 
+
+
 <script type="text/javascript">
     window.onload = function () {
         document.getElementById("password").onchange = validatePassword;
@@ -211,15 +207,16 @@ $page_title ="Create User";
         /* document.getElementById('email').setCustomValidity("Please use an @rgu.ac.uk email address.");*/
 
     }
-    function validatePassword(){
-        var pass2=document.getElementById("confirmpassword").value;
-        var pass1=document.getElementById("password").value;
-        if(pass1!=pass2)
+
+    function validatePassword() {
+        var pass2 = document.getElementById("confirmpassword").value;
+        var pass1 = document.getElementById("password").value;
+        if (pass1 != pass2)
             document.getElementById("confirmpassword").setCustomValidity("Passwords Don't Match");
         else
             document.getElementById("confirmpassword").setCustomValidity('');
-//empty string means no validation error
     }
+
 </script>
 <script>
     function myAccFunc(id) {

@@ -13,41 +13,43 @@ $email = "";
 $password = "";
 
 if(isset($_POST['email'])){
-    $email = $_POST['email'];
-}
+    $email = $_POST['email'];}
+
 if (isset($_POST['password'])) {
-    $password = $_POST['password'];
+    $password = $_POST['password'];}
 
-}
-
-echo $email ." : ".$password;
-
-$q = 'SELECT * FROM users WHERE email=:email AND password=:password';
+$q = 'SELECT *
+      FROM users
+      WHERE email=:email AND password=:password';
 
 $query = $dbh->prepare($q);
 
 $query->execute(array(':email' => $email, ':password' => $password));
 
+/*echo $email ." : ".$password;*/
 
-if($query->rowCount() == 0){
-    header('Location: index.php?err=1');
-}else{
+        if($query->rowCount() == 0){
+            header('Location: index.php?err=1');
+        }
 
-    $row = $query->fetch(PDO::FETCH_ASSOC);
+    else{
+        $row = $query->fetch(PDO::FETCH_ASSOC);
 
-    session_regenerate_id();
-    $_SESSION['userid'] = $row['userid'];
-    $_SESSION['sess_email'] = $row['email'];
-    $_SESSION['sess_firstname'] = $row['firstname'];
-    $_SESSION['sess_surname'] = $row['surname'];
-    $_SESSION['sess_userrole'] = $row['role'];
+        session_regenerate_id();
+        $_SESSION['userid'] = $row['userid'];
+        $_SESSION['sess_email'] = $row['email'];
+        $_SESSION['sess_firstname'] = $row['firstname'];
+        $_SESSION['sess_surname'] = $row['surname'];
+        $_SESSION['sess_userrole'] = $row['role'];
 
-    echo $_SESSION['sess_userrole'];
-    session_write_close();
+        echo $_SESSION['sess_userrole'];
+        session_write_close();
 
     if( $_SESSION['sess_userrole'] == "admin"){
         header('Location: adminviewitems.php');
-    }else{
+    }
+
+    else{
         header('Location: home.php');
     }
 

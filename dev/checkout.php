@@ -110,6 +110,7 @@ $page_title ="Checkout";
             $t = time();
             $a = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 4);
             $orderID = $a . $t;
+
             // set default due date for one week from checkout
             $nextWeek = $t + (7 * 24 * 60 * 60);
             $duedate = date('Y-m-d 00:00:00',$nextWeek);
@@ -168,42 +169,39 @@ $page_title ="Checkout";
                 if ($result = mysqli_query($db, $sql)) {
 
 
-// When sucessful show receipt page send email and unset session
+                    // When sucessfull send email and unset session
+
                     if ($counter==1){
+
                         require_once 'swiftmailer/lib/swift_required.php';
-
-// Create the Transport
+                        // Create the Transport
                         $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
-                            ->setUsername('somtoeluwa@gmail.com')
-                            ->setPassword('h3ll0sommy')
+                            ->setUsername('no.reply.ac.booking.system@gmail.com')
+                            ->setPassword('AcBsMth3s1s!')
                         ;
-// Create the Mailer using your created Transport
+                        // Create the Mailer using your created Transport
                         $mailer = Swift_Mailer::newInstance($transport);
-
-
-
-// Create the message
+                        // Create the message
                         $message = Swift_Message::newInstance();
-// Give the message a subject
+                        // Give the message a subject
                         $message->setSubject('Your order has been placed');
-// Set the From address with an associative array
-                        $message->setFrom(array('somtoeluwa@gmail.com' => 'Somto Eluwa'));
-// Set the To addresses with an associative array
+                        // Set the From address with an associative array
+                        $message->setFrom(array('no.reply.ac.booking.system@gmail.com' => 'DoNotReply Arduino component Booking System'));
+                        // Set the To addresses with an associative array
                         $message->setTo(array($email => $firstname));
-// Give it a body
-                    $message->setBody('<p>Hello, '.$firstname.'</p>
+                        // Give it a body
+                        $message->setBody('<p>Hello, '.$firstname.'</p>
                                     <p>Thank you for using the Arduino booking System.</p>
                                     <p>Your order has been placed. Your order number is:<b>'. $orderID.'</b> </p>
                                     <p>Present this number to the Module co-ordinator to recieve your items.</p>
                                     <br><br>
-                                    <span>King Regards,</span>
+                                    <span>Kind Regards,</span>
                                     <br><br>
                                     <span>Admin</span>
                                     <br><br>
                                     ','text/html');
-// Send the message
-                    $numSent = $mailer->send($message);
-                    }
+                        // Send the message
+                        $numSent = $mailer->send($message); }
 
 
                 unset($_SESSION['cart_items']);

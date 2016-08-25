@@ -9,32 +9,34 @@ include 'functions\functions.php';
 
 $decision = "approved";
 
-// If an order is selected
-if(isset($_POST['orderselected'])){
-    // get order details
-    for ($i = 0; $i < count($_POST['orderselected']); $i++) {
+        // If an order is selected
+        if(isset($_POST['orderselected'])){
+            // get order details
+            for ($i = 0; $i < count($_POST['orderselected']); $i++) {
+                $cid = $_POST['orderselected'][$i];
 
-        $cid = $_POST['orderselected'][$i];
+                $sql = "SELECT checkout.*,asset.total_stock
+                        FROM `checkout`,`asset`
+                        WHERE `c_id` = $cid
+                        AND checkout.assetID = asset.assetID;";
+                $result = $db->query($sql);
 
-        $sql = "SELECT checkout.*,asset.total_stock
-                FROM `checkout`,`asset`
-                WHERE `c_id` = $cid
-                AND checkout.assetID = asset.assetID;";
-        $result = $db->query($sql);
-    //  The result sent back has values
-        if (mysqli_num_rows($result) > 0) {
+            //  The result sent back has values
+                if (mysqli_num_rows($result) > 0) {
 
-            while ($row = $result->fetch_array()) {
-                $assetPicked = $row['assetID'];
-                $quantity = $row['quantity'];
-                $stock = $row['total_stock'];
-                $newStock = $stock - $quantity;
-    //  Set the new stock value
+                    while ($row = $result->fetch_array()) {
+                        $assetPicked = $row['assetID'];
+                        $quantity = $row['quantity'];
+                        $stock = $row['total_stock'];
+                        $newStock = $stock - $quantity;
+
+            //  Set the new stock value
                 $sql2 = "UPDATE `asset`
                           SET `total_stock` = '$newStock'
                           WHERE `assetID` = $assetPicked;";
                         $result2 = $db->query($sql2);
-    // Set the status from pending to approved
+
+                // Set the status from pending to approved
                 if ($result2){
                         $sql3= "Update `checkout`
                         SET `status` = '$decision'

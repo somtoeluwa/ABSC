@@ -100,6 +100,7 @@ $page_title ="Order Details";
 
     <div class="w3-container" id="assetOptionscontent" style=" margin-left:160px;">
         <?php
+
             $search = $_POST['search'];
             $sql = "SELECT checkout.*,users.email,asset.assetName,asset.total_stock,asset.total_owned
                               FROM `checkout`,`users`,`asset`
@@ -107,6 +108,7 @@ $page_title ="Order Details";
                               AND checkout.userid = users.userid
                               AND checkout.assetID = asset.assetID";
             $result = $db->query($sql);
+
             if (mysqli_num_rows($result) > 0) {
                 $counter = 0;
                 ?>
