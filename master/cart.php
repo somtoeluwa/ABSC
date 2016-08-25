@@ -110,15 +110,12 @@ else if($action=='quantity_updated'){
 
 if(count($_SESSION['cart_items'])>0){
 
-    // get the product ids
+    // collect assets details
     $ids = "";
     foreach($_SESSION['cart_items'] as $id=>$value){
         $ids = $ids . $id . ",";
     }
-
-    // remove the last comma
     $ids = rtrim($ids, ',');
-
     ?>
 
    <!-- start table -->
@@ -146,7 +143,7 @@ if(count($_SESSION['cart_items'])>0){
                 <input type="hidden" name="assetName[]" value="<?php echo"{$_SESSION['cart_items'][$row['assetID']]['assetName']}";?>"/></td>
 
             <td><a href='remove_from_cart.php?assetID=<?php echo $row['assetID']?>&assetName=<?php echo $row['assetName']?>' class='btn btn-danger'>
-                    <button class='fa fa-remove w3-button remove'>Remove from cart</button></a>
+                    <i class='fa fa-remove w3-button remove'>Remove from cart</i></a>
             </td>
         </tr>
        <?php
@@ -184,6 +181,8 @@ else{
         <p> Designed by Somto Eluwa</p>
     </footer>
     <!-- -->
+
+<!-- Java script functions-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 

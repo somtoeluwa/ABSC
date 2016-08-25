@@ -202,22 +202,6 @@ $page_title ="Arduino component booking system";
                                     View Details
                                 </button></a>
                         </div>
-                        <!--<div class="col-12 col-m-12">
-
-
-                        </div>-->
-                        <div class="row">
-                            <!-- <div class="col-6 col-m-6">
-                                    <div class="stock_count"><strong><?php /*echo $row['total_stock']; */?></strong> In Stock</div>
-                                </div>-->
-                            <div class="col-12">
-                                <!-- <a href="add_to_cart.php?assetID=<?php /*echo $row['assetID'];*/?>&assetName=<?php /*echo $row['assetName'];*/?>&quantity=1"><button class="w3-btn w3-theme" id="add_to_cart_button" value="Add to Cart" title="Add this item to cart">
-                                        Add to cart
-                                    </button></a>-->
-
-
-                            </div>
-                        </div>
                     </div>
                 </article>
                 <?php
@@ -237,6 +221,8 @@ $page_title ="Arduino component booking system";
     <p> Designed by Somto Eluwa</p>
 </footer>
 <!-- -->
+
+<!-- Javascript Functions-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 

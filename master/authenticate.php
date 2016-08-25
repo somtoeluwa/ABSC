@@ -20,7 +20,7 @@ if (isset($_POST['password'])) {
 
 }
 
-echo $email ." : ".$password;
+
 
 $q = 'SELECT * FROM users WHERE email=:email AND password=:password';
 
@@ -42,7 +42,7 @@ if($query->rowCount() == 0){
     $_SESSION['sess_surname'] = $row['surname'];
     $_SESSION['sess_userrole'] = $row['role'];
 
-    echo $_SESSION['sess_userrole'];
+
     session_write_close();
 
     if( $_SESSION['sess_userrole'] == "admin"){

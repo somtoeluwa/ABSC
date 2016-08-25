@@ -164,13 +164,6 @@ $page_title ="Create User";
         }
         else if ($_SERVER['REQUEST_METHOD']==='POST'){
 
-            // Function to test data and allow those with special characters inputted  to be posted
-            /*function test_input($data) {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                return $data;
-            }*/
 
             $firstname = test_input($_POST['firstname']);
             $surname = test_input($_POST['surname']);
@@ -178,7 +171,6 @@ $page_title ="Create User";
             $password = test_input($_POST['password']);
             $role = test_input($_POST['role']);
 
-/*            echo "'$email','$password','$firstname','$surname','$role'";*/
 
             $sql = "insert into users (email,password,firstname,surname,role)
             values('$email','$password','$firstname','$surname','$role')";
@@ -204,6 +196,8 @@ $page_title ="Create User";
     </div>
 </main>
 
+
+<!-- JavaScript Functions-->
 <script type="text/javascript">
     window.onload = function () {
         document.getElementById("password").onchange = validatePassword;

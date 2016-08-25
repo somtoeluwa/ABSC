@@ -124,7 +124,13 @@ $page_title ="View all Orders";
             echo "</div>";
         }
 
+        if($action=='empty'){
 
+            echo "<div class='w3-container w3-section w3-red'>";
+            echo "<span onclick=\"this.parentElement.style.display='none'\" class=\"w3-closebtn\">&times;</span>";
+            echo "<p>No order selected.</p>";
+            echo "</div>";
+        }
         if($action=='failed'){
 
             echo "<div class='w3-container w3-section w3-red'>";
@@ -168,11 +174,7 @@ $page_title ="View all Orders";
                             $counter++;
                             ?>
                             <tr>
-                                <td><input type="checkbox"   name="orderselected[]" id="orderselected" value="<?php echo $row['c_id'];?>"/>
-                                    <input type="hidden" name="total_stock[]" value="<?php echo $row['total_stock']; ?>"/>
-                                    <input type="hidden" name="quantity[]" value="<?php echo $row['quantity']; ?>"/>
-                                    <input type="hidden" name="orderID" value="<?php echo $row['orderID']; ?>"/>
-                                    <input type="hidden" name="assetID[]" value="<?php echo $row['assetID'];?>"/></td>
+                                <td><input type="checkbox"   name="orderselected[]" id="orderselected" value="<?php echo $row['c_id'];?>"/></td>
 
                                 <td><?php echo $counter;?></td>
                                 <td><?php echo $row['assetID'];?></td>
@@ -211,7 +213,9 @@ $page_title ="View all Orders";
 
 
 
+<!--Javascrit functions-->
 
+<!--Accordion-->
 <script>
     function myAccFunc(id) {
         var x = document.getElementById(id);
@@ -225,6 +229,10 @@ $page_title ="View all Orders";
         }
     }
 </script>
+
+
+<!--COnfirm box-->
+
 <script type="text/javascript">
     var elems = document.getElementsByClassName('confirmation');
     var confirmIt = function (e) {

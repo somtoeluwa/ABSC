@@ -193,7 +193,7 @@ $page_title = "Admin-Home"
 
 
 
-
+<!-- Java script functions-->
 <script>
     function myAccFunc(id) {
         var x = document.getElementById(id);

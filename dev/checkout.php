@@ -218,6 +218,7 @@ $page_title ="Checkout";
         ?>
         <p><a href="home.php" ><button class="w3-btn ">Make another booking</button></a></p>
     </div>
+
 </main>
 
 <footer class="w3-container w3-light-grey">

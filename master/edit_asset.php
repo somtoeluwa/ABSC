@@ -59,7 +59,7 @@ $page_title ="Edit Asset";
                     <a href="logout.php">Sign out</a>
                 </div>
             </li>
-            <li class="w3-right" <?php echo $page_title=="Cart" ? "class='active'" : ""; ?> >
+            <li class="w3-right" >
                 <a href="cart.php">
                     <?php
                     // count products in cart
@@ -199,6 +199,8 @@ $page_title ="Edit Asset";
 <footer>
 
 </footer>
+
+<!--JavaScript Functions-->
 <script type="text/javascript">
     var elems = document.getElementsByClassName('confirmation');
     var confirmIt = function (e) {

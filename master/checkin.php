@@ -1,36 +1,60 @@
 <?php
 session_start();
+$role = $_SESSION['sess_userrole'];
+if(!isset($_SESSION['sess_username']) && $role!="admin"){
+    header('Location: index.php?err=2');
+}
 include 'functions\functions.php';
 
 
 
-for ($i = 0; $i < count($_POST['orderselected']); $i++) {
-    $quantity = $_POST['quantity'][$i];
-    $cid = $_POST['orderselected'][$i];
-    $assetPicked = $_POST['assetID'][$i];
-    $stock = $_POST['total_stock'][$i];
-    $newStock = $stock + $quantity;
+// If an order is selected
+if(isset($_POST['orderselected'])) {
+    // get order details
+    for ($i = 0; $i < count($_POST['orderselected']); $i++) {
+        $cid = $_POST['orderselected'][$i];
 
-    $sql =  "UPDATE `asset`
-              SET `total_stock` = '$newStock'
-              WHERE `assetID` = '$assetPicked';";
-    $result = $db->query($sql);
-    if ($result){
+        $sql = "SELECT checkout.*,asset.total_stock
+                FROM `checkout`,`asset`
+                WHERE `c_id` = $cid
+                AND checkout.assetID = asset.assetID;";
+        $result = $db->query($sql);
 
-        $sql2= "DELETE FROM `checkout`
+        if ($result) {
+            while ($row = $result->fetch_array()) {
+                $assetPicked = $row['assetID'];
+                $quantity = $row['quantity'];
+                $stock = $row['total_stock'];
+                $newStock = $stock + $quantity;
 
-                WHERE  `c_id` ={$cid};";
-        $result2= $db->query($sql2);
+                $sql2 = "UPDATE `asset`
+                  SET `total_stock` = '$newStock'
+                  WHERE `assetID` = '$assetPicked';";
+                $result2 = $db->query($sql2);
+                if ($result2) {
 
-        echo "Successful";
-        header("Location: vieworders.php?action=approved");
-    } else {
-        echo "Error" . $sql . '<br>' . mysqli_error($db);
-        header('Location: vieworders.php?action=failed');
+                    $sql3 = "DELETE FROM `checkout`
+
+                    WHERE  `c_id` ={$cid};";
+                    $result3 = $db->query($sql3);
+
+                    echo "Successful";
+                    header("Location: vieworders.php?action=approved");
+                } else {
+                    echo "Error" . $sql . '<br>' . mysqli_error($db);
+                    header('Location: vieworders.php?action=failed');
+                }
+
+            }
+        } else {
+            echo "Error" . $sql . '<br>' . mysqli_error($db);
+            header('Location: vieworders.php?action=failed');
+        }
     }
-
-
-
-
-
 }
+// If no order is selected before approve button is clicked
+else {
+    header('Location: admincheckin.php?action=empty');
+}
+
+

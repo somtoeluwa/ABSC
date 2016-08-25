@@ -186,6 +186,9 @@ $page_title ="My Profile";
 
 </main>
 
+
+<!-- Java script functions-->
+
 <script type="text/javascript">
     window.onload = function () {
         document.getElementById("password").onchange = validatePassword;

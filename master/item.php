@@ -169,6 +169,8 @@ $page_title ="Asset Details";
 </footer>
 <!-- -->
 
+
+<!-- Javascript Functions-->
 <script type="text/javascript">
     var elems = document.getElementsByClassName('confirmation');
     var confirmIt = function (e) {

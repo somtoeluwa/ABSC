@@ -102,6 +102,7 @@ $page_title ="Checkout";
     <div id="content" class="col-10 w3-padding-row">
 
 
+
         <?php
         if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -110,22 +111,23 @@ $page_title ="Checkout";
             $t = time();
             $a = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 4);
             $orderID = $a . $t;
+
             // set default due date for one week from checkout
             $nextWeek = $t + (7 * 24 * 60 * 60);
             $duedate = date('Y-m-d 00:00:00',$nextWeek);
 
             for ($i = 0; $i < count($_POST['cart_quantity']); $i++) {
 
-            $id = $_POST['assetID'][$i];
-            $name = $_POST['assetName'][$i];
-            $quantity = $_POST['cart_quantity'][$i];
+                $id = $_POST['assetID'][$i];
+                $name = $_POST['assetName'][$i];
+                $quantity = $_POST['cart_quantity'][$i];
 
-            if (!isset($_SESSION['cart_items'])) {
-                $_SESSION['cart_items'] = array();
-            }
+                if (!isset($_SESSION['cart_items'])) {
+                    $_SESSION['cart_items'] = array();
+                }
 
                 // incase quantity has been updated . Insert new values into array
-            $_SESSION['cart_items'][$id] = array('assetID' => $id, 'assetName' => $name, 'quantity' => $quantity);
+                $_SESSION['cart_items'][$id] = array('assetID' => $id, 'assetName' => $name, 'quantity' => $quantity);
 
             }
 
@@ -137,13 +139,13 @@ $page_title ="Checkout";
 
             echo "<table class='w3-table w3-bordered  w3-border w3-hoverable '>";
 
-        // our table heading
-        echo "<tr class=' w3-light-grey'>";
-        echo "<th>AssetID</th>";
-        echo "<th>Asset Name</th>";
-        echo "<th>Quantity</th>";
-        echo "<th>Due Date</th>";
-        echo "</tr>";
+            // our table heading
+            echo "<tr class=' w3-light-grey'>";
+            echo "<th>AssetID</th>";
+            echo "<th>Asset Name</th>";
+            echo "<th>Quantity</th>";
+            echo "<th>Due Date</th>";
+            echo "</tr>";
 
             $counter = 0;
             foreach ($_SESSION['cart_items'] as $key => $value) {
@@ -168,56 +170,57 @@ $page_title ="Checkout";
                 if ($result = mysqli_query($db, $sql)) {
 
 
-// When sucessful show receipt page send email and unset session
-                    if ($counter==1){
-                        require_once 'swiftmailer/lib/swift_required.php';
+                    // When sucessfull send email and unset session
 
-// Create the Transport
+                    if ($counter==1){
+
+                        require_once 'swiftmailer/lib/swift_required.php';
+                        // Create the Transport
                         $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465,'ssl')
                             ->setUsername('no.reply.ac.booking.system@gmail.com')
                             ->setPassword('AcBsMth3s1s!')
                         ;
-// Create the Mailer using your created Transport
+                        // Create the Mailer using your created Transport
                         $mailer = Swift_Mailer::newInstance($transport);
-
-// Create the message
+                        // Create the message
                         $message = Swift_Message::newInstance();
-// Give the message a subject
+                        // Give the message a subject
                         $message->setSubject('Your order has been placed');
-// Set the From address with an associative array
+                        // Set the From address with an associative array
                         $message->setFrom(array('no.reply.ac.booking.system@gmail.com' => 'DoNotReply Arduino component Booking System'));
-// Set the To addresses with an associative array
+                        // Set the To addresses with an associative array
                         $message->setTo(array($email => $firstname));
-// Give it a body
-                    $message->setBody('<p>Hello, '.$firstname.'</p>
+                        // Give it a body
+                        $message->setBody('<p>Hello, '.$firstname.'</p>
                                     <p>Thank you for using the Arduino booking System.</p>
                                     <p>Your order has been placed. Your order number is:<b>'. $orderID.'</b> </p>
                                     <p>Present this number to the Module co-ordinator to recieve your items.</p>
                                     <br><br>
-                                    <span>King Regards,</span>
+                                    <span>Kind Regards,</span>
                                     <br><br>
                                     <span>Admin</span>
                                     <br><br>
                                     ','text/html');
-// Send the message
-                    $numSent = $mailer->send($message);
-                    }
+                        // Send the message
+                        $numSent = $mailer->send($message); }
 
 
-                unset($_SESSION['cart_items']);
-            } else {
+                    unset($_SESSION['cart_items']);
+                } else {
 
-                echo "Error:" . $sql . "<br>" . mysqli_error($db);
+                    echo "Error:" . $sql . "<br>" . mysqli_error($db);
+                }
+
             }
-
-        }
             echo "</table>";
 
         }
 
         ?>
         <p><a href="home.php" ><button class="w3-btn ">Make another booking</button></a></p>
+
     </div>
+
 </main>
 
 <footer class="w3-container w3-light-grey">

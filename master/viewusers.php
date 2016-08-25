@@ -183,7 +183,7 @@ $page_title ="View Users";
 
 
 
-
+<!--Javascript functions -->
 <script>
     function myAccFunc(id) {
         var x = document.getElementById(id);

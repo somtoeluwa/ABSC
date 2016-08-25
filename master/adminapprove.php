@@ -133,7 +133,7 @@ $page_title ="Approve CheckOut";
 
 
 
-
+<!-- Java script functions-->
 
 <script>
     function myAccFunc(id) {

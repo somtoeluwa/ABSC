@@ -191,6 +191,8 @@ $page_title ="Edit Users";
 
 </main>
 
+<!-- Javascript Functions-->
+
 <script type="text/javascript">
     window.onload = function () {
         document.getElementById("password").onchange = validatePassword;
